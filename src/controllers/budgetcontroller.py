@@ -1,42 +1,7 @@
-import json
-import os
-
-# class
-class Budget:
-    def __init__(self, trip_name, total_budget):
-        self.trip_name = trip_name
-        self.total_budget = total_budget
-        self.categories = {}
-
-    def add_category(self, category, amount):
-        self.categories[category] = amount
-
-    def update_category(self, category, amount):
-        if category in self.categories:
-            self.categories[category] = amount
-        else:
-            raise ValueError(f"Category '{category}' not found!")
-
-    def calculate_total(self):
-        return sum(self.categories.values())
-
-    def remaining_budget(self):
-        return self.total_budget - self.calculate_total()
+from src.modules.budget import Budget
+from src.utils.file import load_budgets, save_budgets
 
 
-# files
-def load_budgets(filename="budgets.json"):
-    if not os.path.exists(filename):
-        return {}
-    with open(filename, "r") as f:
-        return json.load(f)
-
-def save_budgets(budgets, filename="budgets.json"):
-    with open(filename, "w") as f:
-        json.dump(budgets, f, indent=4)
-
-
-# main
 def run_budget_estimator():
     budgets = load_budgets()
 
@@ -78,7 +43,7 @@ def run_budget_estimator():
                 "categories": budget.categories
             }
             save_budgets(budgets)
-            print("Budget plan saved!")
+            print("✅ Budget plan saved!")
 
         elif choice == "2":
             if not budgets:
@@ -86,8 +51,8 @@ def run_budget_estimator():
                 continue
 
             print("\nAvailable Trips:")
-            for i, trip in enumerate(budgets.keys(), 1):
-                print(f"{i}. {trip}")
+            for trip in budgets.keys():
+                print(f"- {trip}")
 
             trip_choice = input("Enter trip name to edit: ").strip()
             if trip_choice not in budgets:
@@ -113,17 +78,24 @@ def run_budget_estimator():
             except ValueError as e:
                 print(f"{e}")
 
+
         elif choice == "3":
             if not budgets:
                 print("No budget plans available.")
                 continue
 
-            print("\nAvailable Trips:")
+            print("\n=== Budget Plans ===")
             for trip, data in budgets.items():
-                print(f"- {trip}: Total = {data['total_budget']}, Categories = {data['categories']}")
+                if isinstance(data, dict) and "total_budget" in data and "categories" in data:
+                    print(f"\nTrip: {trip}")
+                    print(f"Total Budget: {data['total_budget']}")
+                    print(f"Categories: {data['categories']}")
+                else:
+                    print(f"Skipping invalid entry for trip '{trip}'")
+
 
         elif choice == "4":
-            print("Returning to Main Menu...")
+            print("⬅ Returning to Main Menu...")
             break
 
         else:

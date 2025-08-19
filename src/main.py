@@ -1,6 +1,6 @@
 # ===== Main Menu for Travel Planner Assistant App =====
 
-from src.Modules.budget_estimator import run_budget_estimator
+from src.controllers.budgetcontroller import run_budget_estimator
 # from itinerary_builder import run_itinerary       # (other teammate)
 # from packing_list import run_packing_list         # (other teammate)
 # from emergency_contact import run_emergency_list  # (other teammate)
