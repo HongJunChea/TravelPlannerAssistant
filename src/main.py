@@ -1,37 +1,56 @@
-# ===== Main Menu for Travel Planner Assistant App =====
+import tkinter as tk
+from tkinter import ttk
+from src.gui.budgetgui import BudgetGUI
 
-from src.controllers.budgetcontroller import run_budget_estimator
-# from itinerary_builder import run_itinerary       # (other teammate)
-# from packing_list import run_packing_list         # (other teammate)
-# from emergency_contact import run_emergency_list  # (other teammate)
+class MainMenu:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("✈ Travel Planner Assistant")
+        self.root.geometry("400x400")
+        self.root.configure(bg="#121212")
 
-def main_menu():
-    while True:
-        print("\n=== Travel Planner Assistant App ===")
-        print("1. Itinerary Builder")
-        print("2. Packing List Generator")
-        print("3. Travel Budget Estimator")
-        print("4. Emergency Contact List")
-        print("5. Exit")
+        # Style
+        style = ttk.Style()
+        style.theme_use("clam")
+        style.configure("TButton",
+                        font=("Segoe UI", 11, "bold"),
+                        padding=10,
+                        width=25,
+                        background="#1f1f1f",
+                        foreground="white")
+        style.map("TButton",
+                  background=[("active", "#333333")],
+                  foreground=[("active", "white")])
 
-        choice = input("Enter choice: ")
+        style.configure("TLabel",
+                        font=("Segoe UI", 16, "bold"),
+                        background="#121212",
+                        foreground="white")
 
-        if choice == "1":
-            print("Itinerary Builder module not yet implemented.")  # placeholder
-            # run_itinerary()
-        elif choice == "2":
-            print("Packing List Generator module not yet implemented.")  # placeholder
-            # run_packing_list()
-        elif choice == "3":
-            run_budget_estimator()
-        elif choice == "4":
-            print("Emergency Contact List module not yet implemented.")  # placeholder
-            # run_emergency_list()
-        elif choice == "5":
-            print("Goodbye")
-            break
-        else:
-            print("Invalid choice, try again.")
+        # Title
+        title = ttk.Label(root, text="✈ Travel Planner Assistant")
+        title.pack(pady=20)
+
+        # Buttons (all equal width)
+        self.btn_trip = ttk.Button(root, text="Module 1")
+        self.btn_trip.pack(pady=10)
+
+        self.btn_dest = ttk.Button(root, text="Module 2")
+        self.btn_dest.pack(pady=10)
+
+        self.btn_budget = ttk.Button(root, text="💰 Budget Estimator", command=self.open_budget_menu)
+        self.btn_budget.pack(pady=10)
+
+        self.btn_exit = ttk.Button(root, text="Exit", command=root.quit)
+        self.btn_exit.pack(pady=20)
+
+    def open_budget_menu(self):
+        from gui.budgetmenu import BudgetMenu
+        win = tk.Toplevel(self.root)
+        BudgetMenu(win)
+
 
 if __name__ == "__main__":
-    main_menu()
+    root = tk.Tk()
+    app = MainMenu(root)
+    root.mainloop()
