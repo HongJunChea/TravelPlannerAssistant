@@ -1,38 +1,25 @@
 import json
 import os
 from typing import Dict
+from src.modules.budget import Budget
 
-def load_budgets(filename: str = "datafiles/budgets.json") -> Dict:
-    """Load budgets from a JSON file."""
+def load_budgets(filename: str = "datafiles/budgets.json") -> Dict[str, Budget]:
     if not os.path.exists(filename):
         return {}
+
     with open(filename, "r") as f:
-        return json.load(f)
+        raw_data = json.load(f)
 
-def save_budgets(budgets: Dict, filename: str = "datafiles/budgets.json") -> None:
-    """Validate and save budgets to a JSON file."""
-    validated = {}
+    return {
+        trip_name: Budget.from_dict(trip_name, data)
+        for trip_name, data in raw_data.items()
+    }
 
-    for trip_name, data in budgets.items():
-        if not isinstance(data, dict):
-            raise ValueError(f"Invalid data for trip '{trip_name}': Expected dict, got {type(data)}")
+def save_budgets(budgets: Dict[str, Budget], filename: str = "datafiles/budgets.json") -> None:
+    """Serialize Budget objects and save to JSON."""
+    serializable = {trip_name: budget.to_dict() for trip_name, budget in budgets.items()}
 
-        if "total_budget" not in data or "categories" not in data:
-            raise ValueError(f"Missing keys in trip '{trip_name}'. Required: total_budget, categories")
-
-        if not isinstance(data["total_budget"], (int, float)):
-            raise ValueError(f"total_budget for '{trip_name}' must be a number")
-
-        if not isinstance(data["categories"], dict):
-            raise ValueError(f"categories for '{trip_name}' must be a dictionary")
-
-        validated[trip_name] = {
-            "total_budget": float(data["total_budget"]),
-            "categories": data["categories"]
-        }
-
-    # Ensure folder exists
     os.makedirs(os.path.dirname(filename), exist_ok=True)
 
-    with open(filename, "w") as f:
-        json.dump(validated, f, indent=4)
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(serializable, f, indent=4)

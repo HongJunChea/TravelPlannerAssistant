@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 from src.gui.budgetgui import BudgetGUI
 
-
 class MainApp:
     def __init__(self, root):
         self.root = root
