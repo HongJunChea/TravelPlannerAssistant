@@ -2,11 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 from gui.budgetgui import BudgetMenu
 
-def enable_fullscreen(win):
-    win.attributes("-fullscreen", True)
-    win.bind("<F11>", lambda e: win.attributes("-fullscreen", not win.attributes("-fullscreen")))
-    win.bind("<Escape>", lambda e: win.attributes("-fullscreen", False))
-
 class MainMenu:
     def __init__(self, root):
         self.root = root

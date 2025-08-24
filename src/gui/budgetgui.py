@@ -3,11 +3,6 @@ from tkinter import ttk, simpledialog, messagebox
 from src.modules.budget import Budget
 from src.utils.file import load_budgets, save_budgets
 
-def enable_fullscreen(win):
-    win.attributes("-fullscreen", True)
-    win.bind("<F11>", lambda e: win.attributes("-fullscreen", not win.attributes("-fullscreen")))
-    win.bind("<Escape>", lambda e: win.attributes("-fullscreen", False))
-
 class BudgetGUI:
     def __init__(self, root, trip_name, budgets):
         self.root = root
