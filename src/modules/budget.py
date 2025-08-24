@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import Dict
+from typing import Dict, Self
 
 @dataclass
 class Budget:
@@ -18,18 +18,17 @@ class Budget:
         return self.total_budget - self.allocated
 
     def to_dict(self) -> dict:
-        """Convert a Budget object to dict with RM formatting."""
+        """Convert a Budget object to a plain dict (for JSON)."""
         return {
-            "total_budget": f"RM{self.total_budget:.2f}",
-            "categories": {cat: f"RM{amt:.2f}" for cat, amt in self.categories.items()}
+            "total_budget": self.total_budget,
+            "categories": self.categories
         }
 
-    @staticmethod
-    def from_dict(trip_name: str, data: dict) -> "Budget":
-        """Recreate a Budget object from dict (parse RM strings)."""
-        total_budget = float(str(data["total_budget"]).replace("RM", ""))
-        budget = Budget(trip_name, total_budget)
-        budget.categories = {
-            cat: float(str(amt).replace("RM", "")) for cat, amt in data["categories"].items()
-        }
-        return budget
+    @classmethod
+    def from_dict(cls, trip_name: str, data: dict) -> Self:
+        """Recreate a Budget object from JSON dict."""
+        return cls(
+            trip_name=trip_name,
+            total_budget=float(data["total_budget"]),
+            categories={k: float(v) for k, v in data.get("categories", {}).items()}
+        )

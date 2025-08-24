@@ -48,7 +48,7 @@ def run_budget_estimator():
             save_budgets({t: b.to_dict() for t, b in budgets.items()})
             print("Budget plan saved!")
 
-        # ---------------- Edit Budget ----------------
+        # Edit Budgets
         elif choice == "2":
             if not budgets:
                 print("No budget plans found.")
@@ -60,7 +60,7 @@ def run_budget_estimator():
 
             trip_choice = input("Enter trip name to edit: ").strip()
             if trip_choice not in budgets:
-                print("⚠ Trip not found.")
+                print("Trip not found.")
                 continue
 
             budget = budgets[trip_choice]
@@ -79,7 +79,7 @@ def run_budget_estimator():
             except ValueError:
                 print("Invalid input, must be a number.")
 
-        # ---------------- View Budgets ----------------
+        # View Budgets
         elif choice == "3":
             if not budgets:
                 print("No budget plans available.")
@@ -95,7 +95,7 @@ def run_budget_estimator():
                 for cat, amt in budget.categories.items():
                     print(f"  - {cat}: RM{amt:.2f}")
 
-        # ---------------- Back ----------------
+        # Back
         elif choice == "4":
             print("⬅ Returning to Main Menu...")
             break

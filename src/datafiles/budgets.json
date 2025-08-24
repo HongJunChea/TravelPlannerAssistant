@@ -1,8 +1,6 @@
 {
-    "japan": {
-        "total_budget": 12312312.0,
-        "categories": {
-            "hotel": 123123.0
-        }
+    "Japan": {
+        "total_budget": 0,
+        "categories": {}
     }
 }

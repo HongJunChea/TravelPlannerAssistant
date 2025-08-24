@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from src.gui.budgetgui import BudgetGUI
+from gui.budgetgui import BudgetMenu
 
 class MainMenu:
     def __init__(self, root):
@@ -45,12 +45,12 @@ class MainMenu:
         self.btn_exit.pack(pady=20)
 
     def open_budget_menu(self):
-        from gui.budgetmenu import BudgetMenu
         win = tk.Toplevel(self.root)
         BudgetMenu(win)
 
 
 if __name__ == "__main__":
     root = tk.Tk()
+    enable_fullscreen(root)
     app = MainMenu(root)
     root.mainloop()
