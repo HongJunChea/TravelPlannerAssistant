@@ -10,7 +10,6 @@ class BudgetGUI:
         self.budgets = budgets  # dict[str, Budget]
 
         self.root.title(f"Budget Plan - {self.trip_name}")
-        enable_fullscreen(self.root)
         self.root.configure(bg="#121212")
 
         # ttk dark styling
@@ -150,7 +149,6 @@ class BudgetMenu:
     def __init__(self, root):
         self.root = root
         self.root.title("💼 Budget Plans")
-        enable_fullscreen(self.root)
         self.root.configure(bg="#121212")
 
         self.budgets = load_budgets()  # dict[str, Budget]

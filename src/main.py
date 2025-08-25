@@ -51,6 +51,5 @@ class MainMenu:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    enable_fullscreen(root)
     app = MainMenu(root)
     root.mainloop()
