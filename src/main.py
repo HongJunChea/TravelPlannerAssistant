@@ -35,7 +35,7 @@ class MainMenu:
         self.btn_trip = ttk.Button(root, text="Module 1")
         self.btn_trip.pack(pady=10)
 
-        self.btn_dest = ttk.Button(root, text="Module 2")
+        self.btn_dest = ttk.Button(root, text="Packing List Generator")
         self.btn_dest.pack(pady=10)
 
         self.btn_budget = ttk.Button(root, text="💰 Budget Estimator", command=self.open_budget_menu)
