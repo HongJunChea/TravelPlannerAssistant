@@ -1,9 +1,13 @@
 {
     "Japan": {
-        "total_budget": 0.0,
-        "categories": {}
+        "total_budget": 100000.0,
+        "categories": {
+            "Food": 20.0,
+            "Hotel": 50.0,
+            "Shopping": 100.0
+        }
     },
-    "Trip 2": {
+    "Penang": {
         "total_budget": 0.0,
         "categories": {}
     }
