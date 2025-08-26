@@ -1,9 +1,8 @@
 import tkinter as tk
-from tkinter import ttk
-from src.gui.budgetgui import BudgetGUI
+from tkinter import ttk, messagebox
+from src.gui.budgetgui import BudgetMenu
 
-
-class MainMenu:
+class MainApp:
     def __init__(self, root):
         self.root = root
         self.root.title("✈ Travel Planner Assistant")
@@ -40,13 +39,7 @@ class MainMenu:
 
     def open_budget_menu(self):
         win = tk.Toplevel(self.root)
-        BudgetGUI(win)
+        BudgetMenu(win)
 
     def not_implemented(self):
-        tk.messagebox.showinfo("Info", "This module is not implemented yet.")
-
-
-# if __name__ == "__main__":
-#     root = tk.Tk()
-#     app = MainApp(root)
-#     root.mainloop()
+        messagebox.showinfo("Info", "This module is not implemented yet.")
