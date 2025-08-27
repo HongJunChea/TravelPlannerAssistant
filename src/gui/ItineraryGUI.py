@@ -181,11 +181,6 @@ class ItineraryGUI:
         self.root.destroy()
 
 
-# =========================================================================
-# ITINERARY MENU CLASS
-# This class manages the main menu for creating and managing trips.
-# =========================================================================
-
 class ItineraryMenu:
     def __init__(self, root):
         self.root = root
@@ -269,10 +264,3 @@ class ItineraryMenu:
             del self.itineraries[trip_name]
             save_itineraries(self.itineraries)
             self.refresh_list()
-
-
-# Main entry point for the application
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = ItineraryMenu(root)
-    root.mainloop()

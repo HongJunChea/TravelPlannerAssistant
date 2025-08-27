@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
+from src.gui.ItineraryGUI import ItineraryMenu
 from src.gui.budgetgui import BudgetMenu
 from src.gui.packageGui import PackingListGUI, PackingListViewer
 
@@ -30,10 +31,14 @@ class MainApp:
         title.pack(pady=20)
 
         # Buttons
-        ttk.Button(root, text="Module 1", command=self.not_implemented).pack(pady=10, fill="x", padx=40)
+        ttk.Button(root, text="Itinerary Builder", command=self.open_itinerary_menu).pack(pady=10, fill="x", padx=40)
         ttk.Button(root, text="Packing List Generator", command=self.open_packing_menu).pack(pady=10, fill="x", padx=40)
         ttk.Button(root, text="💰 Budget Estimator", command=self.open_budget_menu).pack(pady=10, fill="x", padx=40)
         ttk.Button(root, text="Exit", command=root.quit).pack(pady=20, fill="x", padx=40)
+
+    def open_itinerary_menu(self):
+        win = tk.Toplevel(self.root)
+        ItineraryMenu(win)
 
     def open_budget_menu(self):
         win = tk.Toplevel(self.root)
