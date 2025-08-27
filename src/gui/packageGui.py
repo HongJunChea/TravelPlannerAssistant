@@ -43,7 +43,7 @@ class PackingListGUI:
 
         # title
         title = ttk.Label(input_frame, text="📦 Generate Packing List",
-                          font=("Segoe UI", 16, "bold"))
+                          font=("Segoe UI", 20, "bold"))
         title.pack(pady=10)
 
         # Input Grid
@@ -61,10 +61,10 @@ class PackingListGUI:
         style.configure("TCombobox", foreground="black", font=("Segoe UI", 11))
         ttk.Label(grid_frame, text="Destination Type:").grid(row=1, column=0, sticky="w", padx=5, pady=5)
         self.destination_var = tk.StringVar()
-        destination_combo = ttk.Combobox(grid_frame, textvariable=self.destination_var, width=18)
+        destination_combo = ttk.Combobox(grid_frame, textvariable=self.destination_var, width=21)
         destination_combo['values'] = ('Beach', 'Mountain', 'City', 'Countryside')
         destination_combo['state'] = 'readonly'
-        destination_combo.set('city')
+        destination_combo.set('City')
         destination_combo.grid(row=1, column=1, padx=5, pady=5)
 
         # weather
@@ -72,10 +72,10 @@ class PackingListGUI:
         style.configure("TCombobox", foreground="black", font=("Segoe UI", 11))
         ttk.Label(grid_frame, text="Weather:").grid(row=2, column=0, sticky="w", padx=5, pady=5)
         self.weather_var = tk.StringVar()
-        weather_combo = ttk.Combobox(grid_frame, textvariable=self.weather_var, width=18)
+        weather_combo = ttk.Combobox(grid_frame, textvariable=self.weather_var, width=21)
         weather_combo['values'] = ('Sunny', 'Rainy', 'Cold', 'Mild')
         weather_combo['state'] = 'readonly'
-        weather_combo.set('mild')
+        weather_combo.set('Mild')
         weather_combo.grid(row=2, column=1, padx=5, pady=5)
 
         # Number of travelers
@@ -110,7 +110,7 @@ class PackingListGUI:
         info_frame = tk.Frame(display_frame, bg="#121212")
         info_frame.pack(fill="x", pady=5)
 
-        self.info_label = ttk.Label(info_frame, text="⬆ Click the Generate button to create the packing list. ⬆", font=("Segoe UI", 12))
+        self.info_label = ttk.Label(info_frame, text="⬆ Click the Generate button to create the packing list ⬆", font=("Segoe UI", 12))
         self.info_label.pack()
 
         # create treeview show item list
@@ -144,27 +144,37 @@ class PackingListGUI:
         add_frame = tk.Frame(display_frame, bg="#121212")
         add_frame.pack(fill="x", pady=5)
 
-        ttk.Label(add_frame, text="Add Item:").grid(row=0, column=0, sticky="w", padx=5)
+        row_frame = tk.Frame(add_frame, bg="#121212")
+        row_frame.pack(anchor="center")
+
+        style = ttk.Style()
+        style.configure("White.TEntry", fieldbackground="white", background="white", foreground="black")
+
+        ttk.Label(row_frame, text="Add Item:").pack(side="left", padx=5)
         self.new_item_var = tk.StringVar()
-        ttk.Entry(add_frame, textvariable=self.new_item_var, width=20).grid(row=0, column=1, padx=5)
+        ttk.Entry(row_frame, textvariable=self.new_item_var, width=20, style="White.TEntry").pack(side="left", padx=5)
 
-        ttk.Label(add_frame, text="Category:").grid(row=0, column=2, sticky="w", padx=5)
+        ttk.Label(row_frame, text="Category:").pack(side="left", padx=5)
         self.new_category_var = tk.StringVar()
-        category_combo = ttk.Combobox(add_frame, textvariable=self.new_category_var, width=15)
+        category_combo = ttk.Combobox(row_frame, textvariable=self.new_category_var, width=15)
         category_combo['values'] = ('Clothing', 'Toiletries', 'Electronics', 'Documents', 'Medicines', 'Others')
-        category_combo.grid(row=0, column=3, padx=5)
+        style.configure("TCombobox", fieldbackground="white", background="white")
+        category_combo.pack(side="left", padx=5)
 
-        ttk.Button(add_frame, text="➕ Add", command=self.add_custom_item).grid(row=0, column=4, padx=5)
-        ttk.Button(add_frame, text="🗑️ Delete", command=self.delete_item).grid(row=0, column=5, padx=5)
+        style.configure("White.TButton", background="white", foreground="black", padding=(8, 1))
+        ttk.Button(row_frame, text="➕ Add", command=self.add_custom_item, style="White.TButton").pack(side="left", padx=5)
+        ttk.Button(row_frame, text="🗑️ Delete", command=self.delete_item, style="White.TButton").pack(side="left", padx=5)
 
     def create_button_frame(self):
         """create button frame"""
         button_frame = tk.Frame(self.root, bg="#121212")
         button_frame.pack(pady=15)
 
-        ttk.Button(button_frame, text="💾 Save List", command=self.save_list).grid(row=0, column=0, padx=10)
-        ttk.Button(button_frame, text="🔄 Regenerate", command=self.generate_list).grid(row=0, column=1, padx=10)
-        ttk.Button(button_frame, text="⬅️ Back to Menu", command=self.go_back).grid(row=0, column=2, padx=10)
+        style = ttk.Style()
+        style.configure("White.TButton", background="white", foreground="black")
+        ttk.Button(button_frame, text="💾 Save List", command=self.save_list, style="White.TButton").grid(row=0, column=0, padx=10)
+        ttk.Button(button_frame, text="🔄 Regenerate", command=self.generate_list, style="White.TButton").grid(row=0, column=1, padx=10)
+        ttk.Button(button_frame, text="⬅️ Back to Menu", command=self.go_back, style="White.TButton").grid(row=0, column=2, padx=10)
 
     def show_saved_lists(self):
         """show saved lists"""
@@ -358,7 +368,7 @@ class SavedListsSelector:
         title_frame = tk.Frame(self.root, bg="#121212")
         title_frame.pack(pady=10, fill="x")
 
-        title = ttk.Label(title_frame, text="📚 Select the list to load", font=("Segoe UI", 16, "bold"))
+        title = ttk.Label(title_frame, text="📚 Select the list to load", font=("Segoe UI", 20, "bold"))
         title.pack()
 
         # list
@@ -393,9 +403,11 @@ class SavedListsSelector:
         button_frame = tk.Frame(self.root, bg="#121212")
         button_frame.pack(pady=15)
 
-        ttk.Button(button_frame, text="✅ Load List", command=self.load_selected_list).grid(row=0, column=0, padx=10)
-        ttk.Button(button_frame, text="🗑️ Delete List", command=self.delete_selected_list).grid(row=0, column=1, padx=10)
-        ttk.Button(button_frame, text="❌ Cancel", command=self.close_window).grid(row=0, column=2, padx=10)
+        style = ttk.Style()
+        style.configure("White.TButton", background="white", foreground="black", font=("Segoe UI", 11), padding=(8, 5))
+        ttk.Button(button_frame, text="✅ Load List", command=self.load_selected_list, style="White.TButton").grid(row=0, column=0, padx=10)
+        ttk.Button(button_frame, text="🗑️ Delete List", command=self.delete_selected_list, style="White.TButton").grid(row=0, column=1, padx=10)
+        ttk.Button(button_frame, text="❌ Cancel", command=self.close_window, style="White.TButton").grid(row=0, column=2, padx=10)
 
     def load_saved_lists(self):
         """load saved list"""
