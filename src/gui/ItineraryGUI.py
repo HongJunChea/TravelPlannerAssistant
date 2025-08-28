@@ -1,460 +1,254 @@
 import tkinter as tk
-from tkinter import ttk, simpledialog, messagebox
-from datetime import datetime, timedelta
-import json
-import os
+from tkinter import ttk, messagebox
+from datetime import datetime
 from src.modules.itinerary import Itinerary
+from src.utils.file import load_itineraries, save_itineraries
 
 
 class ItineraryMenu:
-    """
-    Main application class that manages the different frames/screens
-    based on the provided flowchart.
-    """
-
     def __init__(self, root):
         self.root = root
-        self.root.title("✈️ Travel Itinerary Builder")
-        self.root.geometry("800x700")
-        self.root.configure(bg="#121212")
+        self.itineraries = load_itineraries()
+        self.current_itinerary: str | None = None
 
-        # The filename for saving/loading data
-        self.save_dir = "itineraries"
-        os.makedirs(self.save_dir, exist_ok=True)
+        # Set window size a bit taller
+        root.geometry("1100x500")
+        root.configure(bg="#000000")
 
-        # Dictionary to hold all created/loaded frames
-        self.frames = {}
-
-        # The current itinerary being edited/viewed
-        self.current_itinerary: Itinerary = None
-
-        self.setup_styles()
-        self.create_frames()
-        self.show_frame("main_menu")
-
-    def setup_styles(self):
-        """
-        Configures the dark theme for the ttk widgets.
-        """
+        # Dark theme styling
         style = ttk.Style()
         style.theme_use("clam")
-        style.configure("TButton", font=("Segoe UI", 11), padding=6,
-                        relief="flat", background="#1f1f1f", foreground="white")
-        style.map("TButton", background=[("active", "#333333")], foreground=[("active", "white")])
-        style.configure("TLabel", font=("Segoe UI", 11), background="#121212", foreground="white")
-        style.configure("TEntry", fieldbackground="#1f1f1f", foreground="white", insertcolor="white")
-        style.configure("TCombobox", fieldbackground="#1f1f1f", foreground="white", insertcolor="white")
-        style.configure("Treeview", fieldbackground="#1f1f1f", foreground="white", background="#1f1f1f",
-                        font=("Segoe UI", 10), rowheight=25)
-        style.configure("Treeview.Heading", font=("Segoe UI", 10, "bold"), background="#1f1f1f", foreground="white")
-        style.map("Treeview", background=[('selected', '#333333')], foreground=[('selected', 'white')])
+        style.configure("Black.TFrame", background="#000000")
+        style.configure("Black.TEntry",
+                        fieldbackground="#000000",
+                        foreground="white",
+                        insertcolor="white")
+        style.configure("Black.TCombobox",
+                        fieldbackground="#000000",
+                        background="#000000",
+                        foreground="white")
 
-    def create_frames(self):
-        """
-        Initializes and stores all the main frames for the application.
-        """
-        # Main Menu Frame
-        main_menu_frame = ttk.Frame(self.root, style="TLabel")
-        self.frames["main_menu"] = main_menu_frame
+        # Layout: split left form + right saved itineraries
+        self.main_frame = ttk.Frame(root, style="Black.TFrame")
+        self.main_frame.pack(fill="both", expand=True, padx=20, pady=20)
 
-        title = ttk.Label(main_menu_frame, text="Main Menu", font=("Segoe UI", 20, "bold"))
-        title.pack(pady=20)
+        # ================= LEFT SIDE: Trip details =================
+        left_frame = ttk.Frame(self.main_frame, style="Black.TFrame")
+        left_frame.pack(side="left", fill="both", expand=True, padx=20)
 
-        ttk.Button(main_menu_frame, text="1. Add Itinerary", command=lambda: self.show_frame("add_itinerary")).pack(
-            pady=10, ipadx=50)
-        ttk.Button(main_menu_frame, text="2. Update Itinerary",
-                   command=lambda: self.show_frame("update_itinerary")).pack(pady=10, ipadx=40)
-        ttk.Button(main_menu_frame, text="3. View Itinerary", command=lambda: self.show_frame("view_itinerary")).pack(
-            pady=10, ipadx=45)
+        self.header_label = ttk.Label(
+            left_frame,
+            text="🗺️ Travel Itinerary Builder",
+            font=("Segoe UI", 20, "bold"),
+            background="#000000",
+            foreground="white"
+        )
+        self.header_label.pack(pady=10)
 
-        # Add Itinerary Frame
-        add_frame = ttk.Frame(self.root, style="TLabel")
-        self.frames["add_itinerary"] = add_frame
-        self.setup_add_frame(add_frame)
+        # Trip details frame
+        self.input_frame = ttk.Frame(left_frame, style="Black.TFrame")
+        self.input_frame.pack(fill="x", pady=20)
 
-        # Update Itinerary Frame
-        update_frame = ttk.Frame(self.root, style="TLabel")
-        self.frames["update_itinerary"] = update_frame
-        self.setup_select_itinerary_frame(update_frame, self.setup_update_frame)
+        # Row 1: Trip Title
+        ttk.Label(self.input_frame, text="Trip Title:", background="#000000", foreground="white").grid(
+            row=0, column=0, padx=5, pady=10, sticky="e"
+        )
+        self.trip_title_entry = ttk.Entry(self.input_frame, style="Black.TEntry", width=50)  # longer field
+        self.trip_title_entry.grid(row=0, column=1, padx=5, pady=10, sticky="w")
 
-        # View Itinerary Frame
-        view_frame = ttk.Frame(self.root, style="TLabel")
-        self.frames["view_itinerary"] = view_frame
-        self.setup_select_itinerary_frame(view_frame, self.setup_view_frame)
+        # Row 2: Location
+        ttk.Label(self.input_frame, text="Location:", background="#000000", foreground="white").grid(
+            row=1, column=0, padx=5, pady=10, sticky="e"
+        )
+        self.location_entry = ttk.Entry(self.input_frame, style="Black.TEntry", width=30)
+        self.location_entry.grid(row=1, column=1, padx=5, pady=10, sticky="w")
 
-    def show_frame(self, frame_name):
-        """
-        Hides all frames and shows the selected one.
-        """
-        for frame in self.frames.values():
-            frame.pack_forget()
+        # Row 3: Start Date + End Date
+        ttk.Label(self.input_frame, text="Start Date:", background="#000000", foreground="white").grid(
+            row=2, column=0, padx=5, pady=10, sticky="e"
+        )
+        self.start_date_entry = ttk.Entry(self.input_frame, style="Black.TEntry", width=20)
+        self.start_date_entry.grid(row=2, column=1, padx=5, pady=10, sticky="w")
 
-        frame_to_show = self.frames.get(frame_name)
-        if frame_to_show:
-            frame_to_show.pack(fill="both", expand=True)
+        ttk.Label(self.input_frame, text="End Date:", background="#000000", foreground="white").grid(
+            row=3, column=0, padx=5, pady=10, sticky="e"
+        )
+        self.end_date_entry = ttk.Entry(self.input_frame, style="Black.TEntry", width=20)
+        self.end_date_entry.grid(row=3, column=1, padx=5, pady=10, sticky="w")
 
-    def setup_add_frame(self, frame):
-        """
-        Creates the GUI for adding a new itinerary.
-        """
-        title = ttk.Label(frame, text="Add New Itinerary", font=("Segoe UI", 20, "bold"))
-        title.pack(pady=20)
+        # Row 4: Trip Type
+        ttk.Label(self.input_frame, text="Type of Trip:", background="#000000", foreground="white").grid(
+            row=4, column=0, padx=5, pady=10, sticky="e"
+        )
+        self.trip_type_combo = ttk.Combobox(self.input_frame,
+                                            values=["General", "Business", "Vacation", "Adventure", "Family", "Other"],
+                                            state="readonly", width=18)
+        self.trip_type_combo.set("General")
+        self.trip_type_combo.grid(row=4, column=1, padx=5, pady=10, sticky="w")
 
-        fields_frame = ttk.Frame(frame, style="TLabel")
-        fields_frame.pack(pady=10)
+        # Bottom button bar
+        self.button_frame = ttk.Frame(left_frame, style="Black.TFrame")
+        self.button_frame.pack(fill="x", pady=15)
 
-        self.add_vars = {
-            "title": tk.StringVar(),
-            "location": tk.StringVar(),
-            "start_date": tk.StringVar(),
-            "end_date": tk.StringVar(),
-            "trip_type": tk.StringVar()
-        }
+        self.save_button = ttk.Button(self.button_frame, text="💾 Save Itinerary", command=self.save_itinerary)
+        self.save_button.pack(side="left", padx=10)
 
-        labels = ["Trip Title:", "Location:", "Start Date (YYYY-MM-DD):", "End Date (YYYY-MM-DD):", "Type of Trip:"]
-        entries = ["title", "location", "start_date", "end_date", "trip_type"]
+        self.update_button = ttk.Button(self.button_frame, text="✏️ Update Itinerary", command=self.update_itinerary)
+        self.update_button.pack(side="left", padx=10)
 
-        for i, (label_text, var_name) in enumerate(zip(labels, entries)):
-            ttk.Label(fields_frame, text=label_text).grid(row=i, column=0, sticky="w", padx=5, pady=5)
-            if var_name == "trip_type":
-                combo = ttk.Combobox(fields_frame, textvariable=self.add_vars[var_name], width=27)
-                combo['values'] = ('Leisure', 'Business', 'Adventure', 'Family')
-                combo['state'] = 'readonly'
-                combo.grid(row=i, column=1, padx=5, pady=5)
-            else:
-                ttk.Entry(fields_frame, textvariable=self.add_vars[var_name], width=30).grid(row=i, column=1, padx=5,
-                                                                                             pady=5)
+        self.delete_button = ttk.Button(self.button_frame, text="🗑️ Delete Itinerary", command=self.delete_itinerary)
+        self.delete_button.pack(side="left", padx=10)
 
-        ttk.Button(frame, text="Add Itinerary", command=self.add_new_itinerary).pack(pady=10)
-        ttk.Button(frame, text="Back to Main Menu", command=lambda: self.show_frame("main_menu")).pack(pady=5)
+        self.reset_button = ttk.Button(self.button_frame, text="🔄 Reset", command=self.reset_fields)
+        self.reset_button.pack(side="left", padx=10)
 
-    def add_new_itinerary(self):
-        """
-        Saves the new itinerary and prompts the user to add another.
-        """
+        self.exit_button = ttk.Button(self.button_frame, text="❌ Exit", command=self.root.destroy)
+        self.exit_button.pack(side="right", padx=10)
+
+        # ================= RIGHT SIDE: Saved itineraries =================
+        right_frame = ttk.Frame(self.main_frame, style="Black.TFrame", width=250)
+        right_frame.pack(side="right", fill="y", padx=10)
+        right_frame.pack_propagate(False)  # prevent frame from shrinking to fit children
+
+        lbl = ttk.Label(right_frame, text="📂 Saved Itineraries",
+                        background="#000000", foreground="white", font=("Segoe UI", 12, "bold"))
+        lbl.pack(pady=5)
+
+        self.itinerary_listbox = tk.Listbox(
+            right_frame,
+            bg="black",
+            fg="white",
+            height=25,
+            width=30,  # make it wider in characters
+            selectmode="single"
+        )
+        self.itinerary_listbox.pack(fill="both", expand=True, padx=5, pady=5)
+        self.itinerary_listbox.bind("<<ListboxSelect>>", self.load_selected_itinerary)
+
+        self.refresh_itinerary_list()
+
+    # ================= FUNCTIONS =================
+
+    def reset_fields(self):
+        """Clear input fields (reset)."""
+        self.trip_title_entry.delete(0, tk.END)
+        self.location_entry.delete(0, tk.END)
+        self.start_date_entry.delete(0, tk.END)
+        self.end_date_entry.delete(0, tk.END)
+        self.trip_type_combo.set("General")
+        self.current_itinerary = None
+        self.itinerary_listbox.selection_clear(0, tk.END)
+
+    def refresh_itinerary_list(self):
+        """Refresh listbox with saved itineraries."""
+        self.itinerary_listbox.delete(0, tk.END)
+        for name in self.itineraries.keys():
+            self.itinerary_listbox.insert(tk.END, name)
+
+    def validate_date(self, date_text):
+        """Check if date is in YYYY-mm-dd format."""
+        if not date_text:
+            return True
         try:
-            trip_data = {key: var.get() for key, var in self.add_vars.items()}
-
-            if not all(trip_data.values()):
-                messagebox.showwarning("Input Error", "Please fill in all fields.")
-                return
-
-            start_date_obj = datetime.strptime(trip_data["start_date"], "%Y-%m-%d")
-            end_date_obj = datetime.strptime(trip_data["end_date"], "%Y-%m-%d")
-            if start_date_obj > end_date_obj:
-                messagebox.showerror("Date Error", "Start date cannot be after the end date.")
-                return
-
-                # Create a new Itinerary object
-            new_itinerary = Itinerary(
-                list_name=f"{trip_data['title'].replace(' ', '_')}.json",
-                trip_title=trip_data["title"],
-                location=trip_data["location"],
-                start_date=trip_data["start_date"],
-                end_date=trip_data["end_date"],
-                trip_type=trip_data["trip_type"]
-            )
-
-            # Save the itinerary
-            filename = new_itinerary.list_name
-            save_path = os.path.join(self.save_dir, filename)
-            with open(save_path, 'w') as f:
-                json.dump(new_itinerary.to_dict(), f, indent=4)
-
-            messagebox.showinfo("Success", "Itinerary added successfully!")
-
-            # Prompt to add another
-            if messagebox.askyesno("Add More?", "Would you like to add another itinerary?"):
-                for var in self.add_vars.values():
-                    var.set("")
-                self.show_frame("add_itinerary")
-            else:
-                self.show_frame("main_menu")
-
+            datetime.strptime(date_text, "%Y-%m-%d")
+            return True
         except ValueError:
-            messagebox.showerror("Input Error", "Invalid date format. Please use YYYY-MM-DD.")
+            return False
 
-    def setup_select_itinerary_frame(self, frame, next_action):
-        """
-        Generates a generic frame for selecting an itinerary from a list.
-        """
-        title = ttk.Label(frame, text="Select Itinerary", font=("Segoe UI", 20, "bold"))
-        title.pack(pady=20)
+    def save_itinerary(self):
+        """Create and save a new itinerary."""
+        trip_title = self.trip_title_entry.get().strip()
+        if not trip_title:
+            messagebox.showwarning("Missing Info", "Trip Title is required.")
+            return
 
-        self.tree_frame = ttk.Frame(frame, style="TLabel")
-        self.tree_frame.pack(fill="both", expand=True, padx=20, pady=10)
+        if not self.validate_date(self.start_date_entry.get()):
+            messagebox.showerror("Invalid Date", "Start Date must be in YYYY-mm-dd format.")
+            return
+        if not self.validate_date(self.end_date_entry.get()):
+            messagebox.showerror("Invalid Date", "End Date must be in YYYY-mm-dd format.")
+            return
 
-        self.itinerary_tree = ttk.Treeview(self.tree_frame, columns=('Location', 'Dates'), show='headings')
-        self.itinerary_tree.heading('#0', text='Trip Title')
-        self.itinerary_tree.heading('Location', text='Location')
-        self.itinerary_tree.heading('Dates', text='Dates')
-        self.itinerary_tree.column('#0', width=200)
-        self.itinerary_tree.column('Location', width=150)
-        self.itinerary_tree.column('Dates', width=200)
+        list_name = trip_title
 
-        scrollbar = ttk.Scrollbar(self.tree_frame, orient="vertical", command=self.itinerary_tree.yview)
-        self.itinerary_tree.configure(yscrollcommand=scrollbar.set)
-
-        self.itinerary_tree.pack(side="left", fill="both", expand=True)
-        scrollbar.pack(side="right", fill="y")
-
-        self.itinerary_tree.bind('<Double-1>', lambda event: self.load_selected_itinerary(next_action))
-
-        select_btn = ttk.Button(frame, text="Select Itinerary",
-                                command=lambda: self.load_selected_itinerary(next_action))
-        select_btn.pack(pady=10)
-
-        ttk.Button(frame, text="Back to Main Menu", command=lambda: self.show_frame("main_menu")).pack(pady=5)
-
-        # This function will load the data for the treeview
-        self.load_all_itineraries()
-
-    def load_all_itineraries(self):
-        """
-        Loads all saved itineraries and populates the Treeview.
-        """
-        for item in self.itinerary_tree.get_children():
-            self.itinerary_tree.delete(item)
-
-        try:
-            files = [f for f in os.listdir(self.save_dir) if f.endswith('.json')]
-            if not files:
-                self.itinerary_tree.insert('', 'end', text="No saved itineraries.", values=('', ''))
+        # Handle duplicate
+        if list_name in self.itineraries:
+            overwrite = messagebox.askyesno("Overwrite?",
+                                            f"Itinerary '{list_name}' already exists. Overwrite?")
+            if not overwrite:
                 return
 
-            for file_name in files:
-                file_path = os.path.join(self.save_dir, file_name)
-                with open(file_path, 'r') as f:
-                    data = json.load(f)
-                    dates = f"{data.get('start_date', 'N/A')} to {data.get('end_date', 'N/A')}"
-                    self.itinerary_tree.insert('', 'end', text=data.get('trip_title', 'N/A'),
-                                               values=(data.get('location', 'N/A'), dates),
-                                               tags=(file_name,))
-        except Exception as e:
-            messagebox.showerror("Error", f"Failed to load files: {e}")
+        itinerary = Itinerary(
+            list_name=list_name,
+            trip_title=trip_title,
+            location=self.location_entry.get(),
+            start_date=self.start_date_entry.get(),
+            end_date=self.end_date_entry.get(),
+            trip_type=self.trip_type_combo.get(),
+            activities=[]
+        )
 
-    def load_selected_itinerary(self, next_action):
-        """
-        Loads the selected itinerary from the Treeview and proceeds to the next frame.
-        """
-        selected_item = self.itinerary_tree.selection()
-        if not selected_item:
-            messagebox.showwarning("Warning", "Please select an itinerary first.")
+        self.itineraries[list_name] = itinerary
+        save_itineraries(self.itineraries)
+        self.refresh_itinerary_list()
+        messagebox.showinfo("Saved", f"Itinerary '{list_name}' saved successfully.")
+
+    def update_itinerary(self):
+        if not self.current_itinerary:
+            messagebox.showwarning("No Selection", "Select an itinerary from the list to update.")
             return
 
-        file_name = self.itinerary_tree.item(selected_item, 'tags')[0]
-        file_path = os.path.join(self.save_dir, file_name)
-
-        try:
-            with open(file_path, 'r') as f:
-                data = json.load(f)
-                # Use from_dict to create an Itinerary object
-                self.current_itinerary = Itinerary.from_dict(list_name=file_name, data=data)
-
-                # Call the function to setup the next frame
-            next_action(file_name)
-        except Exception as e:
-            messagebox.showerror("Error", f"Failed to load itinerary: {e}")
-
-    def setup_view_frame(self, file_name):
-        """
-        Generates the GUI to view itinerary details.
-        """
-        view_frame = ttk.Frame(self.root, style="TLabel")
-        self.frames["view_itinerary_details"] = view_frame
-
-        title = ttk.Label(view_frame, text=f"Viewing: {self.current_itinerary.trip_title}",
-                          font=("Segoe UI", 20, "bold"))
-        title.pack(pady=20)
-
-        info_text = f"Destination: {self.current_itinerary.location}\n" \
-                    f"Dates: {self.current_itinerary.start_date} to {self.current_itinerary.end_date}\n" \
-                    f"Type: {self.current_itinerary.trip_type}"
-        ttk.Label(view_frame, text=info_text, font=("Segoe UI", 12)).pack(pady=10)
-
-        # Treeview for activities
-        activity_tree_frame = ttk.Frame(view_frame, style="TLabel")
-        activity_tree_frame.pack(fill="both", expand=True, padx=20, pady=10)
-
-        self.activity_tree = ttk.Treeview(activity_tree_frame, columns=('Activity', 'Time', 'Notes'), show='headings')
-        self.activity_tree.heading('Activity', text='Activity')
-        self.activity_tree.heading('Time', text='Time')
-        self.activity_tree.heading('Notes', text='Notes')
-        self.activity_tree.pack(fill="both", expand=True)
-
-        for activity in self.current_itinerary.activities:
-            self.activity_tree.insert('', 'end', values=(activity.description, activity.time, activity.notes))
-
-        ttk.Button(view_frame, text="View another Itinerary", command=lambda: self.show_frame("view_itinerary")).pack(
-            pady=10)
-        ttk.Button(view_frame, text="Back to Main Menu", command=lambda: self.show_frame("main_menu")).pack(pady=5)
-
-        self.show_frame("view_itinerary_details")
-
-    def setup_update_frame(self, file_name):
-        """
-        Generates the GUI to update an itinerary.
-        """
-        update_frame = ttk.Frame(self.root, style="TLabel")
-        self.frames["update_itinerary_details"] = update_frame
-
-        title = ttk.Label(update_frame, text=f"Updating: {self.current_itinerary.trip_title}",
-                          font=("Segoe UI", 20, "bold"))
-        title.pack(pady=20)
-
-        # Fields for updating trip details
-        update_fields_frame = ttk.Frame(update_frame, style="TLabel")
-        update_fields_frame.pack(pady=10)
-
-        self.update_vars = {
-            "title": tk.StringVar(value=self.current_itinerary.trip_title),
-            "location": tk.StringVar(value=self.current_itinerary.location),
-            "start_date": tk.StringVar(value=self.current_itinerary.start_date),
-            "end_date": tk.StringVar(value=self.current_itinerary.end_date),
-            "trip_type": tk.StringVar(value=self.current_itinerary.trip_type)
-        }
-
-        labels = ["Trip Title:", "Location:", "Start Date (YYYY-MM-DD):", "End Date (YYYY-MM-DD):", "Type of Trip:"]
-        entries = ["title", "location", "start_date", "end_date", "trip_type"]
-
-        for i, (label_text, var_name) in enumerate(zip(labels, entries)):
-            ttk.Label(update_fields_frame, text=label_text).grid(row=i, column=0, sticky="w", padx=5, pady=5)
-            if var_name == "trip_type":
-                combo = ttk.Combobox(update_fields_frame, textvariable=self.update_vars[var_name], width=27)
-                combo['values'] = ('Leisure', 'Business', 'Adventure', 'Family')
-                combo['state'] = 'readonly'
-                combo.grid(row=i, column=1, padx=5, pady=5)
-            else:
-                ttk.Entry(update_fields_frame, textvariable=self.update_vars[var_name], width=30).grid(row=i, column=1,
-                                                                                                       padx=5, pady=5)
-
-        ttk.Button(update_frame, text="Update Trip Details", command=lambda: self.update_trip_details(file_name)).pack(
-            pady=10)
-
-        # Separator for Activity Management
-        ttk.Separator(update_frame, orient="horizontal").pack(fill="x", padx=20, pady=10)
-        ttk.Label(update_frame, text="Manage Activities", font=("Segoe UI", 16, "bold")).pack()
-
-        # Activity management controls
-        activity_controls = ttk.Frame(update_frame, style="TLabel")
-        activity_controls.pack(pady=5)
-        self.activity_vars = {
-            "description": tk.StringVar(),
-            "time": tk.StringVar(),
-            "notes": tk.StringVar()
-        }
-
-        ttk.Label(activity_controls, text="Description:").grid(row=0, column=0, padx=5)
-        ttk.Entry(activity_controls, textvariable=self.activity_vars["description"], width=30).grid(row=0, column=1,
-                                                                                                    padx=5)
-        ttk.Label(activity_controls, text="Time:").grid(row=0, column=2, padx=5)
-        ttk.Entry(activity_controls, textvariable=self.activity_vars["time"], width=10).grid(row=0, column=3, padx=5)
-        ttk.Label(activity_controls, text="Notes:").grid(row=0, column=4, padx=5)
-        ttk.Entry(activity_controls, textvariable=self.activity_vars["notes"], width=20).grid(row=0, column=5, padx=5)
-
-        ttk.Button(activity_controls, text="Add Activity", command=lambda: self.add_activity(file_name)).grid(row=1,
-                                                                                                              column=0,
-                                                                                                              columnspan=2,
-                                                                                                              pady=5)
-        ttk.Button(activity_controls, text="Delete Selected", command=lambda: self.delete_activity(file_name)).grid(
-            row=1, column=2, columnspan=2, pady=5)
-
-        # Treeview to display activities
-        self.update_activity_tree = ttk.Treeview(update_frame, columns=('Activity', 'Time', 'Notes'), show='headings')
-        self.update_activity_tree.heading('Activity', text='Activity')
-        self.update_activity_tree.heading('Time', text='Time')
-        self.update_activity_tree.heading('Notes', text='Notes')
-        self.update_activity_tree.pack(fill="both", expand=True, padx=20, pady=10)
-        self.populate_activity_tree()
-
-        ttk.Button(update_frame, text="Update another Itinerary",
-                   command=lambda: self.show_frame("update_itinerary")).pack(pady=10)
-        ttk.Button(update_frame, text="Back to Main Menu", command=lambda: self.show_frame("main_menu")).pack(pady=5)
-
-        self.show_frame("update_itinerary_details")
-
-    def populate_activity_tree(self):
-        """
-        Populates the activity Treeview in the update frame.
-        """
-        for item in self.update_activity_tree.get_children():
-            self.update_activity_tree.delete(item)
-
-        for i, activity in enumerate(self.current_itinerary.activities):
-            self.update_activity_tree.insert('', 'end', values=(activity.description, activity.time, activity.notes),
-                                             iid=i)
-
-    def update_trip_details(self, file_name):
-        """
-        Updates the top-level trip details in the JSON file.
-        """
-        try:
-            # Update the attributes of the current Itinerary object
-            self.current_itinerary.trip_title = self.update_vars["title"].get()
-            self.current_itinerary.location = self.update_vars["location"].get()
-            self.current_itinerary.start_date = self.update_vars["start_date"].get()
-            self.current_itinerary.end_date = self.update_vars["end_date"].get()
-            self.current_itinerary.trip_type = self.update_vars["trip_type"].get()
-
-            # Save the updated itinerary
-            self.save_itinerary_file(file_name)
-
-            messagebox.showinfo("Success", "Trip details updated successfully!")
-
-        except Exception as e:
-            messagebox.showerror("Error", f"Failed to update trip details: {e}")
-
-    def add_activity(self, file_name):
-        """
-        Adds a new activity to the current itinerary.
-        """
-        description = self.activity_vars["description"].get()
-        time = self.activity_vars["time"].get()
-        notes = self.activity_vars["notes"].get()
-
-        if not description:
-            messagebox.showwarning("Input Error", "Activity description cannot be empty.")
+        if not self.validate_date(self.start_date_entry.get()):
+            messagebox.showerror("Invalid Date", "Start Date must be in YYYY-mm-dd format.")
+            return
+        if not self.validate_date(self.end_date_entry.get()):
+            messagebox.showerror("Invalid Date", "End Date must be in YYYY-mm-dd format.")
             return
 
-            # Add the new activity using the Itinerary object's method
-        self.current_itinerary.add_activity(description=description, date=self.current_itinerary.start_date, time=time,
-                                            notes=notes)
+        itinerary = Itinerary(
+            list_name=self.current_itinerary,
+            trip_title=self.trip_title_entry.get(),
+            location=self.location_entry.get(),
+            start_date=self.start_date_entry.get(),
+            end_date=self.end_date_entry.get(),
+            trip_type=self.trip_type_combo.get(),
+            activities=[]
+        )
 
-        self.populate_activity_tree()
-        self.save_itinerary_file(file_name)
+        self.itineraries[self.current_itinerary] = itinerary
+        save_itineraries(self.itineraries)
+        self.refresh_itinerary_list()
+        messagebox.showinfo("Updated", f"Itinerary '{self.current_itinerary}' updated successfully.")
 
-        self.activity_vars["description"].set("")
-        self.activity_vars["time"].set("")
-        self.activity_vars["notes"].set("")
-
-    def delete_activity(self, file_name):
-        """
-        Deletes the selected activity from the current itinerary.
-        """
-        selected_item = self.update_activity_tree.selection()
-        if not selected_item:
-            messagebox.showwarning("Warning", "Please select an activity to delete.")
+    def delete_itinerary(self):
+        list_name = self.itinerary_listbox.get(tk.ANCHOR)
+        if not list_name:
+            messagebox.showwarning("No Selection", "Select an itinerary to delete.")
             return
 
-        index_to_delete = int(self.update_activity_tree.item(selected_item, 'iid'))
+        confirm = messagebox.askyesno("Delete", f"Are you sure you want to delete '{list_name}'?")
+        if not confirm:
+            return
 
-        confirm = messagebox.askyesno("Confirm Delete", "Are you sure you want to delete this activity?")
-        if confirm:
-            # Delete the activity using the Itinerary object's method
-            # Note: This is a simplification; a more robust method might use a unique ID
-            del self.current_itinerary.activities[index_to_delete]
-            self.populate_activity_tree()
-            self.save_itinerary_file(file_name)
+        if list_name in self.itineraries:
+            del self.itineraries[list_name]
+            save_itineraries(self.itineraries)
+            self.refresh_itinerary_list()
+            self.reset_fields()
+            messagebox.showinfo("Deleted", f"Itinerary '{list_name}' deleted successfully.")
 
-    def save_itinerary_file(self, file_name):
-        """
-        Helper function to save the current itinerary to a file.
-        """
-        try:
-            save_path = os.path.join(self.save_dir, file_name)
-            with open(save_path, 'w') as f:
-                # Use to_dict() method of the Itinerary object for serialization
-                json.dump(self.current_itinerary.to_dict(), f, indent=4)
-            messagebox.showinfo("Success", "Itinerary saved successfully!")
-        except Exception as e:
-            messagebox.showerror("Error", f"Failed to save itinerary: {e}")
+    def load_selected_itinerary(self, event):
+        selection = self.itinerary_listbox.curselection()
+        if not selection:
+            return
+        list_name = self.itinerary_listbox.get(selection[0])
+        itinerary = self.itineraries[list_name]
+
+        self.reset_fields()
+        self.current_itinerary = list_name
+
+        self.trip_title_entry.insert(0, itinerary.trip_title)
+        self.location_entry.insert(0, itinerary.location)
+        self.start_date_entry.insert(0, itinerary.start_date)
+        self.end_date_entry.insert(0, itinerary.end_date)
+        self.trip_type_combo.set(itinerary.trip_type)
