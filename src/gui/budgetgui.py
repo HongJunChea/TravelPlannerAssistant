@@ -11,6 +11,7 @@ class BudgetGUI:
 
         self.root.title(f"Budget Plan - {self.trip_name}")
         self.root.configure(bg="#121212")
+        self.root.geometry("900x800")
 
         # ttk dark styling
         style = ttk.Style()
@@ -150,6 +151,7 @@ class BudgetMenu:
         self.root = root
         self.root.title("💼 Budget Plans")
         self.root.configure(bg="#121212")
+        self.root.geometry("900x800")
 
         self.budgets = load_budgets()  # dict[str, Budget]
 
@@ -181,11 +183,17 @@ class BudgetMenu:
         btn_frame = tk.Frame(root, bg="#121212")
         btn_frame.pack(pady=15)
 
-        ttk.Button(btn_frame, text="➕ Add New Plan", command=self.add_plan).grid(row=0, column=0, padx=5)
-        ttk.Button(btn_frame, text="✏️ Open Plan", command=self.open_plan).grid(row=0, column=1, padx=5)
-        ttk.Button(btn_frame, text="🗑 Delete Plan", command=self.delete_plan).grid(row=0, column=2, padx=5)
-
+        style = ttk.Style()
+        style.configure("White.TButton", background="white", foreground="black")
+        ttk.Button(btn_frame, text="➕ Add New Plan", command=self.add_plan, style="White.TButton").grid(row=0, column=0, padx=5)
+        ttk.Button(btn_frame, text="✏️ Open Plan", command=self.open_plan, style="White.TButton").grid(row=0, column=1, padx=5)
+        ttk.Button(btn_frame, text="🗑 Delete Plan", command=self.delete_plan, style="White.TButton").grid(row=0, column=2, padx=5)
+        ttk.Button(btn_frame, text="⬅️ Back to Menu", command=self.go_back, style="White.TButton").grid(row=0, column=3, padx=5)
         self.refresh_list()
+
+    def go_back(self):
+        """back to menu"""
+        self.root.destroy()
 
     def refresh_list(self):
         self.listbox.delete(0, tk.END)
