@@ -342,7 +342,7 @@ class SavedListsSelector:
         self.controller = PackingController()
 
         self.root.title("📚 Select a saved list")
-        self.root.geometry("600x400")
+        self.root.geometry("900x800")
         self.root.configure(bg="#121212")
 
         # style
