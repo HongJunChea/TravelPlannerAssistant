@@ -8,7 +8,7 @@ class MainApp:
     def __init__(self, root):
         self.root = root
         self.root.title("✈ Travel Planner Assistant")
-        self.root.geometry("400x400")
+        self.root.geometry("700x450")
         self.root.configure(bg="#121212")
 
         # Style
@@ -32,7 +32,7 @@ class MainApp:
 
         # Buttons
         ttk.Button(root, text="Itinerary Builder", command=self.open_itinerary_menu).pack(pady=10, fill="x", padx=40)
-        ttk.Button(root, text="Packing List Generator", command=self.open_packing_menu).pack(pady=10, fill="x", padx=40)
+        ttk.Button(root, text="📦 Packing List Generator", command=self.open_packing_menu).pack(pady=10, fill="x", padx=40)
         ttk.Button(root, text="💰 Budget Estimator", command=self.open_budget_menu).pack(pady=10, fill="x", padx=40)
         ttk.Button(root, text="Exit", command=root.quit).pack(pady=20, fill="x", padx=40)
 
