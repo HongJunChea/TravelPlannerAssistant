@@ -11,7 +11,7 @@ class PackingListGUI:
     def __init__(self, root):
         self.root = root
         self.root.title("📦 Generate Packing List")
-        self.root.geometry("800x700")
+        self.root.geometry("900x800")
         self.root.configure(bg="#121212")
 
         self.controller = PackingController()
