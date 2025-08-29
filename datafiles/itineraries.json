@@ -1,0 +1,23 @@
+{
+    "UK Company Trip": {
+        "trip_title": "UK Company Trip",
+        "location": "London",
+        "start_date": "2025-09-09",
+        "end_date": "2025-09-18",
+        "trip_type": "Business"
+    },
+    "Trip to Japan": {
+        "trip_title": "Trip to Japan",
+        "location": "Shibuya",
+        "start_date": "2025-12-09",
+        "end_date": "2025-12-24",
+        "trip_type": "Family"
+    },
+    "France Trip with Friends": {
+        "trip_title": "France Trip with Friends",
+        "location": "Paris",
+        "start_date": "2026-01-02",
+        "end_date": "2026-01-15",
+        "trip_type": "Adventure"
+    }
+}
