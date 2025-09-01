@@ -1,324 +1,4804 @@
 {
-  "UK Company Trip": {
-    "trip_title": "UK Company Trip",
-    "location": "London",
-    "start_date": "2025-09-09",
-    "end_date": "2025-09-18",
-    "trip_type": "Company",
-    "activities": [
-      {
-        "date": "2025-09-09",
-        "start_time": "09:00",
-        "end_time": "10:00",
-        "location": "London Eye",
-        "detail": "Enjoy scenery from the top",
-        "notes": ""
-      },
-      {
-        "date": "2025-09-09",
-        "start_time": "10:30",
-        "end_time": "12:00",
-        "location": "Restaurant",
-        "detail": "Fine dining",
-        "notes": "30 pounds per person"
-      },
-      {
-        "date": "2025-09-09",
-        "start_time": "12:00",
-        "end_time": "14:00",
-        "location": "London City",
-        "detail": "Wandering around",
-        "notes": "Gather at park"
-      }
-    ]
-  },
-  "Trip to Japan": {
-    "trip_title": "Trip to Japan",
-    "location": "Shibuya",
-    "start_date": "2025-12-09",
-    "end_date": "2025-12-24",
-    "trip_type": "Family",
-    "activities": [
-      {
-        "date": "2025-12-10",
-        "start_time": "08:00",
-        "end_time": "12:00",
-        "location": "Tokyo Disneyland",
-        "detail": "Family theme park visit",
-        "notes": "Buy fast passes"
-      },
-      {
-        "date": "2025-12-12",
-        "start_time": "14:00",
-        "end_time": "18:00",
-        "location": "Shibuya Crossing",
-        "detail": "Shopping and street food",
-        "notes": "Meet at Hachiko statue"
-      },
-      {
-        "date": "2025-12-15",
-        "start_time": "09:00",
-        "end_time": "13:00",
-        "location": "Mount Fuji",
-        "detail": "Day trip and sightseeing",
-        "notes": "Bring warm clothes"
-      }
-    ]
-  },
-  "France Trip with Friends": {
-    "trip_title": "France Trip with Friends",
-    "location": "Paris",
-    "start_date": "2026-01-02",
-    "end_date": "2026-01-15",
-    "trip_type": "Adventure",
-    "activities": [
-      {
-        "date": "2026-01-03",
-        "start_time": "09:00",
-        "end_time": "11:00",
-        "location": "Eiffel Tower",
-        "detail": "Morning photoshoot",
-        "notes": "Pre-book tickets"
-      },
-      {
-        "date": "2026-01-05",
-        "start_time": "12:00",
-        "end_time": "15:00",
-        "location": "Louvre Museum",
-        "detail": "Explore art and history",
-        "notes": "Focus on Mona Lisa"
-      },
-      {
-        "date": "2026-01-08",
-        "start_time": "10:00",
-        "end_time": "14:00",
-        "location": "Versailles",
-        "detail": "Palace and gardens tour",
-        "notes": ""
-      }
-    ]
-  },
-  "Italy Family Vacation": {
-    "trip_title": "Italy Family Vacation",
-    "location": "Rome",
-    "start_date": "2025-07-10",
-    "end_date": "2025-07-20",
-    "trip_type": "Family",
-    "activities": [
-      {
-        "date": "2025-07-11",
-        "start_time": "09:00",
-        "end_time": "12:00",
-        "location": "Colosseum",
-        "detail": "Guided historical tour",
-        "notes": "Tickets online"
-      },
-      {
-        "date": "2025-07-12",
-        "start_time": "14:00",
-        "end_time": "18:00",
-        "location": "Vatican City",
-        "detail": "St. Peter’s Basilica & Museums",
-        "notes": "Dress code: no shorts"
-      },
-      {
-        "date": "2025-07-14",
-        "start_time": "10:00",
-        "end_time": "13:00",
-        "location": "Trevi Fountain",
-        "detail": "Coin toss and sightseeing",
-        "notes": ""
-      }
-    ]
-  },
-  "New York Business Trip": {
-    "trip_title": "New York Business Trip",
-    "location": "New York City",
-    "start_date": "2025-11-05",
-    "end_date": "2025-11-10",
-    "trip_type": "Company",
-    "activities": [
-      {
-        "date": "2025-11-06",
-        "start_time": "09:00",
-        "end_time": "17:00",
-        "location": "Javits Center",
-        "detail": "Conference sessions",
-        "notes": "Lunch provided"
-      },
-      {
-        "date": "2025-11-07",
-        "start_time": "18:00",
-        "end_time": "21:00",
-        "location": "Broadway Theater",
-        "detail": "Team entertainment",
-        "notes": "Hamilton show"
-      }
-    ]
-  },
-  "Thailand Adventure": {
-    "trip_title": "Thailand Adventure",
-    "location": "Chiang Mai",
-    "start_date": "2025-08-01",
-    "end_date": "2025-08-12",
-    "trip_type": "Adventure",
-    "activities": [
-      {
-        "date": "2025-08-02",
-        "start_time": "07:00",
-        "end_time": "12:00",
-        "location": "Doi Inthanon",
-        "detail": "Mountain hiking",
-        "notes": "Pack hiking shoes"
-      },
-      {
-        "date": "2025-08-04",
-        "start_time": "09:00",
-        "end_time": "14:00",
-        "location": "Elephant Sanctuary",
-        "detail": "Spend time with elephants",
-        "notes": ""
-      },
-      {
-        "date": "2025-08-08",
-        "start_time": "18:00",
-        "end_time": "22:00",
-        "location": "Night Bazaar",
-        "detail": "Shopping and street food",
-        "notes": ""
-      }
-    ]
-  },
-  "Australia Road Trip": {
-    "trip_title": "Australia Road Trip",
-    "location": "Sydney to Melbourne",
-    "start_date": "2026-02-01",
-    "end_date": "2026-02-14",
-    "trip_type": "General",
-    "activities": [
-      {
-        "date": "2026-02-02",
-        "start_time": "09:00",
-        "end_time": "13:00",
-        "location": "Sydney Opera House",
-        "detail": "Opera tour",
-        "notes": ""
-      },
-      {
-        "date": "2026-02-05",
-        "start_time": "10:00",
-        "end_time": "15:00",
-        "location": "Blue Mountains",
-        "detail": "Hiking trails",
-        "notes": "Bring water"
-      },
-      {
-        "date": "2026-02-10",
-        "start_time": "09:00",
-        "end_time": "12:00",
-        "location": "Great Ocean Road",
-        "detail": "Scenic drive",
-        "notes": ""
-      }
-    ]
-  },
-  "Canada Winter Holiday": {
-    "trip_title": "Canada Winter Holiday",
-    "location": "Banff",
-    "start_date": "2025-12-20",
-    "end_date": "2026-01-05",
-    "trip_type": "Vacation",
-    "activities": [
-      {
-        "date": "2025-12-22",
-        "start_time": "08:00",
-        "end_time": "12:00",
-        "location": "Lake Louise",
-        "detail": "Ice skating",
-        "notes": "Rent skates onsite"
-      },
-      {
-        "date": "2025-12-25",
-        "start_time": "10:00",
-        "end_time": "14:00",
-        "location": "Banff Gondola",
-        "detail": "Christmas mountain view",
-        "notes": "Book in advance"
-      },
-      {
-        "date": "2025-12-28",
-        "start_time": "09:00",
-        "end_time": "16:00",
-        "location": "Ski Resort",
-        "detail": "Full day skiing",
-        "notes": "Bring gloves"
-      }
-    ]
-  },
-  "Dubai Desert Escape": {
-    "trip_title": "Dubai Desert Escape",
-    "location": "Dubai",
-    "start_date": "2026-03-10",
-    "end_date": "2026-03-18",
-    "trip_type": "Vacation",
-    "activities": [
-      {
-        "date": "2026-03-11",
-        "start_time": "16:00",
-        "end_time": "21:00",
-        "location": "Desert Safari",
-        "detail": "Dune bashing & BBQ dinner",
-        "notes": ""
-      },
-      {
-        "date": "2026-03-13",
-        "start_time": "10:00",
-        "end_time": "12:00",
-        "location": "Burj Khalifa",
-        "detail": "Observation deck",
-        "notes": "Book tickets"
-      },
-      {
-        "date": "2026-03-15",
-        "start_time": "14:00",
-        "end_time": "17:00",
-        "location": "Dubai Mall",
-        "detail": "Shopping and aquarium",
-        "notes": ""
-      }
-    ]
-  },
-  "Brazil Carnival Trip": {
-    "trip_title": "Brazil Carnival Trip",
-    "location": "Rio de Janeiro",
-    "start_date": "2026-02-20",
-    "end_date": "2026-02-28",
-    "trip_type": "Other",
-    "activities": [
-      {
-        "date": "2026-02-21",
-        "start_time": "18:00",
-        "end_time": "23:59",
-        "location": "Sambadrome",
-        "detail": "Carnival Parade",
-        "notes": "Tickets purchased"
-      },
-      {
-        "date": "2026-02-23",
-        "start_time": "09:00",
-        "end_time": "13:00",
-        "location": "Christ the Redeemer",
-        "detail": "Sightseeing",
-        "notes": ""
-      },
-      {
-        "date": "2026-02-25",
-        "start_time": "15:00",
-        "end_time": "19:00",
-        "location": "Copacabana Beach",
-        "detail": "Beach relaxation",
-        "notes": ""
-      }
-    ]
-  }
+    "UK Company Trip": {
+        "trip_title": "UK Company Trip",
+        "location": "London",
+        "start_date": "2025-09-09",
+        "end_date": "2025-09-18",
+        "trip_type": "Company",
+        "activities": [
+            {
+                "date": "2025-09-09",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "London Eye",
+                "detail": "Morning briefing at London Eye",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-09-09",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "London Eye",
+                "detail": "Visit London Eye",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-09-09",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "London Eye",
+                "detail": "Lunch at London Eye",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-09-09",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "London Eye",
+                "detail": "Explore London Eye",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-09-09",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "London Eye",
+                "detail": "Dinner / Networking at London Eye",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-09-10",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Big Ben",
+                "detail": "Morning briefing at Big Ben",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-09-10",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Big Ben",
+                "detail": "Visit Big Ben",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-09-10",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Big Ben",
+                "detail": "Lunch at Big Ben",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-09-10",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Big Ben",
+                "detail": "Explore Big Ben",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-09-10",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Big Ben",
+                "detail": "Dinner / Networking at Big Ben",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-09-11",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Tower Bridge",
+                "detail": "Morning briefing at Tower Bridge",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-09-11",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Tower Bridge",
+                "detail": "Visit Tower Bridge",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-09-11",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Tower Bridge",
+                "detail": "Lunch at Tower Bridge",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-09-11",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Tower Bridge",
+                "detail": "Explore Tower Bridge",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-09-11",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Tower Bridge",
+                "detail": "Dinner / Networking at Tower Bridge",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-09-12",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "St. Paul’s Cathedral",
+                "detail": "Morning briefing at St. Paul’s Cathedral",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-09-12",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "St. Paul’s Cathedral",
+                "detail": "Visit St. Paul’s Cathedral",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-09-12",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "St. Paul’s Cathedral",
+                "detail": "Lunch at St. Paul’s Cathedral",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-09-12",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "St. Paul’s Cathedral",
+                "detail": "Explore St. Paul’s Cathedral",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-09-12",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "St. Paul’s Cathedral",
+                "detail": "Dinner / Networking at St. Paul’s Cathedral",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-09-13",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Hyde Park",
+                "detail": "Morning briefing at Hyde Park",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-09-13",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Hyde Park",
+                "detail": "Visit Hyde Park",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-09-13",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Hyde Park",
+                "detail": "Lunch at Hyde Park",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-09-13",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Hyde Park",
+                "detail": "Explore Hyde Park",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-09-13",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Hyde Park",
+                "detail": "Dinner / Networking at Hyde Park",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-09-14",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "London Eye",
+                "detail": "Morning briefing at London Eye",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-09-14",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "London Eye",
+                "detail": "Visit London Eye",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-09-14",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "London Eye",
+                "detail": "Lunch at London Eye",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-09-14",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "London Eye",
+                "detail": "Explore London Eye",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-09-14",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "London Eye",
+                "detail": "Dinner / Networking at London Eye",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-09-15",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Big Ben",
+                "detail": "Morning briefing at Big Ben",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-09-15",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Big Ben",
+                "detail": "Visit Big Ben",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-09-15",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Big Ben",
+                "detail": "Lunch at Big Ben",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-09-15",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Big Ben",
+                "detail": "Explore Big Ben",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-09-15",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Big Ben",
+                "detail": "Dinner / Networking at Big Ben",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-09-16",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Tower Bridge",
+                "detail": "Morning briefing at Tower Bridge",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-09-16",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Tower Bridge",
+                "detail": "Visit Tower Bridge",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-09-16",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Tower Bridge",
+                "detail": "Lunch at Tower Bridge",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-09-16",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Tower Bridge",
+                "detail": "Explore Tower Bridge",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-09-16",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Tower Bridge",
+                "detail": "Dinner / Networking at Tower Bridge",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-09-17",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "St. Paul’s Cathedral",
+                "detail": "Morning briefing at St. Paul’s Cathedral",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-09-17",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "St. Paul’s Cathedral",
+                "detail": "Visit St. Paul’s Cathedral",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-09-17",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "St. Paul’s Cathedral",
+                "detail": "Lunch at St. Paul’s Cathedral",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-09-17",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "St. Paul’s Cathedral",
+                "detail": "Explore St. Paul’s Cathedral",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-09-17",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "St. Paul’s Cathedral",
+                "detail": "Dinner / Networking at St. Paul’s Cathedral",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-09-18",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Hyde Park",
+                "detail": "Morning briefing at Hyde Park",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-09-18",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Hyde Park",
+                "detail": "Visit Hyde Park",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-09-18",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Hyde Park",
+                "detail": "Lunch at Hyde Park",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-09-18",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Hyde Park",
+                "detail": "Explore Hyde Park",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-09-18",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Hyde Park",
+                "detail": "Dinner / Networking at Hyde Park",
+                "notes": "Evening wrap-up"
+            }
+        ]
+    },
+    "Trip to Japan": {
+        "trip_title": "Trip to Japan",
+        "location": "Tokyo",
+        "start_date": "2025-12-09",
+        "end_date": "2025-12-24",
+        "trip_type": "Family",
+        "activities": [
+            {
+                "date": "2025-12-09",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Shibuya Crossing",
+                "detail": "Morning briefing at Shibuya Crossing",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-09",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Shibuya Crossing",
+                "detail": "Visit Shibuya Crossing",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-09",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Shibuya Crossing",
+                "detail": "Lunch at Shibuya Crossing",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-09",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Shibuya Crossing",
+                "detail": "Explore Shibuya Crossing",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-09",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Shibuya Crossing",
+                "detail": "Dinner / Networking at Shibuya Crossing",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-10",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Tokyo Disneyland",
+                "detail": "Morning briefing at Tokyo Disneyland",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-10",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Tokyo Disneyland",
+                "detail": "Visit Tokyo Disneyland",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-10",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Tokyo Disneyland",
+                "detail": "Lunch at Tokyo Disneyland",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-10",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Tokyo Disneyland",
+                "detail": "Explore Tokyo Disneyland",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-10",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Tokyo Disneyland",
+                "detail": "Dinner / Networking at Tokyo Disneyland",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-11",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Mount Fuji",
+                "detail": "Morning briefing at Mount Fuji",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-11",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Mount Fuji",
+                "detail": "Visit Mount Fuji",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-11",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Mount Fuji",
+                "detail": "Lunch at Mount Fuji",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-11",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Mount Fuji",
+                "detail": "Explore Mount Fuji",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-11",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Mount Fuji",
+                "detail": "Dinner / Networking at Mount Fuji",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-12",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Asakusa",
+                "detail": "Morning briefing at Asakusa",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-12",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Asakusa",
+                "detail": "Visit Asakusa",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-12",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Asakusa",
+                "detail": "Lunch at Asakusa",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-12",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Asakusa",
+                "detail": "Explore Asakusa",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-12",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Asakusa",
+                "detail": "Dinner / Networking at Asakusa",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-13",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Akihabara",
+                "detail": "Morning briefing at Akihabara",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-13",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Akihabara",
+                "detail": "Visit Akihabara",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-13",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Akihabara",
+                "detail": "Lunch at Akihabara",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-13",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Akihabara",
+                "detail": "Explore Akihabara",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-13",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Akihabara",
+                "detail": "Dinner / Networking at Akihabara",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-14",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Shibuya Crossing",
+                "detail": "Morning briefing at Shibuya Crossing",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-14",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Shibuya Crossing",
+                "detail": "Visit Shibuya Crossing",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-14",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Shibuya Crossing",
+                "detail": "Lunch at Shibuya Crossing",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-14",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Shibuya Crossing",
+                "detail": "Explore Shibuya Crossing",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-14",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Shibuya Crossing",
+                "detail": "Dinner / Networking at Shibuya Crossing",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-15",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Tokyo Disneyland",
+                "detail": "Morning briefing at Tokyo Disneyland",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-15",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Tokyo Disneyland",
+                "detail": "Visit Tokyo Disneyland",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-15",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Tokyo Disneyland",
+                "detail": "Lunch at Tokyo Disneyland",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-15",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Tokyo Disneyland",
+                "detail": "Explore Tokyo Disneyland",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-15",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Tokyo Disneyland",
+                "detail": "Dinner / Networking at Tokyo Disneyland",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-16",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Mount Fuji",
+                "detail": "Morning briefing at Mount Fuji",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-16",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Mount Fuji",
+                "detail": "Visit Mount Fuji",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-16",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Mount Fuji",
+                "detail": "Lunch at Mount Fuji",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-16",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Mount Fuji",
+                "detail": "Explore Mount Fuji",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-16",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Mount Fuji",
+                "detail": "Dinner / Networking at Mount Fuji",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-17",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Asakusa",
+                "detail": "Morning briefing at Asakusa",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-17",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Asakusa",
+                "detail": "Visit Asakusa",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-17",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Asakusa",
+                "detail": "Lunch at Asakusa",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-17",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Asakusa",
+                "detail": "Explore Asakusa",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-17",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Asakusa",
+                "detail": "Dinner / Networking at Asakusa",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-18",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Akihabara",
+                "detail": "Morning briefing at Akihabara",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-18",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Akihabara",
+                "detail": "Visit Akihabara",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-18",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Akihabara",
+                "detail": "Lunch at Akihabara",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-18",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Akihabara",
+                "detail": "Explore Akihabara",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-18",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Akihabara",
+                "detail": "Dinner / Networking at Akihabara",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-19",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Shibuya Crossing",
+                "detail": "Morning briefing at Shibuya Crossing",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-19",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Shibuya Crossing",
+                "detail": "Visit Shibuya Crossing",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-19",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Shibuya Crossing",
+                "detail": "Lunch at Shibuya Crossing",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-19",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Shibuya Crossing",
+                "detail": "Explore Shibuya Crossing",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-19",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Shibuya Crossing",
+                "detail": "Dinner / Networking at Shibuya Crossing",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-20",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Tokyo Disneyland",
+                "detail": "Morning briefing at Tokyo Disneyland",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-20",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Tokyo Disneyland",
+                "detail": "Visit Tokyo Disneyland",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-20",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Tokyo Disneyland",
+                "detail": "Lunch at Tokyo Disneyland",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-20",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Tokyo Disneyland",
+                "detail": "Explore Tokyo Disneyland",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-20",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Tokyo Disneyland",
+                "detail": "Dinner / Networking at Tokyo Disneyland",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-21",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Mount Fuji",
+                "detail": "Morning briefing at Mount Fuji",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-21",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Mount Fuji",
+                "detail": "Visit Mount Fuji",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-21",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Mount Fuji",
+                "detail": "Lunch at Mount Fuji",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-21",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Mount Fuji",
+                "detail": "Explore Mount Fuji",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-21",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Mount Fuji",
+                "detail": "Dinner / Networking at Mount Fuji",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-22",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Asakusa",
+                "detail": "Morning briefing at Asakusa",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-22",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Asakusa",
+                "detail": "Visit Asakusa",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-22",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Asakusa",
+                "detail": "Lunch at Asakusa",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-22",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Asakusa",
+                "detail": "Explore Asakusa",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-22",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Asakusa",
+                "detail": "Dinner / Networking at Asakusa",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-23",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Akihabara",
+                "detail": "Morning briefing at Akihabara",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-23",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Akihabara",
+                "detail": "Visit Akihabara",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-23",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Akihabara",
+                "detail": "Lunch at Akihabara",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-23",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Akihabara",
+                "detail": "Explore Akihabara",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-23",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Akihabara",
+                "detail": "Dinner / Networking at Akihabara",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-24",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Shibuya Crossing",
+                "detail": "Morning briefing at Shibuya Crossing",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-24",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Shibuya Crossing",
+                "detail": "Visit Shibuya Crossing",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-24",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Shibuya Crossing",
+                "detail": "Lunch at Shibuya Crossing",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-24",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Shibuya Crossing",
+                "detail": "Explore Shibuya Crossing",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-24",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Shibuya Crossing",
+                "detail": "Dinner / Networking at Shibuya Crossing",
+                "notes": "Evening wrap-up"
+            }
+        ]
+    },
+    "France Trip with Friends": {
+        "trip_title": "France Trip with Friends",
+        "location": "Paris",
+        "start_date": "2026-01-02",
+        "end_date": "2026-01-15",
+        "trip_type": "Adventure",
+        "activities": [
+            {
+                "date": "2026-01-02",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Eiffel Tower",
+                "detail": "Morning briefing at Eiffel Tower",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-02",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Eiffel Tower",
+                "detail": "Visit Eiffel Tower",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-02",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Eiffel Tower",
+                "detail": "Lunch at Eiffel Tower",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-02",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Eiffel Tower",
+                "detail": "Explore Eiffel Tower",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-02",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Eiffel Tower",
+                "detail": "Dinner / Networking at Eiffel Tower",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-03",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Louvre Museum",
+                "detail": "Morning briefing at Louvre Museum",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-03",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Louvre Museum",
+                "detail": "Visit Louvre Museum",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-03",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Louvre Museum",
+                "detail": "Lunch at Louvre Museum",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-03",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Louvre Museum",
+                "detail": "Explore Louvre Museum",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-03",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Louvre Museum",
+                "detail": "Dinner / Networking at Louvre Museum",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-04",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Versailles",
+                "detail": "Morning briefing at Versailles",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-04",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Versailles",
+                "detail": "Visit Versailles",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-04",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Versailles",
+                "detail": "Lunch at Versailles",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-04",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Versailles",
+                "detail": "Explore Versailles",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-04",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Versailles",
+                "detail": "Dinner / Networking at Versailles",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-05",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Montmartre",
+                "detail": "Morning briefing at Montmartre",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-05",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Montmartre",
+                "detail": "Visit Montmartre",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-05",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Montmartre",
+                "detail": "Lunch at Montmartre",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-05",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Montmartre",
+                "detail": "Explore Montmartre",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-05",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Montmartre",
+                "detail": "Dinner / Networking at Montmartre",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-06",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Seine River",
+                "detail": "Morning briefing at Seine River",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-06",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Seine River",
+                "detail": "Visit Seine River",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-06",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Seine River",
+                "detail": "Lunch at Seine River",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-06",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Seine River",
+                "detail": "Explore Seine River",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-06",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Seine River",
+                "detail": "Dinner / Networking at Seine River",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-07",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Eiffel Tower",
+                "detail": "Morning briefing at Eiffel Tower",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-07",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Eiffel Tower",
+                "detail": "Visit Eiffel Tower",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-07",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Eiffel Tower",
+                "detail": "Lunch at Eiffel Tower",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-07",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Eiffel Tower",
+                "detail": "Explore Eiffel Tower",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-07",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Eiffel Tower",
+                "detail": "Dinner / Networking at Eiffel Tower",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-08",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Louvre Museum",
+                "detail": "Morning briefing at Louvre Museum",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-08",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Louvre Museum",
+                "detail": "Visit Louvre Museum",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-08",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Louvre Museum",
+                "detail": "Lunch at Louvre Museum",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-08",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Louvre Museum",
+                "detail": "Explore Louvre Museum",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-08",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Louvre Museum",
+                "detail": "Dinner / Networking at Louvre Museum",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-09",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Versailles",
+                "detail": "Morning briefing at Versailles",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-09",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Versailles",
+                "detail": "Visit Versailles",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-09",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Versailles",
+                "detail": "Lunch at Versailles",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-09",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Versailles",
+                "detail": "Explore Versailles",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-09",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Versailles",
+                "detail": "Dinner / Networking at Versailles",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-10",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Montmartre",
+                "detail": "Morning briefing at Montmartre",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-10",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Montmartre",
+                "detail": "Visit Montmartre",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-10",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Montmartre",
+                "detail": "Lunch at Montmartre",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-10",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Montmartre",
+                "detail": "Explore Montmartre",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-10",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Montmartre",
+                "detail": "Dinner / Networking at Montmartre",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-11",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Seine River",
+                "detail": "Morning briefing at Seine River",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-11",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Seine River",
+                "detail": "Visit Seine River",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-11",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Seine River",
+                "detail": "Lunch at Seine River",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-11",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Seine River",
+                "detail": "Explore Seine River",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-11",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Seine River",
+                "detail": "Dinner / Networking at Seine River",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-12",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Eiffel Tower",
+                "detail": "Morning briefing at Eiffel Tower",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-12",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Eiffel Tower",
+                "detail": "Visit Eiffel Tower",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-12",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Eiffel Tower",
+                "detail": "Lunch at Eiffel Tower",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-12",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Eiffel Tower",
+                "detail": "Explore Eiffel Tower",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-12",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Eiffel Tower",
+                "detail": "Dinner / Networking at Eiffel Tower",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-13",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Louvre Museum",
+                "detail": "Morning briefing at Louvre Museum",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-13",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Louvre Museum",
+                "detail": "Visit Louvre Museum",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-13",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Louvre Museum",
+                "detail": "Lunch at Louvre Museum",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-13",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Louvre Museum",
+                "detail": "Explore Louvre Museum",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-13",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Louvre Museum",
+                "detail": "Dinner / Networking at Louvre Museum",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-14",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Versailles",
+                "detail": "Morning briefing at Versailles",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-14",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Versailles",
+                "detail": "Visit Versailles",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-14",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Versailles",
+                "detail": "Lunch at Versailles",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-14",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Versailles",
+                "detail": "Explore Versailles",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-14",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Versailles",
+                "detail": "Dinner / Networking at Versailles",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-15",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Montmartre",
+                "detail": "Morning briefing at Montmartre",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-15",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Montmartre",
+                "detail": "Visit Montmartre",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-15",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Montmartre",
+                "detail": "Lunch at Montmartre",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-15",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Montmartre",
+                "detail": "Explore Montmartre",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-15",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Montmartre",
+                "detail": "Dinner / Networking at Montmartre",
+                "notes": "Evening wrap-up"
+            }
+        ]
+    },
+    "Italy Family Vacation": {
+        "trip_title": "Italy Family Vacation",
+        "location": "Rome",
+        "start_date": "2025-07-10",
+        "end_date": "2025-07-20",
+        "trip_type": "Family",
+        "activities": [
+            {
+                "date": "2025-07-10",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Colosseum",
+                "detail": "Morning briefing at Colosseum",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-07-10",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Colosseum",
+                "detail": "Visit Colosseum",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-07-10",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Colosseum",
+                "detail": "Lunch at Colosseum",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-07-10",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Colosseum",
+                "detail": "Explore Colosseum",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-07-10",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Colosseum",
+                "detail": "Dinner / Networking at Colosseum",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-07-11",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Vatican City",
+                "detail": "Morning briefing at Vatican City",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-07-11",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Vatican City",
+                "detail": "Visit Vatican City",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-07-11",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Vatican City",
+                "detail": "Lunch at Vatican City",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-07-11",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Vatican City",
+                "detail": "Explore Vatican City",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-07-11",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Vatican City",
+                "detail": "Dinner / Networking at Vatican City",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-07-12",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Trevi Fountain",
+                "detail": "Morning briefing at Trevi Fountain",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-07-12",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Trevi Fountain",
+                "detail": "Visit Trevi Fountain",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-07-12",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Trevi Fountain",
+                "detail": "Lunch at Trevi Fountain",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-07-12",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Trevi Fountain",
+                "detail": "Explore Trevi Fountain",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-07-12",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Trevi Fountain",
+                "detail": "Dinner / Networking at Trevi Fountain",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-07-13",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Pantheon",
+                "detail": "Morning briefing at Pantheon",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-07-13",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Pantheon",
+                "detail": "Visit Pantheon",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-07-13",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Pantheon",
+                "detail": "Lunch at Pantheon",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-07-13",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Pantheon",
+                "detail": "Explore Pantheon",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-07-13",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Pantheon",
+                "detail": "Dinner / Networking at Pantheon",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-07-14",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Piazza Navona",
+                "detail": "Morning briefing at Piazza Navona",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-07-14",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Piazza Navona",
+                "detail": "Visit Piazza Navona",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-07-14",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Piazza Navona",
+                "detail": "Lunch at Piazza Navona",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-07-14",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Piazza Navona",
+                "detail": "Explore Piazza Navona",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-07-14",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Piazza Navona",
+                "detail": "Dinner / Networking at Piazza Navona",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-07-15",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Colosseum",
+                "detail": "Morning briefing at Colosseum",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-07-15",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Colosseum",
+                "detail": "Visit Colosseum",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-07-15",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Colosseum",
+                "detail": "Lunch at Colosseum",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-07-15",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Colosseum",
+                "detail": "Explore Colosseum",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-07-15",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Colosseum",
+                "detail": "Dinner / Networking at Colosseum",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-07-16",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Vatican City",
+                "detail": "Morning briefing at Vatican City",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-07-16",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Vatican City",
+                "detail": "Visit Vatican City",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-07-16",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Vatican City",
+                "detail": "Lunch at Vatican City",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-07-16",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Vatican City",
+                "detail": "Explore Vatican City",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-07-16",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Vatican City",
+                "detail": "Dinner / Networking at Vatican City",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-07-17",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Trevi Fountain",
+                "detail": "Morning briefing at Trevi Fountain",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-07-17",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Trevi Fountain",
+                "detail": "Visit Trevi Fountain",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-07-17",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Trevi Fountain",
+                "detail": "Lunch at Trevi Fountain",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-07-17",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Trevi Fountain",
+                "detail": "Explore Trevi Fountain",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-07-17",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Trevi Fountain",
+                "detail": "Dinner / Networking at Trevi Fountain",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-07-18",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Pantheon",
+                "detail": "Morning briefing at Pantheon",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-07-18",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Pantheon",
+                "detail": "Visit Pantheon",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-07-18",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Pantheon",
+                "detail": "Lunch at Pantheon",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-07-18",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Pantheon",
+                "detail": "Explore Pantheon",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-07-18",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Pantheon",
+                "detail": "Dinner / Networking at Pantheon",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-07-19",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Piazza Navona",
+                "detail": "Morning briefing at Piazza Navona",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-07-19",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Piazza Navona",
+                "detail": "Visit Piazza Navona",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-07-19",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Piazza Navona",
+                "detail": "Lunch at Piazza Navona",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-07-19",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Piazza Navona",
+                "detail": "Explore Piazza Navona",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-07-19",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Piazza Navona",
+                "detail": "Dinner / Networking at Piazza Navona",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-07-20",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Colosseum",
+                "detail": "Morning briefing at Colosseum",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-07-20",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Colosseum",
+                "detail": "Visit Colosseum",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-07-20",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Colosseum",
+                "detail": "Lunch at Colosseum",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-07-20",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Colosseum",
+                "detail": "Explore Colosseum",
+                "notes": "Afternoon activity"
+            }
+        ]
+    },
+    "New York Business Trip": {
+        "trip_title": "New York Business Trip",
+        "location": "New York City",
+        "start_date": "2025-11-05",
+        "end_date": "2025-11-10",
+        "trip_type": "Company",
+        "activities": [
+            {
+                "date": "2025-11-05",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Javits Center",
+                "detail": "Morning briefing at Javits Center",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-11-05",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Javits Center",
+                "detail": "Visit Javits Center",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-11-05",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Javits Center",
+                "detail": "Lunch at Javits Center",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-11-05",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Javits Center",
+                "detail": "Explore Javits Center",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-11-05",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Javits Center",
+                "detail": "Dinner / Networking at Javits Center",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-11-06",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Broadway Theater",
+                "detail": "Morning briefing at Broadway Theater",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-11-06",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Broadway Theater",
+                "detail": "Visit Broadway Theater",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-11-06",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Broadway Theater",
+                "detail": "Lunch at Broadway Theater",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-11-06",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Broadway Theater",
+                "detail": "Explore Broadway Theater",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-11-06",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Broadway Theater",
+                "detail": "Dinner / Networking at Broadway Theater",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-11-07",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Central Park",
+                "detail": "Morning briefing at Central Park",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-11-07",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Central Park",
+                "detail": "Visit Central Park",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-11-07",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Central Park",
+                "detail": "Lunch at Central Park",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-11-07",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Central Park",
+                "detail": "Explore Central Park",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-11-07",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Central Park",
+                "detail": "Dinner / Networking at Central Park",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-11-08",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Wall Street",
+                "detail": "Morning briefing at Wall Street",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-11-08",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Wall Street",
+                "detail": "Visit Wall Street",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-11-08",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Wall Street",
+                "detail": "Lunch at Wall Street",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-11-08",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Wall Street",
+                "detail": "Explore Wall Street",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-11-08",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Wall Street",
+                "detail": "Dinner / Networking at Wall Street",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-11-09",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Times Square",
+                "detail": "Morning briefing at Times Square",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-11-09",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Times Square",
+                "detail": "Visit Times Square",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-11-09",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Times Square",
+                "detail": "Lunch at Times Square",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-11-09",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Times Square",
+                "detail": "Explore Times Square",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-11-09",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Times Square",
+                "detail": "Dinner / Networking at Times Square",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-11-10",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Javits Center",
+                "detail": "Morning briefing at Javits Center",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-11-10",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Javits Center",
+                "detail": "Visit Javits Center",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-11-10",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Javits Center",
+                "detail": "Lunch at Javits Center",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-11-10",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Javits Center",
+                "detail": "Explore Javits Center",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-11-10",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Javits Center",
+                "detail": "Dinner / Networking at Javits Center",
+                "notes": "Evening wrap-up"
+            }
+        ]
+    },
+    "Thailand Adventure": {
+        "trip_title": "Thailand Adventure",
+        "location": "Chiang Mai",
+        "start_date": "2025-08-01",
+        "end_date": "2025-08-12",
+        "trip_type": "Adventure",
+        "activities": [
+            {
+                "date": "2025-08-01",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Doi Inthanon",
+                "detail": "Morning briefing at Doi Inthanon",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-08-01",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Doi Inthanon",
+                "detail": "Visit Doi Inthanon",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-08-01",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Doi Inthanon",
+                "detail": "Lunch at Doi Inthanon",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-08-01",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Doi Inthanon",
+                "detail": "Explore Doi Inthanon",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-08-01",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Doi Inthanon",
+                "detail": "Dinner / Networking at Doi Inthanon",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-08-02",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Elephant Sanctuary",
+                "detail": "Morning briefing at Elephant Sanctuary",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-08-02",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Elephant Sanctuary",
+                "detail": "Visit Elephant Sanctuary",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-08-02",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Elephant Sanctuary",
+                "detail": "Lunch at Elephant Sanctuary",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-08-02",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Elephant Sanctuary",
+                "detail": "Explore Elephant Sanctuary",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-08-02",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Elephant Sanctuary",
+                "detail": "Dinner / Networking at Elephant Sanctuary",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-08-03",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Night Bazaar",
+                "detail": "Morning briefing at Night Bazaar",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-08-03",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Night Bazaar",
+                "detail": "Visit Night Bazaar",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-08-03",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Night Bazaar",
+                "detail": "Lunch at Night Bazaar",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-08-03",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Night Bazaar",
+                "detail": "Explore Night Bazaar",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-08-03",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Night Bazaar",
+                "detail": "Dinner / Networking at Night Bazaar",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-08-04",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Old City Temples",
+                "detail": "Morning briefing at Old City Temples",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-08-04",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Old City Temples",
+                "detail": "Visit Old City Temples",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-08-04",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Old City Temples",
+                "detail": "Lunch at Old City Temples",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-08-04",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Old City Temples",
+                "detail": "Explore Old City Temples",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-08-04",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Old City Temples",
+                "detail": "Dinner / Networking at Old City Temples",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-08-05",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Chiang Mai Zoo",
+                "detail": "Morning briefing at Chiang Mai Zoo",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-08-05",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Chiang Mai Zoo",
+                "detail": "Visit Chiang Mai Zoo",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-08-05",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Chiang Mai Zoo",
+                "detail": "Lunch at Chiang Mai Zoo",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-08-05",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Chiang Mai Zoo",
+                "detail": "Explore Chiang Mai Zoo",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-08-05",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Chiang Mai Zoo",
+                "detail": "Dinner / Networking at Chiang Mai Zoo",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-08-06",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Doi Inthanon",
+                "detail": "Morning briefing at Doi Inthanon",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-08-06",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Doi Inthanon",
+                "detail": "Visit Doi Inthanon",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-08-06",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Doi Inthanon",
+                "detail": "Lunch at Doi Inthanon",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-08-06",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Doi Inthanon",
+                "detail": "Explore Doi Inthanon",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-08-06",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Doi Inthanon",
+                "detail": "Dinner / Networking at Doi Inthanon",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-08-07",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Elephant Sanctuary",
+                "detail": "Morning briefing at Elephant Sanctuary",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-08-07",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Elephant Sanctuary",
+                "detail": "Visit Elephant Sanctuary",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-08-07",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Elephant Sanctuary",
+                "detail": "Lunch at Elephant Sanctuary",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-08-07",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Elephant Sanctuary",
+                "detail": "Explore Elephant Sanctuary",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-08-07",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Elephant Sanctuary",
+                "detail": "Dinner / Networking at Elephant Sanctuary",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-08-08",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Night Bazaar",
+                "detail": "Morning briefing at Night Bazaar",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-08-08",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Night Bazaar",
+                "detail": "Visit Night Bazaar",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-08-08",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Night Bazaar",
+                "detail": "Lunch at Night Bazaar",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-08-08",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Night Bazaar",
+                "detail": "Explore Night Bazaar",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-08-08",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Night Bazaar",
+                "detail": "Dinner / Networking at Night Bazaar",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-08-09",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Old City Temples",
+                "detail": "Morning briefing at Old City Temples",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-08-09",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Old City Temples",
+                "detail": "Visit Old City Temples",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-08-09",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Old City Temples",
+                "detail": "Lunch at Old City Temples",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-08-09",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Old City Temples",
+                "detail": "Explore Old City Temples",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-08-09",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Old City Temples",
+                "detail": "Dinner / Networking at Old City Temples",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-08-10",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Chiang Mai Zoo",
+                "detail": "Morning briefing at Chiang Mai Zoo",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-08-10",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Chiang Mai Zoo",
+                "detail": "Visit Chiang Mai Zoo",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-08-10",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Chiang Mai Zoo",
+                "detail": "Lunch at Chiang Mai Zoo",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-08-10",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Chiang Mai Zoo",
+                "detail": "Explore Chiang Mai Zoo",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-08-10",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Chiang Mai Zoo",
+                "detail": "Dinner / Networking at Chiang Mai Zoo",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-08-11",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Doi Inthanon",
+                "detail": "Morning briefing at Doi Inthanon",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-08-11",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Doi Inthanon",
+                "detail": "Visit Doi Inthanon",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-08-11",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Doi Inthanon",
+                "detail": "Lunch at Doi Inthanon",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-08-11",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Doi Inthanon",
+                "detail": "Explore Doi Inthanon",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-08-11",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Doi Inthanon",
+                "detail": "Dinner / Networking at Doi Inthanon",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-08-12",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Elephant Sanctuary",
+                "detail": "Morning briefing at Elephant Sanctuary",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-08-12",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Elephant Sanctuary",
+                "detail": "Visit Elephant Sanctuary",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-08-12",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Elephant Sanctuary",
+                "detail": "Lunch at Elephant Sanctuary",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-08-12",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Elephant Sanctuary",
+                "detail": "Explore Elephant Sanctuary",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-08-12",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Elephant Sanctuary",
+                "detail": "Dinner / Networking at Elephant Sanctuary",
+                "notes": "Evening wrap-up"
+            }
+        ]
+    },
+    "Australia Road Trip": {
+        "trip_title": "Australia Road Trip",
+        "location": "Sydney to Melbourne",
+        "start_date": "2026-02-01",
+        "end_date": "2026-02-14",
+        "trip_type": "General",
+        "activities": [
+            {
+                "date": "2026-02-01",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Sydney Opera House",
+                "detail": "Morning briefing at Sydney Opera House",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-01",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Sydney Opera House",
+                "detail": "Visit Sydney Opera House",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-01",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Sydney Opera House",
+                "detail": "Lunch at Sydney Opera House",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-01",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Sydney Opera House",
+                "detail": "Explore Sydney Opera House",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-01",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Sydney Opera House",
+                "detail": "Dinner / Networking at Sydney Opera House",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-02",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Blue Mountains",
+                "detail": "Morning briefing at Blue Mountains",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-02",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Blue Mountains",
+                "detail": "Visit Blue Mountains",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-02",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Blue Mountains",
+                "detail": "Lunch at Blue Mountains",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-02",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Blue Mountains",
+                "detail": "Explore Blue Mountains",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-02",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Blue Mountains",
+                "detail": "Dinner / Networking at Blue Mountains",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-03",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Great Ocean Road",
+                "detail": "Morning briefing at Great Ocean Road",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-03",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Great Ocean Road",
+                "detail": "Visit Great Ocean Road",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-03",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Great Ocean Road",
+                "detail": "Lunch at Great Ocean Road",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-03",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Great Ocean Road",
+                "detail": "Explore Great Ocean Road",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-03",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Great Ocean Road",
+                "detail": "Dinner / Networking at Great Ocean Road",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-04",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Bondi Beach",
+                "detail": "Morning briefing at Bondi Beach",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-04",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Bondi Beach",
+                "detail": "Visit Bondi Beach",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-04",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Bondi Beach",
+                "detail": "Lunch at Bondi Beach",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-04",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Bondi Beach",
+                "detail": "Explore Bondi Beach",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-04",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Bondi Beach",
+                "detail": "Dinner / Networking at Bondi Beach",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-05",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Melbourne Central",
+                "detail": "Morning briefing at Melbourne Central",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-05",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Melbourne Central",
+                "detail": "Visit Melbourne Central",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-05",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Melbourne Central",
+                "detail": "Lunch at Melbourne Central",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-05",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Melbourne Central",
+                "detail": "Explore Melbourne Central",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-05",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Melbourne Central",
+                "detail": "Dinner / Networking at Melbourne Central",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-06",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Sydney Opera House",
+                "detail": "Morning briefing at Sydney Opera House",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-06",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Sydney Opera House",
+                "detail": "Visit Sydney Opera House",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-06",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Sydney Opera House",
+                "detail": "Lunch at Sydney Opera House",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-06",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Sydney Opera House",
+                "detail": "Explore Sydney Opera House",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-06",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Sydney Opera House",
+                "detail": "Dinner / Networking at Sydney Opera House",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-07",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Blue Mountains",
+                "detail": "Morning briefing at Blue Mountains",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-07",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Blue Mountains",
+                "detail": "Visit Blue Mountains",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-07",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Blue Mountains",
+                "detail": "Lunch at Blue Mountains",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-07",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Blue Mountains",
+                "detail": "Explore Blue Mountains",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-07",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Blue Mountains",
+                "detail": "Dinner / Networking at Blue Mountains",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-08",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Great Ocean Road",
+                "detail": "Morning briefing at Great Ocean Road",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-08",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Great Ocean Road",
+                "detail": "Visit Great Ocean Road",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-08",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Great Ocean Road",
+                "detail": "Lunch at Great Ocean Road",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-08",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Great Ocean Road",
+                "detail": "Explore Great Ocean Road",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-08",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Great Ocean Road",
+                "detail": "Dinner / Networking at Great Ocean Road",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-09",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Bondi Beach",
+                "detail": "Morning briefing at Bondi Beach",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-09",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Bondi Beach",
+                "detail": "Visit Bondi Beach",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-09",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Bondi Beach",
+                "detail": "Lunch at Bondi Beach",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-09",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Bondi Beach",
+                "detail": "Explore Bondi Beach",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-09",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Bondi Beach",
+                "detail": "Dinner / Networking at Bondi Beach",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-10",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Melbourne Central",
+                "detail": "Morning briefing at Melbourne Central",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-10",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Melbourne Central",
+                "detail": "Visit Melbourne Central",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-10",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Melbourne Central",
+                "detail": "Lunch at Melbourne Central",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-10",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Melbourne Central",
+                "detail": "Explore Melbourne Central",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-10",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Melbourne Central",
+                "detail": "Dinner / Networking at Melbourne Central",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-11",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Sydney Opera House",
+                "detail": "Morning briefing at Sydney Opera House",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-11",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Sydney Opera House",
+                "detail": "Visit Sydney Opera House",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-11",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Sydney Opera House",
+                "detail": "Lunch at Sydney Opera House",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-11",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Sydney Opera House",
+                "detail": "Explore Sydney Opera House",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-11",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Sydney Opera House",
+                "detail": "Dinner / Networking at Sydney Opera House",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-12",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Blue Mountains",
+                "detail": "Morning briefing at Blue Mountains",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-12",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Blue Mountains",
+                "detail": "Visit Blue Mountains",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-12",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Blue Mountains",
+                "detail": "Lunch at Blue Mountains",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-12",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Blue Mountains",
+                "detail": "Explore Blue Mountains",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-12",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Blue Mountains",
+                "detail": "Dinner / Networking at Blue Mountains",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-13",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Great Ocean Road",
+                "detail": "Morning briefing at Great Ocean Road",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-13",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Great Ocean Road",
+                "detail": "Visit Great Ocean Road",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-13",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Great Ocean Road",
+                "detail": "Lunch at Great Ocean Road",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-13",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Great Ocean Road",
+                "detail": "Explore Great Ocean Road",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-13",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Great Ocean Road",
+                "detail": "Dinner / Networking at Great Ocean Road",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-14",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Bondi Beach",
+                "detail": "Morning briefing at Bondi Beach",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-14",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Bondi Beach",
+                "detail": "Visit Bondi Beach",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-14",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Bondi Beach",
+                "detail": "Lunch at Bondi Beach",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-14",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Bondi Beach",
+                "detail": "Explore Bondi Beach",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-14",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Bondi Beach",
+                "detail": "Dinner / Networking at Bondi Beach",
+                "notes": "Evening wrap-up"
+            }
+        ]
+    },
+    "Canada Winter Holiday": {
+        "trip_title": "Canada Winter Holiday",
+        "location": "Banff",
+        "start_date": "2025-12-20",
+        "end_date": "2026-01-05",
+        "trip_type": "Vacation",
+        "activities": [
+            {
+                "date": "2025-12-20",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Lake Louise",
+                "detail": "Morning briefing at Lake Louise",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-20",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Lake Louise",
+                "detail": "Visit Lake Louise",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-20",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Lake Louise",
+                "detail": "Lunch at Lake Louise",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-20",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Lake Louise",
+                "detail": "Explore Lake Louise",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-20",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Lake Louise",
+                "detail": "Dinner / Networking at Lake Louise",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-21",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Banff Gondola",
+                "detail": "Morning briefing at Banff Gondola",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-21",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Banff Gondola",
+                "detail": "Visit Banff Gondola",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-21",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Banff Gondola",
+                "detail": "Lunch at Banff Gondola",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-21",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Banff Gondola",
+                "detail": "Explore Banff Gondola",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-21",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Banff Gondola",
+                "detail": "Dinner / Networking at Banff Gondola",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-22",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Ski Resort",
+                "detail": "Morning briefing at Ski Resort",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-22",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Ski Resort",
+                "detail": "Visit Ski Resort",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-22",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Ski Resort",
+                "detail": "Lunch at Ski Resort",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-22",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Ski Resort",
+                "detail": "Explore Ski Resort",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-22",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Ski Resort",
+                "detail": "Dinner / Networking at Ski Resort",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-23",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Icefields Parkway",
+                "detail": "Morning briefing at Icefields Parkway",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-23",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Icefields Parkway",
+                "detail": "Visit Icefields Parkway",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-23",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Icefields Parkway",
+                "detail": "Lunch at Icefields Parkway",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-23",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Icefields Parkway",
+                "detail": "Explore Icefields Parkway",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-23",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Icefields Parkway",
+                "detail": "Dinner / Networking at Icefields Parkway",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-24",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Downtown Banff",
+                "detail": "Morning briefing at Downtown Banff",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-24",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Downtown Banff",
+                "detail": "Visit Downtown Banff",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-24",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Downtown Banff",
+                "detail": "Lunch at Downtown Banff",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-24",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Downtown Banff",
+                "detail": "Explore Downtown Banff",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-24",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Downtown Banff",
+                "detail": "Dinner / Networking at Downtown Banff",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-25",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Lake Louise",
+                "detail": "Morning briefing at Lake Louise",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-25",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Lake Louise",
+                "detail": "Visit Lake Louise",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-25",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Lake Louise",
+                "detail": "Lunch at Lake Louise",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-25",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Lake Louise",
+                "detail": "Explore Lake Louise",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-25",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Lake Louise",
+                "detail": "Dinner / Networking at Lake Louise",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-26",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Banff Gondola",
+                "detail": "Morning briefing at Banff Gondola",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-26",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Banff Gondola",
+                "detail": "Visit Banff Gondola",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-26",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Banff Gondola",
+                "detail": "Lunch at Banff Gondola",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-26",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Banff Gondola",
+                "detail": "Explore Banff Gondola",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-26",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Banff Gondola",
+                "detail": "Dinner / Networking at Banff Gondola",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-27",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Ski Resort",
+                "detail": "Morning briefing at Ski Resort",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-27",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Ski Resort",
+                "detail": "Visit Ski Resort",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-27",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Ski Resort",
+                "detail": "Lunch at Ski Resort",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-27",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Ski Resort",
+                "detail": "Explore Ski Resort",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-27",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Ski Resort",
+                "detail": "Dinner / Networking at Ski Resort",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-28",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Icefields Parkway",
+                "detail": "Morning briefing at Icefields Parkway",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-28",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Icefields Parkway",
+                "detail": "Visit Icefields Parkway",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-28",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Icefields Parkway",
+                "detail": "Lunch at Icefields Parkway",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-28",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Icefields Parkway",
+                "detail": "Explore Icefields Parkway",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-28",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Icefields Parkway",
+                "detail": "Dinner / Networking at Icefields Parkway",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-29",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Downtown Banff",
+                "detail": "Morning briefing at Downtown Banff",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-29",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Downtown Banff",
+                "detail": "Visit Downtown Banff",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-29",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Downtown Banff",
+                "detail": "Lunch at Downtown Banff",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-29",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Downtown Banff",
+                "detail": "Explore Downtown Banff",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-29",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Downtown Banff",
+                "detail": "Dinner / Networking at Downtown Banff",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-30",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Lake Louise",
+                "detail": "Morning briefing at Lake Louise",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-30",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Lake Louise",
+                "detail": "Visit Lake Louise",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-30",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Lake Louise",
+                "detail": "Lunch at Lake Louise",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-30",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Lake Louise",
+                "detail": "Explore Lake Louise",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-30",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Lake Louise",
+                "detail": "Dinner / Networking at Lake Louise",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2025-12-31",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Banff Gondola",
+                "detail": "Morning briefing at Banff Gondola",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2025-12-31",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Banff Gondola",
+                "detail": "Visit Banff Gondola",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2025-12-31",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Banff Gondola",
+                "detail": "Lunch at Banff Gondola",
+                "notes": "Local food"
+            },
+            {
+                "date": "2025-12-31",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Banff Gondola",
+                "detail": "Explore Banff Gondola",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2025-12-31",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Banff Gondola",
+                "detail": "Dinner / Networking at Banff Gondola",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-01",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Ski Resort",
+                "detail": "Morning briefing at Ski Resort",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-01",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Ski Resort",
+                "detail": "Visit Ski Resort",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-01",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Ski Resort",
+                "detail": "Lunch at Ski Resort",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-01",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Ski Resort",
+                "detail": "Explore Ski Resort",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-01",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Ski Resort",
+                "detail": "Dinner / Networking at Ski Resort",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-02",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Icefields Parkway",
+                "detail": "Morning briefing at Icefields Parkway",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-02",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Icefields Parkway",
+                "detail": "Visit Icefields Parkway",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-02",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Icefields Parkway",
+                "detail": "Lunch at Icefields Parkway",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-02",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Icefields Parkway",
+                "detail": "Explore Icefields Parkway",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-02",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Icefields Parkway",
+                "detail": "Dinner / Networking at Icefields Parkway",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-03",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Downtown Banff",
+                "detail": "Morning briefing at Downtown Banff",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-03",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Downtown Banff",
+                "detail": "Visit Downtown Banff",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-03",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Downtown Banff",
+                "detail": "Lunch at Downtown Banff",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-03",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Downtown Banff",
+                "detail": "Explore Downtown Banff",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-03",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Downtown Banff",
+                "detail": "Dinner / Networking at Downtown Banff",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-04",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Lake Louise",
+                "detail": "Morning briefing at Lake Louise",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-04",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Lake Louise",
+                "detail": "Visit Lake Louise",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-04",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Lake Louise",
+                "detail": "Lunch at Lake Louise",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-04",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Lake Louise",
+                "detail": "Explore Lake Louise",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-04",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Lake Louise",
+                "detail": "Dinner / Networking at Lake Louise",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-01-05",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Banff Gondola",
+                "detail": "Morning briefing at Banff Gondola",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-01-05",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Banff Gondola",
+                "detail": "Visit Banff Gondola",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-01-05",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Banff Gondola",
+                "detail": "Lunch at Banff Gondola",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-01-05",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Banff Gondola",
+                "detail": "Explore Banff Gondola",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-01-05",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Banff Gondola",
+                "detail": "Dinner / Networking at Banff Gondola",
+                "notes": "Evening wrap-up"
+            }
+        ]
+    },
+    "Dubai Desert Escape": {
+        "trip_title": "Dubai Desert Escape",
+        "location": "Dubai",
+        "start_date": "2026-03-10",
+        "end_date": "2026-03-18",
+        "trip_type": "Vacation",
+        "activities": [
+            {
+                "date": "2026-03-10",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Desert Safari",
+                "detail": "Morning briefing at Desert Safari",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-03-10",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Desert Safari",
+                "detail": "Visit Desert Safari",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-03-10",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Desert Safari",
+                "detail": "Lunch at Desert Safari",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-03-10",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Desert Safari",
+                "detail": "Explore Desert Safari",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-03-10",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Desert Safari",
+                "detail": "Dinner / Networking at Desert Safari",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-03-11",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Burj Khalifa",
+                "detail": "Morning briefing at Burj Khalifa",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-03-11",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Burj Khalifa",
+                "detail": "Visit Burj Khalifa",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-03-11",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Burj Khalifa",
+                "detail": "Lunch at Burj Khalifa",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-03-11",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Burj Khalifa",
+                "detail": "Explore Burj Khalifa",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-03-11",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Burj Khalifa",
+                "detail": "Dinner / Networking at Burj Khalifa",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-03-12",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Dubai Mall",
+                "detail": "Morning briefing at Dubai Mall",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-03-12",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Dubai Mall",
+                "detail": "Visit Dubai Mall",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-03-12",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Dubai Mall",
+                "detail": "Lunch at Dubai Mall",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-03-12",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Dubai Mall",
+                "detail": "Explore Dubai Mall",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-03-12",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Dubai Mall",
+                "detail": "Dinner / Networking at Dubai Mall",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-03-13",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Palm Jumeirah",
+                "detail": "Morning briefing at Palm Jumeirah",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-03-13",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Palm Jumeirah",
+                "detail": "Visit Palm Jumeirah",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-03-13",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Palm Jumeirah",
+                "detail": "Lunch at Palm Jumeirah",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-03-13",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Palm Jumeirah",
+                "detail": "Explore Palm Jumeirah",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-03-13",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Palm Jumeirah",
+                "detail": "Dinner / Networking at Palm Jumeirah",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-03-14",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Dubai Marina",
+                "detail": "Morning briefing at Dubai Marina",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-03-14",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Dubai Marina",
+                "detail": "Visit Dubai Marina",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-03-14",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Dubai Marina",
+                "detail": "Lunch at Dubai Marina",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-03-14",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Dubai Marina",
+                "detail": "Explore Dubai Marina",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-03-14",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Dubai Marina",
+                "detail": "Dinner / Networking at Dubai Marina",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-03-15",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Desert Safari",
+                "detail": "Morning briefing at Desert Safari",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-03-15",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Desert Safari",
+                "detail": "Visit Desert Safari",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-03-15",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Desert Safari",
+                "detail": "Lunch at Desert Safari",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-03-15",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Desert Safari",
+                "detail": "Explore Desert Safari",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-03-15",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Desert Safari",
+                "detail": "Dinner / Networking at Desert Safari",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-03-16",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Burj Khalifa",
+                "detail": "Morning briefing at Burj Khalifa",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-03-16",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Burj Khalifa",
+                "detail": "Visit Burj Khalifa",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-03-16",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Burj Khalifa",
+                "detail": "Lunch at Burj Khalifa",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-03-16",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Burj Khalifa",
+                "detail": "Explore Burj Khalifa",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-03-16",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Burj Khalifa",
+                "detail": "Dinner / Networking at Burj Khalifa",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-03-17",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Dubai Mall",
+                "detail": "Morning briefing at Dubai Mall",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-03-17",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Dubai Mall",
+                "detail": "Visit Dubai Mall",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-03-17",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Dubai Mall",
+                "detail": "Lunch at Dubai Mall",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-03-17",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Dubai Mall",
+                "detail": "Explore Dubai Mall",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-03-17",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Dubai Mall",
+                "detail": "Dinner / Networking at Dubai Mall",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-03-18",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Palm Jumeirah",
+                "detail": "Morning briefing at Palm Jumeirah",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-03-18",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Palm Jumeirah",
+                "detail": "Visit Palm Jumeirah",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-03-18",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Palm Jumeirah",
+                "detail": "Lunch at Palm Jumeirah",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-03-18",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Palm Jumeirah",
+                "detail": "Explore Palm Jumeirah",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-03-18",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Palm Jumeirah",
+                "detail": "Dinner / Networking at Palm Jumeirah",
+                "notes": "Evening wrap-up"
+            }
+        ]
+    },
+    "Brazil Carnival Trip": {
+        "trip_title": "Brazil Carnival Trip",
+        "location": "Rio de Janeiro",
+        "start_date": "2026-02-20",
+        "end_date": "2026-02-28",
+        "trip_type": "Other",
+        "activities": [
+            {
+                "date": "2026-02-20",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Sambadrome",
+                "detail": "Morning briefing at Sambadrome",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-20",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Sambadrome",
+                "detail": "Visit Sambadrome",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-20",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Sambadrome",
+                "detail": "Lunch at Sambadrome",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-20",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Sambadrome",
+                "detail": "Explore Sambadrome",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-20",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Sambadrome",
+                "detail": "Dinner / Networking at Sambadrome",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-21",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Christ the Redeemer",
+                "detail": "Morning briefing at Christ the Redeemer",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-21",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Christ the Redeemer",
+                "detail": "Visit Christ the Redeemer",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-21",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Christ the Redeemer",
+                "detail": "Lunch at Christ the Redeemer",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-21",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Christ the Redeemer",
+                "detail": "Explore Christ the Redeemer",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-21",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Christ the Redeemer",
+                "detail": "Dinner / Networking at Christ the Redeemer",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-22",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Copacabana Beach",
+                "detail": "Morning briefing at Copacabana Beach",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-22",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Copacabana Beach",
+                "detail": "Visit Copacabana Beach",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-22",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Copacabana Beach",
+                "detail": "Lunch at Copacabana Beach",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-22",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Copacabana Beach",
+                "detail": "Explore Copacabana Beach",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-22",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Copacabana Beach",
+                "detail": "Dinner / Networking at Copacabana Beach",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-23",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Sugarloaf Mountain",
+                "detail": "Morning briefing at Sugarloaf Mountain",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-23",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Sugarloaf Mountain",
+                "detail": "Visit Sugarloaf Mountain",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-23",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Sugarloaf Mountain",
+                "detail": "Lunch at Sugarloaf Mountain",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-23",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Sugarloaf Mountain",
+                "detail": "Explore Sugarloaf Mountain",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-23",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Sugarloaf Mountain",
+                "detail": "Dinner / Networking at Sugarloaf Mountain",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-24",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Lapa District",
+                "detail": "Morning briefing at Lapa District",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-24",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Lapa District",
+                "detail": "Visit Lapa District",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-24",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Lapa District",
+                "detail": "Lunch at Lapa District",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-24",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Lapa District",
+                "detail": "Explore Lapa District",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-24",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Lapa District",
+                "detail": "Dinner / Networking at Lapa District",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-25",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Sambadrome",
+                "detail": "Morning briefing at Sambadrome",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-25",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Sambadrome",
+                "detail": "Visit Sambadrome",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-25",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Sambadrome",
+                "detail": "Lunch at Sambadrome",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-25",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Sambadrome",
+                "detail": "Explore Sambadrome",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-25",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Sambadrome",
+                "detail": "Dinner / Networking at Sambadrome",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-26",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Christ the Redeemer",
+                "detail": "Morning briefing at Christ the Redeemer",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-26",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Christ the Redeemer",
+                "detail": "Visit Christ the Redeemer",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-26",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Christ the Redeemer",
+                "detail": "Lunch at Christ the Redeemer",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-26",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Christ the Redeemer",
+                "detail": "Explore Christ the Redeemer",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-26",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Christ the Redeemer",
+                "detail": "Dinner / Networking at Christ the Redeemer",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-27",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Copacabana Beach",
+                "detail": "Morning briefing at Copacabana Beach",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-27",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Copacabana Beach",
+                "detail": "Visit Copacabana Beach",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-27",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Copacabana Beach",
+                "detail": "Lunch at Copacabana Beach",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-27",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Copacabana Beach",
+                "detail": "Explore Copacabana Beach",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-27",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Copacabana Beach",
+                "detail": "Dinner / Networking at Copacabana Beach",
+                "notes": "Evening wrap-up"
+            },
+            {
+                "date": "2026-02-28",
+                "start_time": "08:00",
+                "end_time": "09:30",
+                "location": "Sugarloaf Mountain",
+                "detail": "Morning briefing at Sugarloaf Mountain",
+                "notes": "Start the day together"
+            },
+            {
+                "date": "2026-02-28",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "location": "Sugarloaf Mountain",
+                "detail": "Visit Sugarloaf Mountain",
+                "notes": "Guided tour"
+            },
+            {
+                "date": "2026-02-28",
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "location": "Sugarloaf Mountain",
+                "detail": "Lunch at Sugarloaf Mountain",
+                "notes": "Local food"
+            },
+            {
+                "date": "2026-02-28",
+                "start_time": "15:00",
+                "end_time": "17:00",
+                "location": "Sugarloaf Mountain",
+                "detail": "Explore Sugarloaf Mountain",
+                "notes": "Afternoon activity"
+            },
+            {
+                "date": "2026-02-28",
+                "start_time": "18:00",
+                "end_time": "20:00",
+                "location": "Sugarloaf Mountain",
+                "detail": "Dinner / Networking at Sugarloaf Mountain",
+                "notes": "Evening wrap-up"
+            }
+        ]
+    }
 }
