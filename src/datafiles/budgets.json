@@ -2,5 +2,13 @@
     "Japan": {
         "total_budget": 0.0,
         "categories": {}
+    },
+    "Malaysia": {
+        "total_budget": 0.0,
+        "categories": {
+            "Hotel": 1000.0,
+            "Food": 20000.0,
+            "Transport": 5000.0
+        }
     }
 }
