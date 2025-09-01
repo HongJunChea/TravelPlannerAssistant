@@ -1,23 +1,324 @@
 {
-    "UK Company Trip": {
-        "trip_title": "UK Company Trip",
-        "location": "London",
-        "start_date": "2025-09-09",
-        "end_date": "2025-09-18",
-        "trip_type": "Business"
-    },
-    "Trip to Japan": {
-        "trip_title": "Trip to Japan",
-        "location": "Shibuya",
-        "start_date": "2025-12-09",
-        "end_date": "2025-12-24",
-        "trip_type": "Family"
-    },
-    "France Trip with Friends": {
-        "trip_title": "France Trip with Friends",
-        "location": "Paris",
-        "start_date": "2026-01-02",
-        "end_date": "2026-01-15",
-        "trip_type": "Adventure"
-    }
+  "UK Company Trip": {
+    "trip_title": "UK Company Trip",
+    "location": "London",
+    "start_date": "2025-09-09",
+    "end_date": "2025-09-18",
+    "trip_type": "Company",
+    "activities": [
+      {
+        "date": "2025-09-09",
+        "start_time": "09:00",
+        "end_time": "10:00",
+        "location": "London Eye",
+        "detail": "Enjoy scenery from the top",
+        "notes": ""
+      },
+      {
+        "date": "2025-09-09",
+        "start_time": "10:30",
+        "end_time": "12:00",
+        "location": "Restaurant",
+        "detail": "Fine dining",
+        "notes": "30 pounds per person"
+      },
+      {
+        "date": "2025-09-09",
+        "start_time": "12:00",
+        "end_time": "14:00",
+        "location": "London City",
+        "detail": "Wandering around",
+        "notes": "Gather at park"
+      }
+    ]
+  },
+  "Trip to Japan": {
+    "trip_title": "Trip to Japan",
+    "location": "Shibuya",
+    "start_date": "2025-12-09",
+    "end_date": "2025-12-24",
+    "trip_type": "Family",
+    "activities": [
+      {
+        "date": "2025-12-10",
+        "start_time": "08:00",
+        "end_time": "12:00",
+        "location": "Tokyo Disneyland",
+        "detail": "Family theme park visit",
+        "notes": "Buy fast passes"
+      },
+      {
+        "date": "2025-12-12",
+        "start_time": "14:00",
+        "end_time": "18:00",
+        "location": "Shibuya Crossing",
+        "detail": "Shopping and street food",
+        "notes": "Meet at Hachiko statue"
+      },
+      {
+        "date": "2025-12-15",
+        "start_time": "09:00",
+        "end_time": "13:00",
+        "location": "Mount Fuji",
+        "detail": "Day trip and sightseeing",
+        "notes": "Bring warm clothes"
+      }
+    ]
+  },
+  "France Trip with Friends": {
+    "trip_title": "France Trip with Friends",
+    "location": "Paris",
+    "start_date": "2026-01-02",
+    "end_date": "2026-01-15",
+    "trip_type": "Adventure",
+    "activities": [
+      {
+        "date": "2026-01-03",
+        "start_time": "09:00",
+        "end_time": "11:00",
+        "location": "Eiffel Tower",
+        "detail": "Morning photoshoot",
+        "notes": "Pre-book tickets"
+      },
+      {
+        "date": "2026-01-05",
+        "start_time": "12:00",
+        "end_time": "15:00",
+        "location": "Louvre Museum",
+        "detail": "Explore art and history",
+        "notes": "Focus on Mona Lisa"
+      },
+      {
+        "date": "2026-01-08",
+        "start_time": "10:00",
+        "end_time": "14:00",
+        "location": "Versailles",
+        "detail": "Palace and gardens tour",
+        "notes": ""
+      }
+    ]
+  },
+  "Italy Family Vacation": {
+    "trip_title": "Italy Family Vacation",
+    "location": "Rome",
+    "start_date": "2025-07-10",
+    "end_date": "2025-07-20",
+    "trip_type": "Family",
+    "activities": [
+      {
+        "date": "2025-07-11",
+        "start_time": "09:00",
+        "end_time": "12:00",
+        "location": "Colosseum",
+        "detail": "Guided historical tour",
+        "notes": "Tickets online"
+      },
+      {
+        "date": "2025-07-12",
+        "start_time": "14:00",
+        "end_time": "18:00",
+        "location": "Vatican City",
+        "detail": "St. Peter’s Basilica & Museums",
+        "notes": "Dress code: no shorts"
+      },
+      {
+        "date": "2025-07-14",
+        "start_time": "10:00",
+        "end_time": "13:00",
+        "location": "Trevi Fountain",
+        "detail": "Coin toss and sightseeing",
+        "notes": ""
+      }
+    ]
+  },
+  "New York Business Trip": {
+    "trip_title": "New York Business Trip",
+    "location": "New York City",
+    "start_date": "2025-11-05",
+    "end_date": "2025-11-10",
+    "trip_type": "Company",
+    "activities": [
+      {
+        "date": "2025-11-06",
+        "start_time": "09:00",
+        "end_time": "17:00",
+        "location": "Javits Center",
+        "detail": "Conference sessions",
+        "notes": "Lunch provided"
+      },
+      {
+        "date": "2025-11-07",
+        "start_time": "18:00",
+        "end_time": "21:00",
+        "location": "Broadway Theater",
+        "detail": "Team entertainment",
+        "notes": "Hamilton show"
+      }
+    ]
+  },
+  "Thailand Adventure": {
+    "trip_title": "Thailand Adventure",
+    "location": "Chiang Mai",
+    "start_date": "2025-08-01",
+    "end_date": "2025-08-12",
+    "trip_type": "Adventure",
+    "activities": [
+      {
+        "date": "2025-08-02",
+        "start_time": "07:00",
+        "end_time": "12:00",
+        "location": "Doi Inthanon",
+        "detail": "Mountain hiking",
+        "notes": "Pack hiking shoes"
+      },
+      {
+        "date": "2025-08-04",
+        "start_time": "09:00",
+        "end_time": "14:00",
+        "location": "Elephant Sanctuary",
+        "detail": "Spend time with elephants",
+        "notes": ""
+      },
+      {
+        "date": "2025-08-08",
+        "start_time": "18:00",
+        "end_time": "22:00",
+        "location": "Night Bazaar",
+        "detail": "Shopping and street food",
+        "notes": ""
+      }
+    ]
+  },
+  "Australia Road Trip": {
+    "trip_title": "Australia Road Trip",
+    "location": "Sydney to Melbourne",
+    "start_date": "2026-02-01",
+    "end_date": "2026-02-14",
+    "trip_type": "General",
+    "activities": [
+      {
+        "date": "2026-02-02",
+        "start_time": "09:00",
+        "end_time": "13:00",
+        "location": "Sydney Opera House",
+        "detail": "Opera tour",
+        "notes": ""
+      },
+      {
+        "date": "2026-02-05",
+        "start_time": "10:00",
+        "end_time": "15:00",
+        "location": "Blue Mountains",
+        "detail": "Hiking trails",
+        "notes": "Bring water"
+      },
+      {
+        "date": "2026-02-10",
+        "start_time": "09:00",
+        "end_time": "12:00",
+        "location": "Great Ocean Road",
+        "detail": "Scenic drive",
+        "notes": ""
+      }
+    ]
+  },
+  "Canada Winter Holiday": {
+    "trip_title": "Canada Winter Holiday",
+    "location": "Banff",
+    "start_date": "2025-12-20",
+    "end_date": "2026-01-05",
+    "trip_type": "Vacation",
+    "activities": [
+      {
+        "date": "2025-12-22",
+        "start_time": "08:00",
+        "end_time": "12:00",
+        "location": "Lake Louise",
+        "detail": "Ice skating",
+        "notes": "Rent skates onsite"
+      },
+      {
+        "date": "2025-12-25",
+        "start_time": "10:00",
+        "end_time": "14:00",
+        "location": "Banff Gondola",
+        "detail": "Christmas mountain view",
+        "notes": "Book in advance"
+      },
+      {
+        "date": "2025-12-28",
+        "start_time": "09:00",
+        "end_time": "16:00",
+        "location": "Ski Resort",
+        "detail": "Full day skiing",
+        "notes": "Bring gloves"
+      }
+    ]
+  },
+  "Dubai Desert Escape": {
+    "trip_title": "Dubai Desert Escape",
+    "location": "Dubai",
+    "start_date": "2026-03-10",
+    "end_date": "2026-03-18",
+    "trip_type": "Vacation",
+    "activities": [
+      {
+        "date": "2026-03-11",
+        "start_time": "16:00",
+        "end_time": "21:00",
+        "location": "Desert Safari",
+        "detail": "Dune bashing & BBQ dinner",
+        "notes": ""
+      },
+      {
+        "date": "2026-03-13",
+        "start_time": "10:00",
+        "end_time": "12:00",
+        "location": "Burj Khalifa",
+        "detail": "Observation deck",
+        "notes": "Book tickets"
+      },
+      {
+        "date": "2026-03-15",
+        "start_time": "14:00",
+        "end_time": "17:00",
+        "location": "Dubai Mall",
+        "detail": "Shopping and aquarium",
+        "notes": ""
+      }
+    ]
+  },
+  "Brazil Carnival Trip": {
+    "trip_title": "Brazil Carnival Trip",
+    "location": "Rio de Janeiro",
+    "start_date": "2026-02-20",
+    "end_date": "2026-02-28",
+    "trip_type": "Other",
+    "activities": [
+      {
+        "date": "2026-02-21",
+        "start_time": "18:00",
+        "end_time": "23:59",
+        "location": "Sambadrome",
+        "detail": "Carnival Parade",
+        "notes": "Tickets purchased"
+      },
+      {
+        "date": "2026-02-23",
+        "start_time": "09:00",
+        "end_time": "13:00",
+        "location": "Christ the Redeemer",
+        "detail": "Sightseeing",
+        "notes": ""
+      },
+      {
+        "date": "2026-02-25",
+        "start_time": "15:00",
+        "end_time": "19:00",
+        "location": "Copacabana Beach",
+        "detail": "Beach relaxation",
+        "notes": ""
+      }
+    ]
+  }
 }
