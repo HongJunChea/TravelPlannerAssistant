@@ -194,7 +194,7 @@ class PackingListGUI:
         # update display
         self.update_display()
 
-        messagebox.showinfo("Loading successful", f"List loaded: {packing_list.list_name}")
+        messagebox.showinfo("Loading successful", f"List loaded: {packing_list.list_name}", parent=self.root)
 
     def generate_list(self):
         """generate packing list"""
@@ -214,7 +214,7 @@ class PackingListGUI:
             # update display
             self.update_display()
 
-            messagebox.showinfo("Generation successful", f"Your packing list has been generated with {len(self.current_list.items)} items!")
+            messagebox.showinfo("Generation successful", f"Your packing list has been generated with {len(self.current_list.items)} items!", parent=self.root)
 
         except ValueError:
             messagebox.showerror("Input error", "Please enter a valid number of days and number of travelers！")
@@ -287,7 +287,7 @@ class PackingListGUI:
         self.new_item_var.set("")
         self.new_category_var.set("")
 
-        messagebox.showinfo("Added successfully", f"Items added: {item_name}")
+        messagebox.showinfo("Added successfully", f"Items added: {item_name}", parent=self.root)
 
     def delete_item(self):
         """delete selected item"""
@@ -309,7 +309,7 @@ class PackingListGUI:
                 success = self.current_list.remove_item(item_text)
                 if success:
                     self.update_display()
-                    messagebox.showinfo("Delete successful", f"Deleted items: {item_text}")
+                    messagebox.showinfo("Delete successful", f"Deleted items: {item_text}", parent=self.root)
 
     def save_list(self):
         """save list"""
@@ -324,7 +324,7 @@ class PackingListGUI:
         success = self.controller.save_packing_list(self.current_list, list_name)
 
         if success:
-            messagebox.showinfo("Saved successfully", f"The list '{list_name}' has been saved!")
+            messagebox.showinfo("Saved successfully", f"The list '{list_name}' has been saved!", parent=self.root)
         else:
             messagebox.showerror("Save failed", "An error occurred while saving the list!")
 
@@ -477,7 +477,7 @@ class SavedListsSelector:
             try:
                 success = self.controller.delete_list(list_name)
                 if success:
-                    messagebox.showinfo("Delete successful", f"List '{list_name}' deleted successfully!")
+                    messagebox.showinfo("Delete successful", f"List '{list_name}' deleted successfully!", parent=self.root)
                     self.load_saved_lists()  # load saved list again
                 else:
                     messagebox.showerror("Delete failed", "The list does not exist or deletion failed!")
