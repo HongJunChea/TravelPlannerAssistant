@@ -12,7 +12,7 @@ class MainApp:
         self.root.geometry("750x500")
         self.root.configure(bg="#121212")
 
-        # 🎨 Gradient Background (Dark → Teal)
+        # Gradient Background
         self.bg_canvas = tk.Canvas(self.root, highlightthickness=0, bd=0)
         self.bg_canvas.pack(fill="both", expand=True)
         self.bg_canvas.bind("<Configure>", self.redraw_gradient)

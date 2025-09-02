@@ -1,12 +1,18 @@
 from dataclasses import dataclass, field
 from typing import Dict, Self
+from src.modules.trip import Trip
 
 @dataclass
-class Budget:
-    trip_name: str
+class Budget(Trip):
     total_budget: float
     currency: str = "RM"
     categories: Dict[str, float] = field(default_factory=dict)
+
+    def __init__(self, trip_name: str, total_budget: float, currency: str = "RM", categories=None):
+        super().__init__(trip_name)
+        self.total_budget = total_budget
+        self.currency = currency
+        self.categories = categories or {}
 
     @property
     def allocated(self) -> float:  # allocate total amount of all categories
