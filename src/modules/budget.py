@@ -5,6 +5,7 @@ from typing import Dict, Self
 class Budget:
     trip_name: str
     total_budget: float
+    currency: str = "RM"
     categories: Dict[str, float] = field(default_factory=dict)
 
     @property
