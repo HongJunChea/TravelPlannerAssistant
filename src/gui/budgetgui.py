@@ -2,33 +2,6 @@ import tkinter as tk
 from tkinter import ttk, simpledialog, messagebox
 from src.controllers.budgetcontroller import BudgetController
 
-def apply_gradient(widget, color1="#0f0f0f", color2="#2a2a2a"):
-    canvas = tk.Canvas(widget, highlightthickness=0)
-    canvas.pack(fill="both", expand=True)
-
-    def _draw_gradient(event=None):
-        canvas.delete("gradient")
-        width = canvas.winfo_width()
-        height = canvas.winfo_height()
-        limit = height
-        (r1, g1, b1) = widget.winfo_rgb(color1)
-        (r2, g2, b2) = widget.winfo_rgb(color2)
-        r_ratio = float(r2 - r1) / limit
-        g_ratio = float(g2 - g1) / limit
-        b_ratio = float(b2 - b1) / limit
-
-        for i in range(limit):
-            nr = int(r1 + (r_ratio * i))
-            ng = int(g1 + (g_ratio * i))
-            nb = int(b1 + (b_ratio * i))
-            color = f"#{nr >> 8:02x}{ng >> 8:02x}{nb >> 8:02x}"
-            canvas.create_line(0, i, width, i, tags=("gradient",), fill=color)
-
-        canvas.lower("gradient")
-
-    canvas.bind("<Configure>", _draw_gradient)
-    return canvas
-
 
 class BudgetGUI:
     def __init__(self, root, trip_name, controller: BudgetController):
@@ -38,12 +11,10 @@ class BudgetGUI:
 
         self.root.title(f"Budget Plan - {self.trip_name}")
         self.root.geometry("850x700")  # slightly smaller for balance
-
-        # Gradient Background
-        bg_canvas = apply_gradient(self.root, "#0f0f0f", "#2a2a2a")
+        self.root.configure(bg="#121212")
 
         # Main container with grid
-        container = tk.Frame(bg_canvas, bg="#121212", bd=0)
+        container = tk.Frame(self.root, bg="#121212", bd=0)
         container.pack(fill="both", expand=True)
 
         container.grid_rowconfigure(0, weight=0)   # inputs + buttons (fixed)
@@ -237,15 +208,11 @@ class BudgetGUI:
         tk.Label(summary, text=f"💵 Remaining: {budget.currency}{budget.remaining:.2f}",
                  bg="#222222", fg=remaining_color).grid(row=3, column=0, sticky="w")
 
-        # Progress Bar
-        progress = ttk.Progressbar(summary, maximum=budget.total_budget, value=budget.allocated)
-        progress.grid(row=4, column=0, sticky="ew", pady=5)
-
-        # === Categories Table ===
+        # ategories Table
         cat_frame = tk.Frame(self.display, bg="#1c1c1c")
         cat_frame.pack(fill="both", expand=True, padx=10, pady=10)
 
-        columns = ("Category", f"Amount ({budget.currency})")  # 👈 use currency dynamically
+        columns = ("Category", f"Amount ({budget.currency})")
         tree = ttk.Treeview(cat_frame, columns=columns, show="headings", height=8)
         tree.heading("Category", text="📂 Category")
         tree.heading(f"Amount ({budget.currency})", text=f"💵 Amount ({budget.currency})")
