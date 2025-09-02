@@ -205,7 +205,7 @@ class PackingListGUI:
             travelers = int(self.travelers_var.get())
 
             if not destination or not weather:
-                messagebox.showwarning("Input error", "Please select destination type and weather！")
+                messagebox.showwarning("Input error", "Please select destination type and weather！", parent=self.root)
                 return
 
             # generate
@@ -217,7 +217,7 @@ class PackingListGUI:
             messagebox.showinfo("Generation successful", f"Your packing list has been generated with {len(self.current_list.items)} items!", parent=self.root)
 
         except ValueError:
-            messagebox.showerror("Input error", "Please enter a valid number of days and number of travelers！")
+            messagebox.showerror("Input error", "Please enter a valid number of days and number of travelers！", parent=self.root)
 
     def update_display(self):
         """update display content"""
@@ -270,14 +270,14 @@ class PackingListGUI:
     def add_custom_item(self):
         """add custom item"""
         if not self.current_list:
-            messagebox.showwarning("WARNING!", "Please create a packing list！")
+            messagebox.showwarning("WARNING!", "Please create a packing list！", parent=self.root)
             return
 
         item_name = self.new_item_var.get().strip()
         category = self.new_category_var.get().strip()
 
         if not item_name or not category:
-            messagebox.showwarning("Input error", "Please enter the item name and category！")
+            messagebox.showwarning("Input error", "Please enter the item name and category！", parent=self.root)
             return
 
         self.current_list.add_item(item_name, category)
@@ -296,7 +296,7 @@ class PackingListGUI:
 
         selection = self.tree.selection()
         if not selection:
-            messagebox.showwarning("Incorrect selection", "Please select the items to be deleted！")
+            messagebox.showwarning("Incorrect selection", "Please select the items to be deleted！", parent=self.root)
             return
 
         selected_item = selection[0]
@@ -304,7 +304,7 @@ class PackingListGUI:
 
         # check is item or category
         if not item_text.startswith("📂"):
-            confirm = messagebox.askyesno("Confirm delete", f"Confirm delete of item?: '{item_text}'")
+            confirm = messagebox.askyesno("Confirm delete", f"Confirm delete of item?: '{item_text}'", parent=self.root)
             if confirm:
                 success = self.current_list.remove_item(item_text)
                 if success:
@@ -314,7 +314,7 @@ class PackingListGUI:
     def save_list(self):
         """save list"""
         if not self.current_list:
-            messagebox.showwarning("WARNING!", "Please create a packing list!")
+            messagebox.showwarning("WARNING!", "Please create a packing list!", parent=self.root)
             return
 
         list_name = simpledialog.askstring("Save List", "Please enter the list name:", parent=self.root)
@@ -326,7 +326,7 @@ class PackingListGUI:
         if success:
             messagebox.showinfo("Saved successfully", f"The list '{list_name}' has been saved!", parent=self.root)
         else:
-            messagebox.showerror("Save failed", "An error occurred while saving the list!")
+            messagebox.showerror("Save failed", "An error occurred while saving the list!", parent=self.root)
 
     def go_back(self):
         """back to menu"""
@@ -432,13 +432,13 @@ class SavedListsSelector:
                                          progress_text))
 
         except Exception as e:
-            messagebox.showerror("Loading error", f"An error occurred while loading the manifest: {str(e)}")
+            messagebox.showerror("Loading error", f"An error occurred while loading the manifest: {str(e)}", parent=self.root)
 
     def load_selected_list(self, event=None):
         """load selected list"""
         selection = self.tree.selection()
         if not selection:
-            messagebox.showwarning("Incorrect selection", "Please select the list to load!")
+            messagebox.showwarning("Incorrect selection", "Please select the list to load!", parent=self.root)
             return
 
         selected_item = selection[0]
@@ -454,15 +454,15 @@ class SavedListsSelector:
                 self.parent_gui.load_saved_list(saved_lists[list_name])
                 self.close_window()
             else:
-                messagebox.showerror("Error", "The specified list cannot be found!")
+                messagebox.showerror("Error", "The specified list cannot be found!", parent=self.root)
         except Exception as e:
-            messagebox.showerror("Loading error", f"An error occurred while loading the manifest: {str(e)}")
+            messagebox.showerror("Loading error", f"An error occurred while loading the manifest: {str(e)}", parent=self.root)
 
     def delete_selected_list(self):
         """delete selected list"""
         selection = self.tree.selection()
         if not selection:
-            messagebox.showwarning("Incorrect selection", "Please select the list to delete!")
+            messagebox.showwarning("Incorrect selection", "Please select the list to delete!", parent=self.root)
             return
 
         selected_item = selection[0]
@@ -472,7 +472,7 @@ class SavedListsSelector:
             return
 
         # check delete
-        confirm = messagebox.askyesno("Confirm deletion", f"Are you sure you want to delete the list '{list_name}' ?\nThis action cannot be undone!")
+        confirm = messagebox.askyesno("Confirm deletion", f"Are you sure you want to delete the list '{list_name}' ?\nThis action cannot be undone!", parent=self.root)
         if confirm:
             try:
                 success = self.controller.delete_list(list_name)
@@ -480,9 +480,9 @@ class SavedListsSelector:
                     messagebox.showinfo("Delete successful", f"List '{list_name}' deleted successfully!", parent=self.root)
                     self.load_saved_lists()  # load saved list again
                 else:
-                    messagebox.showerror("Delete failed", "The list does not exist or deletion failed!")
+                    messagebox.showerror("Delete failed", "The list does not exist or deletion failed!", parent=self.root)
             except Exception as e:
-                messagebox.showerror("Delete Error", f"An error occurred while deleting the list: {str(e)}")
+                messagebox.showerror("Delete Error", f"An error occurred while deleting the list: {str(e)}", parent=self.root)
 
     def close_window(self):
         """close window"""
