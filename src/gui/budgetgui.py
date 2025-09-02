@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk, simpledialog, messagebox
 from src.controllers.budgetcontroller import BudgetController
 
-
 class BudgetGUI:
     def __init__(self, root, trip_name, controller: BudgetController):
         self.root = root
@@ -10,7 +9,7 @@ class BudgetGUI:
         self.controller = controller
 
         self.root.title(f"Budget Plan - {self.trip_name}")
-        self.root.geometry("850x700")  # slightly smaller for balance
+        self.root.geometry("850x700")
         self.root.configure(bg="#121212")
 
         # Main container with grid
@@ -93,16 +92,16 @@ class BudgetGUI:
             amount = float(self.amount_entry.get())
             self.controller.add_category(self.trip_name, category, amount)
             self.view_budgets()
-            messagebox.showinfo("Added", f"Category '{category}' added with RM{amount:.2f}")
+            messagebox.showinfo("Added", f"Category '{category}' added with RM{amount:.2f}", parent=self.root)
         except ValueError as e:
-            messagebox.showerror("Error", str(e))
+            messagebox.showerror("Error", str(e), parent=self.root)
 
     def edit_category(self):
         budget = self.controller.get_trip(self.trip_name)
         categories = list(budget.categories.keys())
 
         if not categories:
-            messagebox.showinfo("No Categories", "There are no categories to edit.")
+            messagebox.showinfo("No Categories", "There are no categories to edit.", parent=self.root)
             return
 
         # Create pop-up dialog
@@ -127,29 +126,29 @@ class BudgetGUI:
                 self.controller.edit_category(self.trip_name, cat_var.get(), amt)
                 self.view_budgets()
                 dialog.destroy()
-                messagebox.showinfo("Updated", f"Category '{cat_var.get()}' updated to RM{amt:.2f}")
+                messagebox.showinfo("Updated", f"Category '{cat_var.get()}' updated to RM{amt:.2f}", parent=self.root)
             except ValueError:
-                messagebox.showerror("Error", "Please enter a valid number.")
+                messagebox.showerror("Error", "Please enter a valid number.", parent=self.root)
 
         ttk.Button(dialog, text="💾 Save Changes", style="Modern.TButton", command=save).pack(pady=15, fill="x", padx=20)
         ttk.Button(dialog, text="❌ Cancel", style="Exit.TButton", command=dialog.destroy).pack(pady=(0, 15), fill="x", padx=20)
 
     def delete_trip(self):
-        confirm = messagebox.askyesno("Confirm Delete", f"Delete trip '{self.trip_name}'?")
+        confirm = messagebox.askyesno("Confirm Delete", f"Delete trip '{self.trip_name}'?", parent=self.root)
         if confirm:
             try:
                 self.controller.delete_trip(self.trip_name)
                 self.root.destroy()
-                messagebox.showinfo("Deleted", f"Trip '{self.trip_name}' deleted!")
+                messagebox.showinfo("Deleted", f"Trip '{self.trip_name}' deleted!", parent=self.root)
             except ValueError as e:
-                messagebox.showerror("Error", str(e))
+                messagebox.showerror("Error", str(e), parent=self.root)
 
     def delete_category(self):
         budget = self.controller.get_trip(self.trip_name)
         categories = list(budget.categories.keys())
 
         if not categories:
-            messagebox.showinfo("No Categories", "There are no categories to delete.")
+            messagebox.showinfo("No Categories", "There are no categories to delete.", parent=self.root)
             return
 
         # Create pop-up dialog
@@ -170,7 +169,7 @@ class BudgetGUI:
                 self.controller.delete_category(self.trip_name, category)
                 self.view_budgets()
                 dialog.destroy()
-                messagebox.showinfo("Deleted", f"Category '{category}' has been removed.")
+                messagebox.showinfo("Deleted", f"Category '{category}' has been removed.", parent=self.root)
 
         ttk.Button(dialog, text="🗑 Delete", style="Exit.TButton", command=confirm_delete).pack(pady=15, fill="x", padx=20)
         ttk.Button(dialog, text="❌ Cancel", style="Exit.TButton", command=dialog.destroy).pack(pady=(0, 15), fill="x", padx=20)
@@ -179,9 +178,9 @@ class BudgetGUI:
         try:
             total = float(self.total_entry.get())
             self.controller.update_total(self.trip_name, total)
-            messagebox.showinfo("Saved", "Budget saved successfully!")
+            messagebox.showinfo("Saved", "Budget saved successfully!", parent=self.root)
         except ValueError:
-            messagebox.showerror("Error", "Total budget must be a number!")
+            messagebox.showerror("Error", "Total budget must be a number!", parent=self.root)
 
     def view_budgets(self):
         # Clear display frame
@@ -310,7 +309,7 @@ class BudgetMenu:
             currency = currency_var.get()
 
             if not trip_name:
-                messagebox.showwarning("Missing Info", "Please enter a trip name.")
+                messagebox.showwarning("Missing Info", "Please enter a trip name.", parent=self.root)
                 return
 
             try:
@@ -318,7 +317,7 @@ class BudgetMenu:
                 self.refresh_list()
                 dialog.destroy()
             except ValueError as e:
-                messagebox.showerror("Error", str(e))
+                messagebox.showerror("Error", str(e), parent=self.root)
 
         ttk.Button(dialog, text="💾 Save Plan", command=save_plan).pack(pady=15, fill="x", padx=20)
         ttk.Button(dialog, text="❌ Cancel", command=dialog.destroy).pack(pady=(0, 15), fill="x", padx=20)
@@ -326,7 +325,7 @@ class BudgetMenu:
     def open_plan(self):
         selection = self.listbox.curselection()
         if not selection:
-            messagebox.showwarning("No selection", "Please select a plan to open.")
+            messagebox.showwarning("No selection", "Please select a plan to open.", parent=self.root)
             return
         trip_name = self.listbox.get(selection[0])
         win = tk.Toplevel(self.root)
@@ -335,7 +334,7 @@ class BudgetMenu:
     def delete_plan(self):
         selection = self.listbox.curselection()
         if not selection:
-            messagebox.showwarning("No selection", "Please select a plan to delete.")
+            messagebox.showwarning("No selection", "Please select a plan to delete.", parent=self.root)
             return
         trip_name = self.listbox.get(selection[0])
         confirm = messagebox.askyesno("Confirm Delete", f"Delete plan '{trip_name}'?")
@@ -344,4 +343,4 @@ class BudgetMenu:
                 self.controller.delete_trip(trip_name)
                 self.refresh_list()
             except ValueError as e:
-                messagebox.showerror("Error", str(e))
+                messagebox.showerror("Error", str(e), parent=self.root)
