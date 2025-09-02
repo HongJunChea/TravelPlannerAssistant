@@ -1,7 +1,3 @@
-# This program simulates a simple travel planner assistant
-# based on the provided flowchart. It allows users to add, update,
-# and view their travel itineraries.
-
 def display_main_menu():
     """Displays the main menu options to the user."""
     print("\nTravel Planner Assistant")

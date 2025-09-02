@@ -3,7 +3,6 @@ from tkinter import ttk, simpledialog, messagebox
 from src.controllers.budgetcontroller import BudgetController
 
 def apply_gradient(widget, color1="#0f0f0f", color2="#2a2a2a"):
-    """Paint a vertical gradient background on a canvas that resizes with window."""
     canvas = tk.Canvas(widget, highlightthickness=0)
     canvas.pack(fill="both", expand=True)
 
@@ -38,12 +37,12 @@ class BudgetGUI:
         self.controller = controller
 
         self.root.title(f"Budget Plan - {self.trip_name}")
-        self.root.geometry("750x600")  # slightly smaller for balance
+        self.root.geometry("850x700")  # slightly smaller for balance
 
-        # === Gradient Background ===
+        # Gradient Background
         bg_canvas = apply_gradient(self.root, "#0f0f0f", "#2a2a2a")
 
-        # === Main container with grid ===
+        # Main container with grid
         container = tk.Frame(bg_canvas, bg="#121212", bd=0)
         container.pack(fill="both", expand=True)
 
@@ -52,7 +51,7 @@ class BudgetGUI:
         container.grid_rowconfigure(2, weight=0)   # footer (fixed)
         container.grid_columnconfigure(0, weight=1)
 
-        # === Card: Inputs ===
+        # Card: Inputs
         input_card = tk.Frame(container, bg="#1c1c1c", bd=0)
         input_card.grid(row=0, column=0, sticky="ew", padx=20, pady=10)
 
@@ -214,25 +213,58 @@ class BudgetGUI:
             messagebox.showerror("Error", "Total budget must be a number!")
 
     def view_budgets(self):
-        self.display.delete("1.0", tk.END)
+        # Clear display frame
+        for widget in self.display.winfo_children():
+            widget.destroy()
+
         budget = self.controller.get_trip(self.trip_name)
 
-        self.display.insert(tk.END, f"🏖️ Trip: {budget.trip_name}\n")
-        self.display.insert(tk.END, f"   💰 Total Budget: RM{budget.total_budget:.2f}\n")
-        self.display.insert(tk.END, f"   📊 Allocated: RM{budget.allocated:.2f}\n")
-        self.display.insert(tk.END, f"   💵 Remaining: RM{budget.remaining:.2f}\n")
-        self.display.insert(tk.END, "   📂 Categories:\n")
+        # Summary Card
+        summary = tk.Frame(self.display, bg="#222222", pady=10, padx=10)
+        summary.pack(fill="x", pady=5)
+
+        remaining_color = "lightgreen" if budget.remaining >= 0 else "red"
+
+        tk.Label(summary, text=f"🏖️ {budget.trip_name}", font=("Segoe UI", 14, "bold"),
+                 bg="#222222", fg="white").grid(row=0, column=0, sticky="w")
+
+        tk.Label(summary, text=f"💰 Total: {budget.currency}{budget.total_budget:.2f}",
+                 bg="#222222", fg="white").grid(row=1, column=0, sticky="w")
+
+        tk.Label(summary, text=f"📊 Allocated: {budget.currency}{budget.allocated:.2f}",
+                 bg="#222222", fg="white").grid(row=2, column=0, sticky="w")
+
+        tk.Label(summary, text=f"💵 Remaining: {budget.currency}{budget.remaining:.2f}",
+                 bg="#222222", fg=remaining_color).grid(row=3, column=0, sticky="w")
+
+        # Progress Bar
+        progress = ttk.Progressbar(summary, maximum=budget.total_budget, value=budget.allocated)
+        progress.grid(row=4, column=0, sticky="ew", pady=5)
+
+        # === Categories Table ===
+        cat_frame = tk.Frame(self.display, bg="#1c1c1c")
+        cat_frame.pack(fill="both", expand=True, padx=10, pady=10)
+
+        columns = ("Category", f"Amount ({budget.currency})")  # 👈 use currency dynamically
+        tree = ttk.Treeview(cat_frame, columns=columns, show="headings", height=8)
+        tree.heading("Category", text="📂 Category")
+        tree.heading(f"Amount ({budget.currency})", text=f"💵 Amount ({budget.currency})")
+
+        tree.column("Category", width=200, anchor="w")
+        tree.column(f"Amount ({budget.currency})", width=120, anchor="center")
+
+        tree.pack(fill="both", expand=True)
 
         if budget.categories:
             for category, amount in budget.categories.items():
-                self.display.insert(tk.END, f"      - {category}: RM{amount:.2f}\n")
+                tree.insert("", "end", values=(category, f"{budget.currency}{amount:.2f}"))
         else:
-            self.display.insert(tk.END, "      (No categories)\n")
+            tree.insert("", "end", values=("No categories", "—"))
 
     def go_back(self):
         self.root.destroy()
 
-# === Budget Menu ===
+# Budget Menu
 class BudgetMenu:
     def __init__(self, root, controller: BudgetController):
         self.root = root
@@ -287,14 +319,42 @@ class BudgetMenu:
             self.listbox.insert(tk.END, trip_name)
 
     def add_plan(self):
-        trip_name = simpledialog.askstring("New Plan", "Enter trip name:", parent=self.root)
-        if not trip_name:
-            return
-        try:
-            self.controller.add_trip(trip_name)
-            self.refresh_list()
-        except ValueError as e:
-            messagebox.showerror("Error", str(e))
+        # Create dialog
+        dialog = tk.Toplevel(self.root)
+        dialog.title("➕ New Budget Plan")
+        dialog.geometry("300x300")
+        dialog.configure(bg="#2b2b2b")
+
+        # Trip Name
+        ttk.Label(dialog, text="Trip Name:", background="#2b2b2b", foreground="white").pack(pady=(15, 5))
+        trip_var = tk.StringVar()
+        trip_entry = ttk.Entry(dialog, textvariable=trip_var)
+        trip_entry.pack(pady=5)
+
+        # Currency Selector
+        ttk.Label(dialog, text="Currency:", background="#2b2b2b", foreground="white").pack(pady=(15, 5))
+        currency_var = tk.StringVar(value="RM")
+        currencies = ["RM", "$", "€", "£", "¥"]
+        currency_combo = ttk.Combobox(dialog, textvariable=currency_var, values=currencies, state="readonly")
+        currency_combo.pack(pady=5)
+
+        def save_plan():
+            trip_name = trip_var.get().strip()
+            currency = currency_var.get()
+
+            if not trip_name:
+                messagebox.showwarning("Missing Info", "Please enter a trip name.")
+                return
+
+            try:
+                self.controller.add_trip(trip_name, currency=currency)
+                self.refresh_list()
+                dialog.destroy()
+            except ValueError as e:
+                messagebox.showerror("Error", str(e))
+
+        ttk.Button(dialog, text="💾 Save Plan", command=save_plan).pack(pady=15, fill="x", padx=20)
+        ttk.Button(dialog, text="❌ Cancel", command=dialog.destroy).pack(pady=(0, 15), fill="x", padx=20)
 
     def open_plan(self):
         selection = self.listbox.curselection()

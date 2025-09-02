@@ -9,10 +9,15 @@ class BudgetController:
     def get_trips(self):
         return list(self.budgets.keys())
 
-    def add_trip(self, trip_name):
+    def add_trip(self, trip_name, currency="RM"):
         if trip_name in self.budgets:
             raise ValueError(f"Trip '{trip_name}' already exists")
-        self.budgets[trip_name] = Budget(trip_name=trip_name, total_budget=0, categories={})
+        self.budgets[trip_name] = Budget(
+            trip_name=trip_name,
+            total_budget=0,
+            currency=currency,
+            categories={}
+        )
         save_budgets(self.budgets)
 
     def delete_trip(self, trip_name):

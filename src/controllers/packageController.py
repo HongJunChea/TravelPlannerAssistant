@@ -2,7 +2,6 @@ from src.modules.package import PackingList, PackingItem
 from src.utils.file import load_packing_lists, save_packing_lists
 from typing import Dict
 
-
 class PackingController:
     """packing list controller"""
 
