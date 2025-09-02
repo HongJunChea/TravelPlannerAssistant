@@ -5,7 +5,6 @@ from src.gui.budgetgui import BudgetMenu
 from src.gui.packageGui import PackingListGUI
 from src.controllers.budgetcontroller import BudgetController
 
-
 class MainApp:
     def __init__(self, root):
         self.root = root
@@ -120,7 +119,6 @@ class MainApp:
             messagebox.showerror("Module Not Found", f"Packing list not found:\n{str(e)}")
         except Exception as e:
             messagebox.showerror("Error", f"Error when opening packing list:\n{str(e)}")
-
 
 if __name__ == "__main__":
     root = tk.Tk()

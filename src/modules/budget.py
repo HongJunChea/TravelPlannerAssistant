@@ -9,17 +9,15 @@ class Budget:
     categories: Dict[str, float] = field(default_factory=dict)
 
     @property
-    def allocated(self) -> float:
-        """Total allocated amount across all categories."""
+    def allocated(self) -> float:  # allocate total amount of all categories
         return sum(self.categories.values())
 
     @property
-    def remaining(self) -> float:
-        """Remaining budget balance."""
+    def remaining(self) -> float: # display remaining balance
         return self.total_budget - self.allocated
 
     def to_dict(self) -> dict:
-        """Convert a Budget object to a plain dict (for JSON)."""
+        # convert budget object to dictionary
         return {
             "total_budget": self.total_budget,
             "categories": self.categories
@@ -27,7 +25,7 @@ class Budget:
 
     @classmethod
     def from_dict(cls, trip_name: str, data: dict) -> Self:
-        """Recreate a Budget object from JSON dict."""
+        # convert dictionary to object
         return cls(
             trip_name=trip_name,
             total_budget=float(data["total_budget"]),
