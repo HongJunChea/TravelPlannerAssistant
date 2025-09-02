@@ -169,11 +169,11 @@ class ItineraryMenu:
             sd = datetime.strptime(start_date, "%Y-%m-%d")
             ed = datetime.strptime(end_date, "%Y-%m-%d")
             if ed < sd:
-                messagebox.showerror("Invalid Dates", "End Date cannot be before Start Date.")
+                messagebox.showerror("Invalid Dates", "End Date cannot be before Start Date.", parent=self.root)
                 return False
             return True
         except ValueError:
-            messagebox.showerror("Invalid Dates", "Please enter valid dates.")
+            messagebox.showerror("Invalid Dates", "Please enter valid dates.", parent=self.root)
             return False
 
     def validate_activity_date(self, date):
@@ -184,7 +184,7 @@ class ItineraryMenu:
             ed = datetime.strptime(self.end_date_entry.get(), "%Y-%m-%d")
             if not (sd <= act_date <= ed):
                 messagebox.showerror("Invalid Date",
-                                     f"Activity date {date} must be between trip dates ({sd.date()} - {ed.date()}).")
+                                     f"Activity date {date} must be between trip dates ({sd.date()} - {ed.date()}).", parent=self.root)
                 return False
             return True
         except Exception:
@@ -195,11 +195,11 @@ class ItineraryMenu:
             st = datetime.strptime(start_time, "%H:%M")
             et = datetime.strptime(end_time, "%H:%M")
             if et < st:
-                messagebox.showerror("Invalid Time", "End Time cannot be before Start Time.")
+                messagebox.showerror("Invalid Time", "End Time cannot be before Start Time.", parent=self.root)
                 return False
             return True
         except ValueError:
-            messagebox.showerror("Invalid Time Format", "Please use HH:MM format.")
+            messagebox.showerror("Invalid Time Format", "Please use HH:MM format.", parent=self.root)
             return False
 
     def reset_fields(self):
@@ -223,7 +223,7 @@ class ItineraryMenu:
     def update_activity_popup(self):
         selection = self.activity_tree.selection()
         if not selection:
-            messagebox.showwarning("No Selection", "Select an activity to update.")
+            messagebox.showwarning("No Selection", "Select an activity to update.", parent=self.root)
             return
         self.activity_popup(mode="update", selection=selection[0])
 
@@ -315,7 +315,7 @@ class ItineraryMenu:
     def remove_activity(self):
         selection = self.activity_tree.selection()
         if not selection:
-            messagebox.showwarning("No Selection", "Select an activity to remove.")
+            messagebox.showwarning("No Selection", "Select an activity to remove.", parent=self.root)
             return
         for item in selection:
             idx = self.activity_tree.index(item)
@@ -325,7 +325,7 @@ class ItineraryMenu:
     def save_itinerary(self):
         trip_title = self.trip_title_entry.get().strip()
         if not trip_title:
-            messagebox.showwarning("Missing Info", "Trip Title is required.")
+            messagebox.showwarning("Missing Info", "Trip Title is required.", parent=self.root)
             return
         if not self.validate_dates(self.start_date_entry.get(), self.end_date_entry.get()):
             return
@@ -335,7 +335,8 @@ class ItineraryMenu:
         if list_name in self.itineraries:
             confirm = messagebox.askyesno(
                 "Overwrite Itinerary",
-                f"An itinerary named '{list_name}' already exists.\nDo you want to overwrite it?"
+                f"An itinerary named '{list_name}' already exists.\nDo you want to overwrite it?",
+                parent=self.root
             )
             if not confirm:
                 return
@@ -353,11 +354,11 @@ class ItineraryMenu:
         self.itineraries[list_name] = itinerary
         save_itineraries(self.itineraries)
         self.refresh_itinerary_list()
-        messagebox.showinfo("Saved", f"Itinerary '{list_name}' saved successfully.")
+        messagebox.showinfo("Saved", f"Itinerary '{list_name}' saved successfully.", parent=self.root)
 
     def update_itinerary(self):
         if not self.current_itinerary:
-            messagebox.showwarning("No Selection", "Select an itinerary from the list to update.")
+            messagebox.showwarning("No Selection", "Select an itinerary from the list to update.", parent=self.root)
             return
         if not self.validate_dates(self.start_date_entry.get(), self.end_date_entry.get()):
             return
@@ -376,14 +377,14 @@ class ItineraryMenu:
         save_itineraries(self.itineraries)
         self.refresh_itinerary_list()
         self.refresh_activity_table()  # FIX: ensures activities reload properly
-        messagebox.showinfo("Updated", f"Itinerary '{self.current_itinerary}' updated successfully.")
+        messagebox.showinfo("Updated", f"Itinerary '{self.current_itinerary}' updated successfully.", parent=self.root)
 
     def delete_itinerary(self):
         list_name = self.itinerary_listbox.get(tk.ANCHOR)
         if not list_name:
-            messagebox.showwarning("No Selection", "Select an itinerary to delete.")
+            messagebox.showwarning("No Selection", "Select an itinerary to delete.", parent=self.root)
             return
-        confirm = messagebox.askyesno("Delete", f"Are you sure you want to delete '{list_name}'?")
+        confirm = messagebox.askyesno("Delete", f"Are you sure you want to delete '{list_name}'?", parent=self.root)
         if not confirm:
             return
         if list_name in self.itineraries:
@@ -391,7 +392,7 @@ class ItineraryMenu:
             save_itineraries(self.itineraries)
             self.refresh_itinerary_list()
             self.reset_fields()
-            messagebox.showinfo("Deleted", f"Itinerary '{list_name}' deleted successfully.")
+            messagebox.showinfo("Deleted", f"Itinerary '{list_name}' deleted successfully.", parent=self.root)
 
     def load_selected_itinerary(self, event):
         selection = self.itinerary_listbox.curselection()
