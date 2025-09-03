@@ -156,7 +156,7 @@ class ItineraryMenu:
         self.reset_button = ttk.Button(self.button_frame, text="🔄 Reset", command=self.reset_fields)
         self.reset_button.pack(side="left", padx=8)
 
-        self.exit_button = ttk.Button(self.button_frame, text="❌ Exit", command=self.go_back)
+        self.exit_button = ttk.Button(self.button_frame, text="⬅️ Back to Menu", command=self.go_back)
         self.exit_button.pack(side="right", padx=8)
 
         # Fill itineraries
@@ -369,7 +369,6 @@ class ItineraryMenu:
             return
 
         itinerary = Itinerary(
-            list_name=self.current_itinerary,
             trip_name=self.trip_title_entry.get(),
             location=self.location_entry.get(),
             start_date=self.start_date_entry.get(),
