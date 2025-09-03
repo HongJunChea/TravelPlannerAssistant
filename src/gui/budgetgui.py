@@ -8,6 +8,13 @@ class BudgetGUI:
         self.trip_name = trip_name
         self.controller = controller
 
+        # Check if trip exists first
+        trip = self.controller.get_trip(trip_name)
+        if trip is None:
+            messagebox.showerror("Error", f"Trip '{trip_name}' not found!")
+            self.root.destroy()
+            return
+
         self.root.title(f"Budget Plan - {self.trip_name}")
         self.root.geometry("850x700")
         self.root.configure(bg="#121212")
@@ -140,12 +147,12 @@ class BudgetGUI:
         if confirm:
             try:
                 self.controller.delete_trip(self.trip_name)
-                self.root.destroy()
                 messagebox.showinfo("Deleted", f"Trip '{self.trip_name}' deleted successfully!", parent=self.root)
+                self.root.destroy()
             except ValueError as e:
                 messagebox.showerror("Delete Failed",
-                    f"Unable to delete trip '{self.trip_name}'.\n\nReason: {e}\n\n"
-                    f"Tip: Make sure the trip exists before deleting.", parent=self.root)
+                                     f"Unable to delete trip '{self.trip_name}'.\n\nReason: {e}\n\n"
+                                     f"Tip: Make sure the trip exists before deleting.", parent=self.root)
 
     def delete_category(self):
         budget = self.controller.get_trip(self.trip_name)
@@ -183,13 +190,22 @@ class BudgetGUI:
 
     def save_budget(self):
         try:
+            # First, check if trip name was changed and update it
+            new_trip_name = self.trip_entry.get().strip()
+            if new_trip_name and new_trip_name != self.trip_name:
+                # Update trip name in controller
+                self.controller.update_trip_name(self.trip_name, new_trip_name)
+                self.trip_name = new_trip_name  # Update local reference
+                self.root.title(f"Budget Plan - {self.trip_name}")  # Update window title
+
+            # Then save the total budget
             total = float(self.total_entry.get())
             self.controller.update_total(self.trip_name, total)
+
             messagebox.showinfo("Saved", "Budget saved successfully!", parent=self.root)
-        except ValueError:
-            messagebox.showerror("Invalid Total Budget",
-                "The total budget must be a valid number.\n\nTip: Enter numbers only (e.g., 5000 or 5000.75).",
-                parent=self.root)
+
+        except ValueError as e:
+            messagebox.showerror("Error", f"Could not save budget: {e}", parent=self.root)
 
     def view_budgets(self):
         # Clear display frame
@@ -276,12 +292,19 @@ class BudgetMenu:
         btn_frame = tk.Frame(root, bg="#121212")
         btn_frame.pack(pady=15)
 
+        # Create a grid with 5 columns for the buttons
+        for i in range(5):
+            btn_frame.grid_columnconfigure(i, weight=1)
+
         style = ttk.Style()
         style.configure("White.TButton", background="white", foreground="black")
-        ttk.Button(btn_frame, text="➕ Add New Plan", command=self.add_plan, style="White.TButton").grid(row=0, column=0, padx=5)
-        ttk.Button(btn_frame, text="✏️ Open Plan", command=self.open_plan, style="White.TButton").grid(row=0, column=1, padx=5)
-        ttk.Button(btn_frame, text="🗑 Delete Plan", command=self.delete_plan, style="White.TButton").grid(row=0, column=2, padx=5)
-        ttk.Button(btn_frame, text="⬅️ Back to Menu", command=self.go_back, style="White.TButton").grid(row=0, column=3, padx=5)
+
+        # Add the refresh button as the 4th button
+        ttk.Button(btn_frame, text="➕ Add New Plan", command=self.add_plan, style="White.TButton").grid(row=0, column=0, padx=2, pady=5, sticky="ew")
+        ttk.Button(btn_frame, text="✏️ Open Plan", command=self.open_plan, style="White.TButton").grid(row=0, column=1, padx=2, pady=5, sticky="ew")
+        ttk.Button(btn_frame, text="🗑 Delete Plan", command=self.delete_plan, style="White.TButton").grid(row=0, column=2, padx=2, pady=5, sticky="ew")
+        ttk.Button(btn_frame, text="🔄 Refresh", command=self.refresh_list, style="White.TButton").grid(row=0, column=3, padx=2, pady=5, sticky="ew")
+        ttk.Button(btn_frame, text="⬅️ Back to Menu", command=self.go_back, style="White.TButton").grid(row=0, column=4, padx=2, pady=5, sticky="ew")
 
         self.refresh_list()
 
