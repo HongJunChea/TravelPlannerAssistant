@@ -52,8 +52,12 @@ class PackingController:
             }
         }
 
-    def generate_packing_list(self, trip_name: str, destination: str, duration: int, weather: str, travelers: int) -> PackingList:
+    def generate_packing_list(self, destination: str, duration: int, weather: str, travelers: int,
+                              trip_name: str = None) -> PackingList:
         """generate packing list"""
+
+        if not trip_name:
+            trip_name = f"{destination} Trip"
 
         # create empty list
         packing_list = PackingList(

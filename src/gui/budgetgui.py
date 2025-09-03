@@ -239,7 +239,6 @@ class BudgetGUI:
     def go_back(self):
         self.root.destroy()
 
-
 # Budget Menu
 class BudgetMenu:
     def __init__(self, root, controller: BudgetController):
@@ -288,6 +287,10 @@ class BudgetMenu:
 
     def go_back(self):
         self.root.destroy()
+        from src.gui.mainmenu import MainApp
+        root = tk.Tk()
+        MainApp(root)
+        root.mainloop()
 
     def refresh_list(self):
         self.listbox.delete(0, tk.END)
