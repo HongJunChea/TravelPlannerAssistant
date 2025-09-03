@@ -100,21 +100,27 @@ class MainApp:
 
     # Sub-Menus
     def open_itinerary_menu(self):
-        win = tk.Toplevel(self.root)
-        win.configure(bg="#121212")
-        ItineraryMenu(win)
+        self.root.destroy()
+        new_root = tk.Tk()
+        new_root.configure(bg="#121212")
+        ItineraryMenu(new_root)
+        new_root.mainloop()
 
     def open_budget_menu(self):
-        win = tk.Toplevel(self.root)
+        self.root.destroy()
+        new_root = tk.Tk()
+        new_root.configure(bg="#121212")
         controller = BudgetController()
-        win.configure(bg="#121212")
-        BudgetMenu(win, controller)
+        BudgetMenu(new_root, controller)
+        new_root.mainloop()
 
     def open_packing_menu(self):
         try:
-            win = tk.Toplevel(self.root)
-            win.configure(bg="#121212")
-            PackingListGUI(win)
+            self.root.destroy()
+            new_root = tk.Tk()
+            new_root.configure(bg="#121212")
+            PackingListGUI(new_root)
+            new_root.mainloop()
         except ImportError as e:
             messagebox.showerror("Module Not Found", f"Packing list not found:\n{str(e)}")
         except Exception as e:

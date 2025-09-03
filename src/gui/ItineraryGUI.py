@@ -5,7 +5,6 @@ from src.modules.itinerary import Itinerary, Activity
 from src.utils.file import load_itineraries, save_itineraries
 from tkcalendar import DateEntry
 
-
 class ItineraryMenu:
     def __init__(self, root):
         self.root = root
@@ -157,13 +156,20 @@ class ItineraryMenu:
         self.reset_button = ttk.Button(self.button_frame, text="🔄 Reset", command=self.reset_fields)
         self.reset_button.pack(side="left", padx=8)
 
-        self.exit_button = ttk.Button(self.button_frame, text="❌ Exit", command=self.root.destroy)
+        self.exit_button = ttk.Button(self.button_frame, text="❌ Exit", command=self.go_back)
         self.exit_button.pack(side="right", padx=8)
 
         # Fill itineraries
         self.refresh_itinerary_list()
 
     # ================= FUNCTIONS =================
+    def go_back(self):
+        self.root.destroy()
+        from src.gui.mainmenu import MainApp
+        root = tk.Tk()
+        MainApp(root)
+        root.mainloop()
+
     def validate_dates(self, start_date, end_date):
         try:
             sd = datetime.strptime(start_date, "%Y-%m-%d")

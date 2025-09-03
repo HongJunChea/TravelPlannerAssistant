@@ -88,17 +88,14 @@ class PackingListGUI:
         button_row = tk.Frame(grid_frame, bg="#121212")
         button_row.grid(row=4, column=0, columnspan=2, pady=10)
 
-        # create button
         style = ttk.Style()
         style.configure("White.TButton", background="white", foreground="black")
         generate_btn = ttk.Button(button_row, text="🎯 Generate Packing List", command=self.generate_list,
                                   style="White.TButton")
         generate_btn.pack(side="left", padx=5)
 
-        # check saved list button
-        style = ttk.Style()
-        style.configure("White.TButton", background="white", foreground="black")
-        view_saved_btn = ttk.Button(button_row, text="📂 View Saved Lists", command=self.show_saved_lists, style="White.TButton")
+        view_saved_btn = ttk.Button(button_row, text="📂 View Saved Lists", command=self.show_saved_lists,
+                                    style="White.TButton")
         view_saved_btn.pack(side="left", padx=5)
 
     def create_display_frame(self):
@@ -110,14 +107,14 @@ class PackingListGUI:
         info_frame = tk.Frame(display_frame, bg="#121212")
         info_frame.pack(fill="x", pady=5)
 
-        self.info_label = ttk.Label(info_frame, text="⬆ Click the Generate button to create the packing list ⬆", font=("Segoe UI", 12))
+        self.info_label = ttk.Label(info_frame, text="⬆ Click the Generate button to create the packing list ⬆",
+                                    font=("Segoe UI", 12))
         self.info_label.pack()
 
         # create treeview show item list
         tree_frame = tk.Frame(display_frame, bg="#121212")
         tree_frame.pack(fill="both", expand=True, pady=10)
 
-        # Treeview
         self.tree = ttk.Treeview(tree_frame, columns=('Category', 'Quantity', 'Packed'), show='tree headings',
                                  height=15)
         self.tree.heading('#0', text='Item Name')
@@ -130,14 +127,12 @@ class PackingListGUI:
         self.tree.column('Quantity', width=80, anchor="center")
         self.tree.column('Packed', width=80, anchor="center")
 
-        # scrollbar
         scrollbar = ttk.Scrollbar(tree_frame, orient="vertical", command=self.tree.yview)
         self.tree.configure(yscrollcommand=scrollbar.set)
 
         self.tree.pack(side="left", fill="both", expand=True)
         scrollbar.pack(side="right", fill="y")
 
-        # double click
         self.tree.bind('<Double-1>', self.toggle_packed_status)
 
         # add item frame
@@ -185,16 +180,14 @@ class PackingListGUI:
         """load saved lists"""
         self.current_list = packing_list
 
-        # update input parameter display
         self.duration_var.set(str(packing_list.duration))
         self.destination_var.set(packing_list.destination_type)
         self.weather_var.set(packing_list.weather)
         self.travelers_var.set(str(packing_list.travelers))
 
-        # update display
         self.update_display()
 
-        messagebox.showinfo("Loading successful", f"List loaded: {packing_list.list_name}", parent=self.root)
+        messagebox.showinfo("Loading successful", f"Trip loaded: {packing_list.trip_name}", parent=self.root)
 
     def generate_list(self):
         """generate packing list"""
@@ -208,13 +201,19 @@ class PackingListGUI:
                 messagebox.showwarning("Input error", "Please select destination type and weather！", parent=self.root)
                 return
 
-            # generate
-            self.current_list = self.controller.generate_packing_list(destination, duration, weather, travelers)
+            trip_name = simpledialog.askstring("Trip Name", "Enter a name for this trip:", parent=self.root)
+            if not trip_name:
+                trip_name = f"{destination.capitalize()} Trip"
 
-            # update display
+            self.current_list = self.controller.generate_packing_list(
+                destination, duration, weather, travelers, trip_name=trip_name
+            )
+
             self.update_display()
 
-            messagebox.showinfo("Generation successful", f"Your packing list has been generated with {len(self.current_list.items)} items!", parent=self.root)
+            messagebox.showinfo("Generation successful",
+                                f"Your packing list has been generated with {len(self.current_list.items)} items!",
+                                parent=self.root)
 
         except ValueError:
             messagebox.showerror("Input error", "Please enter a valid number of days and number of travelers！", parent=self.root)
@@ -224,31 +223,24 @@ class PackingListGUI:
         if not self.current_list:
             return
 
-        # update Information Label
         info_text = f"Destination: {self.current_list.destination_type} | Duration: {self.current_list.duration} | "
         info_text += f"Weather: {self.current_list.weather} | Number of travelers: {self.current_list.travelers} | "
         info_text += f"Progress: {self.current_list.packed_items}/{self.current_list.total_items} "
         info_text += f"({self.current_list.packing_progress:.1f}%)"
         self.info_label.config(text=info_text)
 
-        # clear treeview
         for item in self.tree.get_children():
             self.tree.delete(item)
 
-        # display grouped by category
         categories = self.current_list.get_items_by_category()
 
         for category, items in categories.items():
-            # add category node
             category_id = self.tree.insert('', 'end', text=f"📂 {category}", values=('', '', ''))
-
-            # add item
             for item in items:
                 packed_status = "✅" if item.is_packed else "❌"
                 self.tree.insert(category_id, 'end', text=item.name,
                                  values=(item.category, item.quantity, packed_status))
 
-        # expand all category
         for item in self.tree.get_children():
             self.tree.item(item, open=True)
 
@@ -260,9 +252,7 @@ class PackingListGUI:
         selected_item = self.tree.selection()[0]
         item_text = self.tree.item(selected_item, "text")
 
-        # check is item and not category
         if not item_text.startswith("📂"):
-            # change status
             success = self.current_list.toggle_packed(item_text)
             if success:
                 self.update_display()
@@ -283,7 +273,6 @@ class PackingListGUI:
         self.current_list.add_item(item_name, category)
         self.update_display()
 
-        # clear the input field
         self.new_item_var.set("")
         self.new_category_var.set("")
 
@@ -302,7 +291,6 @@ class PackingListGUI:
         selected_item = selection[0]
         item_text = self.tree.item(selected_item, "text")
 
-        # check is item or category
         if not item_text.startswith("📂"):
             confirm = messagebox.askyesno("Confirm delete", f"Confirm delete of item?: '{item_text}'", parent=self.root)
             if confirm:
@@ -317,21 +305,21 @@ class PackingListGUI:
             messagebox.showwarning("WARNING!", "Please create a packing list!", parent=self.root)
             return
 
-        list_name = simpledialog.askstring("Save List", "Please enter the list name:", parent=self.root)
-        if not list_name:
-            return
-
-        success = self.controller.save_packing_list(self.current_list, list_name)
+        list_name = self.current_list.trip_name
+        success = self.controller.save_packing_list(self.current_list)
 
         if success:
-            messagebox.showinfo("Saved successfully", f"The list '{list_name}' has been saved!", parent=self.root)
+            messagebox.showinfo("Saved successfully", f"The trip '{list_name}' has been saved!", parent=self.root)
         else:
-            messagebox.showerror("Save failed", "An error occurred while saving the list!", parent=self.root)
+            messagebox.showerror("Save failed", "An error occurred while saving the trip!", parent=self.root)
 
     def go_back(self):
         """back to menu"""
         self.root.destroy()
-
+        from src.gui.mainmenu import MainApp
+        root = tk.Tk()
+        MainApp(root)
+        root.mainloop()
 
 class SavedListsSelector:
     """saved lists selector"""
@@ -345,17 +333,11 @@ class SavedListsSelector:
         self.root.geometry("900x800")
         self.root.configure(bg="#121212")
 
-        # style
         self.setup_styles()
-
-        # create interface
         self.create_interface()
-
-        # load list
         self.load_saved_lists()
 
     def setup_styles(self):
-        """theme"""
         style = ttk.Style()
         style.configure("TButton", font=("Segoe UI", 11), padding=6,
                         relief="flat", background="#1f1f1f", foreground="white")
@@ -363,21 +345,18 @@ class SavedListsSelector:
         style.configure("TLabel", font=("Segoe UI", 11), background="#121212", foreground="white")
 
     def create_interface(self):
-        """create interface"""
-        # title
         title_frame = tk.Frame(self.root, bg="#121212")
         title_frame.pack(pady=10, fill="x")
 
         title = ttk.Label(title_frame, text="📚 Select the list to load", font=("Segoe UI", 20, "bold"))
         title.pack()
 
-        # list
         list_frame = tk.Frame(self.root, bg="#121212")
         list_frame.pack(pady=10, padx=20, fill="both", expand=True)
 
-        # Treeview
-        self.tree = ttk.Treeview(list_frame, columns=('Destination', 'Duration', 'Weather', 'Progress'), show='tree headings', height=15)
-        self.tree.heading('#0', text='List Name')
+        self.tree = ttk.Treeview(list_frame, columns=('Destination', 'Duration', 'Weather', 'Progress'),
+                                 show='tree headings', height=15)
+        self.tree.heading('#0', text='Trip Name')
         self.tree.heading('Destination', text='Destination')
         self.tree.heading('Duration', text='Duration')
         self.tree.heading('Weather', text='Weather')
@@ -389,29 +368,27 @@ class SavedListsSelector:
         self.tree.column('Weather', width=80, anchor="center")
         self.tree.column('Progress', width=120, anchor="center")
 
-        # scrollbar
         scrollbar = ttk.Scrollbar(list_frame, orient="vertical", command=self.tree.yview)
         self.tree.configure(yscrollcommand=scrollbar.set)
 
         self.tree.pack(side="left", fill="both", expand=True)
         scrollbar.pack(side="right", fill="y")
 
-        # double click
         self.tree.bind('<Double-1>', self.load_selected_list)
 
-        # button
         button_frame = tk.Frame(self.root, bg="#121212")
         button_frame.pack(pady=15)
 
         style = ttk.Style()
         style.configure("White.TButton", background="white", foreground="black", font=("Segoe UI", 11), padding=(8, 5))
-        ttk.Button(button_frame, text="✅ Load List", command=self.load_selected_list, style="White.TButton").grid(row=0, column=0, padx=10)
-        ttk.Button(button_frame, text="🗑️ Delete List", command=self.delete_selected_list, style="White.TButton").grid(row=0, column=1, padx=10)
-        ttk.Button(button_frame, text="❌ Cancel", command=self.close_window, style="White.TButton").grid(row=0, column=2, padx=10)
+        ttk.Button(button_frame, text="✅ Load List", command=self.load_selected_list,
+                   style="White.TButton").grid(row=0, column=0, padx=10)
+        ttk.Button(button_frame, text="🗑️ Delete List", command=self.delete_selected_list,
+                   style="White.TButton").grid(row=0, column=1, padx=10)
+        ttk.Button(button_frame, text="❌ Cancel", command=self.close_window,
+                   style="White.TButton").grid(row=0, column=2, padx=10)
 
     def load_saved_lists(self):
-        """load saved list"""
-        # clear treeview
         for item in self.tree.get_children():
             self.tree.delete(item)
 
@@ -422,12 +399,11 @@ class SavedListsSelector:
                 self.tree.insert('', 'end', text="No saved lists at this time", values=('', '', '', ''))
                 return
 
-            for list_name, packing_list in saved_lists.items():
+            for packing_list in saved_lists.values():
                 progress_text = f"{packing_list.packed_items}/{packing_list.total_items} ({packing_list.packing_progress:.1f}%)"
-
-                self.tree.insert('', 'end', text=list_name,
+                self.tree.insert('', 'end', text=packing_list.trip_name,
                                  values=(packing_list.destination_type,
-                                         f"{packing_list.duration}days",
+                                         f"{packing_list.duration} days",
                                          packing_list.weather,
                                          progress_text))
 
@@ -435,7 +411,6 @@ class SavedListsSelector:
             messagebox.showerror("Loading error", f"An error occurred while loading the manifest: {str(e)}", parent=self.root)
 
     def load_selected_list(self, event=None):
-        """load selected list"""
         selection = self.tree.selection()
         if not selection:
             messagebox.showwarning("Incorrect selection", "Please select the list to load!", parent=self.root)

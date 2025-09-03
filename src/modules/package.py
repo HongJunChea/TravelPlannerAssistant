@@ -94,7 +94,7 @@ class PackingList(Trip):
     # ---------- Serialization ----------
     def to_dict(self) -> dict:
         return {
-            "trip_name": self.trip_name,   # ✅ from Trip
+            "trip_name": self.trip_name,
             "destination_type": self.destination_type,
             "duration": self.duration,
             "weather": self.weather,

@@ -36,7 +36,7 @@ def load_packing_lists(filename: str = "src/datafiles/packing_lists.json") -> Di
         raw_data = json.load(f)
 
     return {
-        list_name: PackingList.from_dict(list_name, data)
+        list_name: PackingList.from_dict(data)
         for list_name, data in raw_data.items()
     }
 
