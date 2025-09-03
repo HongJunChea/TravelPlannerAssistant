@@ -1,5 +1,7 @@
 from dataclasses import dataclass, field
 from typing import List, Self
+from src.modules.trip import Trip
+
 
 @dataclass
 class Activity:
@@ -33,17 +35,27 @@ class Activity:
 
 
 @dataclass
-class Itinerary:
-    list_name: str
-    trip_title: str
-    location: str
-    start_date: str
-    end_date: str
-    trip_type: str
+class Itinerary(Trip):
+    trip_title: str = ""
+    location: str = ""
+    start_date: str = ""
+    end_date: str = ""
+    trip_type: str = ""
     activities: List[Activity] = field(default_factory=list)
 
+    def __init__(self, trip_name: str, trip_title: str, location: str, start_date: str, end_date: str, trip_type: str, activities: List[Activity] = None):
+        super().__init__(trip_name)
+        self.trip_title = trip_title
+        self.location = location
+        self.start_date = start_date
+        self.end_date = end_date
+        self.trip_type = trip_type
+        self.activities = activities if activities else []
+
+    # ---------- Serialization ----------
     def to_dict(self) -> dict:
         return {
+            "trip_name": self.trip_name,   # ✅ from Trip
             "trip_title": self.trip_title,
             "location": self.location,
             "start_date": self.start_date,
@@ -53,10 +65,10 @@ class Itinerary:
         }
 
     @classmethod
-    def from_dict(cls, list_name: str, data: dict) -> Self:
+    def from_dict(cls, data: dict) -> Self:
         activities = [Activity.from_dict(a) for a in data.get("activities", [])]
         return cls(
-            list_name=list_name,
+            trip_name=data["trip_name"],   # ✅ base trip field
             trip_title=data["trip_title"],
             location=data["location"],
             start_date=data["start_date"],
