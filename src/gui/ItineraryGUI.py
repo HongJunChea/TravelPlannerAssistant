@@ -323,14 +323,14 @@ class ItineraryMenu:
             self.activity_tree.delete(item)
 
     def save_itinerary(self):
-        trip_title = self.trip_title_entry.get().strip()
-        if not trip_title:
+        trip_name = self.trip_title_entry.get().strip()
+        if not trip_name:
             messagebox.showwarning("Missing Info", "Trip Title is required.", parent=self.root)
             return
         if not self.validate_dates(self.start_date_entry.get(), self.end_date_entry.get()):
             return
 
-        list_name = trip_title
+        list_name = trip_name
 
         if list_name in self.itineraries:
             confirm = messagebox.askyesno(
@@ -342,8 +342,7 @@ class ItineraryMenu:
                 return
 
         itinerary = Itinerary(
-            list_name=list_name,
-            trip_title=trip_title,
+            trip_name=trip_name,
             location=self.location_entry.get(),
             start_date=self.start_date_entry.get(),
             end_date=self.end_date_entry.get(),
@@ -365,7 +364,7 @@ class ItineraryMenu:
 
         itinerary = Itinerary(
             list_name=self.current_itinerary,
-            trip_title=self.trip_title_entry.get(),
+            trip_name=self.trip_title_entry.get(),
             location=self.location_entry.get(),
             start_date=self.start_date_entry.get(),
             end_date=self.end_date_entry.get(),
@@ -404,7 +403,7 @@ class ItineraryMenu:
         self.reset_fields()
         self.current_itinerary = list_name
 
-        self.trip_title_entry.insert(0, itinerary.trip_title)
+        self.trip_title_entry.insert(0, itinerary.trip_name)
         self.location_entry.insert(0, itinerary.location)
         self.start_date_entry.set_date(itinerary.start_date)
         self.end_date_entry.set_date(itinerary.end_date)

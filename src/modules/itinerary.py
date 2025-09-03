@@ -36,16 +36,14 @@ class Activity:
 
 @dataclass
 class Itinerary(Trip):
-    trip_title: str = ""
     location: str = ""
     start_date: str = ""
     end_date: str = ""
     trip_type: str = ""
     activities: List[Activity] = field(default_factory=list)
 
-    def __init__(self, trip_name: str, trip_title: str, location: str, start_date: str, end_date: str, trip_type: str, activities: List[Activity] = None):
+    def __init__(self, trip_name: str, location: str, start_date: str, end_date: str, trip_type: str, activities: List[Activity] = None):
         super().__init__(trip_name)
-        self.trip_title = trip_title
         self.location = location
         self.start_date = start_date
         self.end_date = end_date
@@ -55,8 +53,7 @@ class Itinerary(Trip):
     # ---------- Serialization ----------
     def to_dict(self) -> dict:
         return {
-            "trip_name": self.trip_name,   # ✅ from Trip
-            "trip_title": self.trip_title,
+            "trip_name": self.trip_name,
             "location": self.location,
             "start_date": self.start_date,
             "end_date": self.end_date,
@@ -68,8 +65,7 @@ class Itinerary(Trip):
     def from_dict(cls, data: dict) -> Self:
         activities = [Activity.from_dict(a) for a in data.get("activities", [])]
         return cls(
-            trip_name=data["trip_name"],   # ✅ base trip field
-            trip_title=data["trip_title"],
+            trip_name=data["trip_name"],
             location=data["location"],
             start_date=data["start_date"],
             end_date=data["end_date"],

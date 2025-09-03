@@ -56,11 +56,11 @@ def load_itineraries(filename: str = "src/datafiles/itineraries.json") -> Dict[s
         return {}
 
     with open(filename, "r", encoding="utf-8") as f:
-        raw_data = json.load(f)
+        data = json.load(f)
 
     return {
-        list_name: Itinerary.from_dict(list_name, data)
-        for list_name, data in raw_data.items()
+        list_name: Itinerary.from_dict(data)
+        for list_name, data in data.items()
     }
 
 def save_itineraries(itineraries: Dict[str, Itinerary], filename: str = "src/datafiles/itineraries.json") -> None:

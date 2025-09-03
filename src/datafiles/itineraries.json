@@ -1,6 +1,6 @@
 {
     "UK Company Trip": {
-        "trip_title": "UK Company Trip",
+        "trip_name": "UK Company Trip",
         "location": "London",
         "start_date": "2025-09-09",
         "end_date": "2025-09-18",
@@ -409,7 +409,7 @@
         ]
     },
     "Trip to Japan": {
-        "trip_title": "Trip to Japan",
+        "trip_name": "Trip to Japan",
         "location": "Tokyo",
         "start_date": "2025-12-09",
         "end_date": "2025-12-24",
@@ -1058,7 +1058,7 @@
         ]
     },
     "France Trip with Friends": {
-        "trip_title": "France Trip with Friends",
+        "trip_name": "France Trip with Friends",
         "location": "Paris",
         "start_date": "2026-01-02",
         "end_date": "2026-01-15",
@@ -1627,7 +1627,7 @@
         ]
     },
     "Italy Family Vacation": {
-        "trip_title": "Italy Family Vacation",
+        "trip_name": "Italy Family Vacation",
         "location": "Rome",
         "start_date": "2025-07-10",
         "end_date": "2025-07-20",
@@ -2068,7 +2068,7 @@
         ]
     },
     "New York Business Trip": {
-        "trip_title": "New York Business Trip",
+        "trip_name": "New York Business Trip",
         "location": "New York City",
         "start_date": "2025-11-05",
         "end_date": "2025-11-10",
@@ -2317,7 +2317,7 @@
         ]
     },
     "Thailand Adventure": {
-        "trip_title": "Thailand Adventure",
+        "trip_name": "Thailand Adventure",
         "location": "Chiang Mai",
         "start_date": "2025-08-01",
         "end_date": "2025-08-12",
@@ -2806,7 +2806,7 @@
         ]
     },
     "Australia Road Trip": {
-        "trip_title": "Australia Road Trip",
+        "trip_name": "Australia Road Trip",
         "location": "Sydney to Melbourne",
         "start_date": "2026-02-01",
         "end_date": "2026-02-14",
@@ -3375,7 +3375,7 @@
         ]
     },
     "Canada Winter Holiday": {
-        "trip_title": "Canada Winter Holiday",
+        "trip_name": "Canada Winter Holiday",
         "location": "Banff",
         "start_date": "2025-12-20",
         "end_date": "2026-01-05",
@@ -4064,7 +4064,7 @@
         ]
     },
     "Dubai Desert Escape": {
-        "trip_title": "Dubai Desert Escape",
+        "trip_name": "Dubai Desert Escape",
         "location": "Dubai",
         "start_date": "2026-03-10",
         "end_date": "2026-03-18",
@@ -4433,7 +4433,7 @@
         ]
     },
     "Brazil Carnival Trip": {
-        "trip_title": "Brazil Carnival Trip",
+        "trip_name": "Brazil Carnival Trip",
         "location": "Rio de Janeiro",
         "start_date": "2026-02-20",
         "end_date": "2026-02-28",
