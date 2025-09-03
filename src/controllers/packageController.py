@@ -15,7 +15,6 @@ class PackingController:
                 "Documents": ["ID Card", "Passport", "Flight Ticket", "Hotel Confirmation", "Insurance Policy"],
                 "Medicines": ["Regular Medicine", "Band-aids", "Painkillers"],
                 "Others": ["Wallet", "Cash", "Credit Card", "Keys"]
-
             },
 
             "destination_items": {
@@ -35,7 +34,6 @@ class PackingController:
                     "Clothing": ["Comfortable Shoes", "Long-Sleeve Clothes", "Insect-Proof Clothing", "Hat"],
                     "Supplies": ["Insect Repellent", "Flashlight", "Picnic Utensils", "Camera Tripod"]
                 }
-
             },
 
             "weather_items": {
@@ -54,28 +52,22 @@ class PackingController:
             }
         }
 
-    def generate_packing_list(self, destination: str, duration: int, weather: str, travelers: int) -> PackingList:
+    def generate_packing_list(self, trip_name: str, destination: str, duration: int, weather: str, travelers: int) -> PackingList:
         """generate packing list"""
 
         # create empty list
         packing_list = PackingList(
-            list_name="",
+            trip_name=trip_name,
             destination_type=destination,
             duration=duration,
             weather=weather,
             travelers=travelers
         )
 
-        # add base item
+        # add items
         self._add_base_items(packing_list, duration, travelers)
-
-        # 2. add destination items
         self._add_destination_items(packing_list, destination)
-
-        # 3. add weather item
         self._add_weather_items(packing_list, weather)
-
-        # 4. adjust item quantity by duration
         self._adjust_quantities_by_duration(packing_list, duration, travelers)
 
         return packing_list
@@ -86,12 +78,11 @@ class PackingController:
 
         for category, items in base_items.items():
             for item_name in items:
-                # item quantity based on duration and people
                 if item_name in ["Underwear", "Socks", "Pajamas", "Change of clothes"]:
-                    quantity = min(duration, 7) * travelers  # maximum x7 days
-                elif item_name in [["Toothbrush", "Towel", "Phone Charger", "Power Bank", "Camera", "Earphones",
-                                     "ID Card", "Passport", "Flight Ticket", "Hotel Confirmation", "Insurance Policy",
-                                     "Wallet", "Credit Card", "Keys", "Cash"]]:
+                    quantity = min(duration, 7) * travelers
+                elif item_name in ["Toothbrush", "Towel", "Phone Charger", "Power Bank", "Camera", "Earphones",
+                                   "ID Card", "Passport", "Flight Ticket", "Hotel Confirmation", "Insurance Policy",
+                                   "Wallet", "Credit Card", "Keys", "Cash"]:
                     quantity = travelers
                 else:
                     quantity = 1
@@ -102,7 +93,6 @@ class PackingController:
         """add item based on destination"""
         if destination in self.PACKING_DATABASE["destination_items"]:
             dest_items = self.PACKING_DATABASE["destination_items"][destination]
-
             for category, items in dest_items.items():
                 for item_name in items:
                     packing_list.add_item(item_name, category, 1)
@@ -111,7 +101,6 @@ class PackingController:
         """add item based on weather"""
         if weather in self.PACKING_DATABASE["weather_items"]:
             weather_items = self.PACKING_DATABASE["weather_items"][weather]
-
             for category, items in weather_items.items():
                 for item_name in items:
                     packing_list.add_item(item_name, category, 1)
@@ -121,26 +110,16 @@ class PackingController:
         if duration >= 7:
             packing_list.add_item("Laundry Detergent", "Skincare Products", 1)
             packing_list.add_item("Clothes Hangers", "Others", 3)
-
         if duration >= 14:
             packing_list.add_item("Cold Medicine", "Medicine", 1)
             packing_list.add_item("Stomach Medicine", "Medicine", 1)
 
-    def save_packing_list(self, packing_list: PackingList, list_name: str) -> bool:
+    def save_packing_list(self, packing_list: PackingList) -> bool:
         """save list"""
         try:
-            # load exist list
             existing_lists = load_packing_lists()
-
-            # set name
-            packing_list.list_name = list_name
-
-            # add to exist list
-            existing_lists[list_name] = packing_list
-
-            # save
+            existing_lists[packing_list.trip_name] = packing_list
             save_packing_lists(existing_lists)
-
             return True
         except Exception as e:
             print(f"Error while saving the file: {e}")
@@ -150,16 +129,15 @@ class PackingController:
         """load all lists"""
         return load_packing_lists()
 
-    def delete_list(self, list_name: str) -> bool:
+    def delete_list(self, trip_name: str) -> bool:
         """delete list"""
         try:
             existing_lists = load_packing_lists()
-
-            if list_name in existing_lists:
-                del existing_lists[list_name]
+            if trip_name in existing_lists:
+                del existing_lists[trip_name]
                 save_packing_lists(existing_lists)
                 return True
             return False
         except Exception as e:
-            print(f"Error while delete the file: {e}")
+            print(f"Error while deleting the file: {e}")
             return False
