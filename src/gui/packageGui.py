@@ -161,14 +161,13 @@ class PackingListGUI:
         ttk.Button(row_frame, text="🗑️ Delete", command=self.delete_item, style="White.TButton").pack(side="left", padx=5)
 
     def create_button_frame(self):
-        """create button frame"""
+        """create bottom button frame"""
         button_frame = tk.Frame(self.root, bg="#121212")
         button_frame.pack(pady=15)
 
         style = ttk.Style()
         style.configure("White.TButton", background="white", foreground="black")
         ttk.Button(button_frame, text="💾 Save List", command=self.save_list, style="White.TButton").grid(row=0, column=0, padx=10)
-        ttk.Button(button_frame, text="🔄 Regenerate", command=self.generate_list, style="White.TButton").grid(row=0, column=1, padx=10)
         ttk.Button(button_frame, text="⬅️ Back to Menu", command=self.go_back, style="White.TButton").grid(row=0, column=2, padx=10)
 
     def show_saved_lists(self):
@@ -201,13 +200,11 @@ class PackingListGUI:
                 messagebox.showwarning("Input error", "Please select destination type and weather！", parent=self.root)
                 return
 
-            trip_name = simpledialog.askstring("Trip Name", "Enter a name for this trip:", parent=self.root)
-            if not trip_name:
-                trip_name = f"{destination.capitalize()} Trip"
+            # trip_name = simpledialog.askstring("Trip Name", "Enter a name for this trip:", parent=self.root)
+            # if not trip_name:
+            #     trip_name = f"{destination.capitalize()} Trip"
 
-            self.current_list = self.controller.generate_packing_list(
-                destination, duration, weather, travelers, trip_name=trip_name
-            )
+            self.current_list = self.controller.generate_packing_list(destination, duration, weather, travelers)
 
             self.update_display()
 
@@ -301,9 +298,22 @@ class PackingListGUI:
 
     def save_list(self):
         """save list"""
+        duration = int(self.duration_var.get())
+        destination = self.destination_var.get()
+        weather = self.weather_var.get()
+        travelers = int(self.travelers_var.get())
+
         if not self.current_list:
             messagebox.showwarning("WARNING!", "Please create a packing list!", parent=self.root)
             return
+
+        trip_name = simpledialog.askstring("Trip Name", "Enter a name for this trip:", parent=self.root)
+        if not trip_name:
+            trip_name = f"{destination.capitalize()} Trip"
+
+        self.current_list = self.controller.generate_packing_list(
+            destination, duration, weather, travelers, trip_name=trip_name
+        )
 
         list_name = self.current_list.trip_name
         success = self.controller.save_packing_list(self.current_list)
