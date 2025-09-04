@@ -11,16 +11,23 @@
 ## Screenshots
 
 *Main Menu*
-ss
+<img width="752" height="532" alt="image" src="https://github.com/user-attachments/assets/fb2d7898-d2b9-4fb8-aefa-5dd929ef1d99" />
+
 
 *Itinerary Builder*
-ss
+<img width="1052" height="832" alt="image" src="https://github.com/user-attachments/assets/90881053-4e21-48e1-8b40-2a9eb6892e87" />
+
+
 
 *Packing List Generator*
-ss
+<img width="902" height="932" alt="image" src="https://github.com/user-attachments/assets/8e2d9bb3-3f04-475a-9337-cdf24a0966a6" />
+
+
 
 *Budget Estimator*
-ss
+<img width="702" height="632" alt="image" src="https://github.com/user-attachments/assets/b12fdf35-b98a-42ba-a04d-2d1f9bac8b99" />
+<img width="852" height="732" alt="image" src="https://github.com/user-attachments/assets/0a2c1461-f121-4f70-bafa-a650da116d82" />
+
 
 ## Authors
 
