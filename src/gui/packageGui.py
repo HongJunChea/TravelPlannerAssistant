@@ -311,15 +311,16 @@ class PackingListGUI:
         if not trip_name:
             trip_name = f"{destination.capitalize()} Trip"
 
-        self.current_list = self.controller.generate_packing_list(
-            destination, duration, weather, travelers, trip_name=trip_name
-        )
+        # self.current_list = self.controller.generate_packing_list(
+        #     destination, duration, weather, travelers, trip_name=trip_name
+        # )
 
-        list_name = self.current_list.trip_name
+        # list_name = self.current_list.trip_name
+        self.current_list.trip_name = trip_name
         success = self.controller.save_packing_list(self.current_list)
 
         if success:
-            messagebox.showinfo("Saved successfully", f"The trip '{list_name}' has been saved!", parent=self.root)
+            messagebox.showinfo("Saved successfully", f"The trip '{trip_name}' has been saved!", parent=self.root)
         else:
             messagebox.showerror("Save failed", "An error occurred while saving the trip!", parent=self.root)
 
