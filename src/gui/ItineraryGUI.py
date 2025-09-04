@@ -183,7 +183,7 @@ class ItineraryMenu:
             messagebox.showerror("Invalid Dates", "Please enter valid dates.", parent=self.root)
             return False
 
-    def validate_activity_date(self, date):
+    def validate_activity_date(self, date, parent=None):
         """ Ensure activity date is within itinerary range """
         try:
             act_date = datetime.strptime(date, "%Y-%m-%d")
@@ -191,22 +191,22 @@ class ItineraryMenu:
             ed = datetime.strptime(self.end_date_entry.get(), "%Y-%m-%d")
             if not (sd <= act_date <= ed):
                 messagebox.showerror("Invalid Date",
-                                     f"Activity date {date} must be between trip dates ({sd.date()} - {ed.date()}).", parent=self.root)
+                                     f"Activity date {date} must be between trip dates ({sd.date()} - {ed.date()}).", parent=parent)
                 return False
             return True
         except Exception:
             return False
 
-    def validate_times(self, start_time, end_time):
+    def validate_times(self, start_time, end_time, parent=None):
         try:
             st = datetime.strptime(start_time, "%H:%M")
             et = datetime.strptime(end_time, "%H:%M")
             if et < st:
-                messagebox.showerror("Invalid Time", "End Time cannot be before Start Time.", parent=self.root)
+                messagebox.showerror("Invalid Time", "End Time cannot be before Start Time.", parent=parent)
                 return False
             return True
         except ValueError:
-            messagebox.showerror("Invalid Time Format", "Please use HH:MM format.", parent=self.root)
+            messagebox.showerror("Invalid Time Format", "Please use HH:MM format.", parent=parent)
             return False
 
     def reset_fields(self):
@@ -278,9 +278,9 @@ class ItineraryMenu:
             start_time = start_entry.get()
             end_time = end_entry.get()
 
-            if not self.validate_activity_date(date):
+            if not self.validate_activity_date(date, popup):
                 return
-            if not self.validate_times(start_time, end_time):
+            if not self.validate_times(start_time, end_time, popup):
                 return
 
             activity = Activity(
