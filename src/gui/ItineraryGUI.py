@@ -11,6 +11,7 @@ class ItineraryMenu:
         self.itineraries = load_itineraries()
         self.current_itinerary: str | None = None
         self.activities = []
+        self.root.title("Itinerary Builder")
 
         root.geometry("1050x800")
         root.configure(bg="#000000")
